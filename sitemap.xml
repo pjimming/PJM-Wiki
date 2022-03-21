@@ -16,7 +16,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pjimming.github.io/PJM-Wiki/linux/vimrc/</loc>
+         <loc>https://pjimming.github.io/PJM-Wiki/linux/command/</loc>
+         <lastmod>2022-03-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pjimming.github.io/PJM-Wiki/linux/tmux_and_vim/</loc>
          <lastmod>2022-03-21</lastmod>
          <changefreq>daily</changefreq>
     </url>
