@@ -15,7 +15,7 @@ theme:
     - navigation.tabs
   language: 'zh'
   palette:
-    primary: 'white'
+    primary: 'blue'
     accent: 'red'
 
 # copyright
