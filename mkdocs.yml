@@ -1,4 +1,13 @@
+# Project information
 site_name: PJM Wiki
+site_description: PJM Wiki 是一个计算机知识整合的站点
+site_author: 潘江明
+site_url: https://pjimming.github.io/PJM-Wiki/
+strict: false
+
+# Repository
+repo_name: 'pjimming/PJM-Wiki'
+repo_url: 'https://github.com/pjimming/PJM-Wiki'
 
 theme:
   name: material
