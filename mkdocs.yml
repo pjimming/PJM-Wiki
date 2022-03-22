@@ -27,6 +27,7 @@ nav:
   - Linux:
     - 常用文件管理命令: linux/command.md
     - tmux和vim: linux/tmux_and_vim.md
+    - Shell: linux/shell.md
   - 关于:
     - 关于作者: about/aboutme.md
     - 关于PJM Wiki: about/aboutwiki.md
