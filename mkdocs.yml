@@ -41,6 +41,10 @@ extra:
 
 # Latex
 markdown_extensions:
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
   - pymdownx.arithmatex:
       generic: true
 
