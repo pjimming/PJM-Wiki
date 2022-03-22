@@ -2,27 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://pjimming.github.io/PJM-Wiki/</loc>
-         <lastmod>2022-03-21</lastmod>
+         <lastmod>2022-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pjimming.github.io/PJM-Wiki/about/aboutme/</loc>
-         <lastmod>2022-03-21</lastmod>
+         <lastmod>2022-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pjimming.github.io/PJM-Wiki/about/aboutwiki/</loc>
-         <lastmod>2022-03-21</lastmod>
+         <lastmod>2022-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pjimming.github.io/PJM-Wiki/linux/command/</loc>
-         <lastmod>2022-03-21</lastmod>
+         <lastmod>2022-03-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pjimming.github.io/PJM-Wiki/linux/shell/</loc>
+         <lastmod>2022-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://pjimming.github.io/PJM-Wiki/linux/tmux_and_vim/</loc>
-         <lastmod>2022-03-21</lastmod>
+         <lastmod>2022-03-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
