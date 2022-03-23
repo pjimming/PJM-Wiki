@@ -16,12 +16,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://pjimming.github.io/PJM-Wiki/leetcode/</loc>
+         <lastmod>2022-03-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://pjimming.github.io/PJM-Wiki/linux/command/</loc>
          <lastmod>2022-03-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://pjimming.github.io/PJM-Wiki/linux/shell/</loc>
+         <loc>https://pjimming.github.io/PJM-Wiki/linux/conduit/</loc>
+         <lastmod>2022-03-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pjimming.github.io/PJM-Wiki/linux/environment_variable/</loc>
+         <lastmod>2022-03-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://pjimming.github.io/PJM-Wiki/linux/git/</loc>
          <lastmod>2022-03-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
