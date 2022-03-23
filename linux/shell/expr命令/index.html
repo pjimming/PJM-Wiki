@@ -12,21 +12,21 @@
         <meta name="author" content="潘江明">
       
       
-        <link rel="canonical" href="https://pjimming.github.io/PJM-Wiki/linux/command/">
+        <link rel="canonical" href="https://pjimming.github.io/PJM-Wiki/linux/shell/expr%E5%91%BD%E4%BB%A4/">
       
-      <link rel="icon" href="../../img/favicon.png">
+      <link rel="icon" href="../../../img/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>常用文件管理命令 - PJM Wiki</title>
+        <title>expr命令 - PJM Wiki</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -45,7 +45,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -78,7 +83,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../.." title="PJM Wiki" class="md-header__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
+    <a href="../../.." title="PJM Wiki" class="md-header__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -97,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              常用文件管理命令
+              expr命令
             
           </span>
         </div>
@@ -172,7 +177,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Welcome
     </a>
   </li>
@@ -189,7 +194,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../../command/" class="md-tabs__link md-tabs__link--active">
         Linux
       </a>
     </li>
@@ -205,7 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../about/aboutme/" class="md-tabs__link">
+      <a href="../../../about/aboutme/" class="md-tabs__link">
         关于
       </a>
     </li>
@@ -233,7 +238,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="PJM Wiki" class="md-nav__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
+    <a href="../../.." title="PJM Wiki" class="md-nav__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -264,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Welcome
       </a>
     </li>
@@ -305,19 +310,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../command/" class="md-nav__link">
         常用文件管理命令
       </a>
-      
     </li>
   
 
@@ -329,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tmux_and_vim/" class="md-nav__link">
+      <a href="../../tmux_and_vim/" class="md-nav__link">
         tmux和vim
       </a>
     </li>
@@ -341,12 +338,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
       
       
       
@@ -369,7 +368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+      <a href="../%E6%A6%82%E8%AE%BA/" class="md-nav__link">
         概论
       </a>
     </li>
@@ -383,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/%E6%B3%A8%E9%87%8A/" class="md-nav__link">
+      <a href="../%E6%B3%A8%E9%87%8A/" class="md-nav__link">
         注释
       </a>
     </li>
@@ -397,7 +396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/%E5%8F%98%E9%87%8F/" class="md-nav__link">
+      <a href="../%E5%8F%98%E9%87%8F/" class="md-nav__link">
         变量
       </a>
     </li>
@@ -411,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/%E9%BB%98%E8%AE%A4%E5%8F%98%E9%87%8F/" class="md-nav__link">
+      <a href="../%E9%BB%98%E8%AE%A4%E5%8F%98%E9%87%8F/" class="md-nav__link">
         默认变量
       </a>
     </li>
@@ -425,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../%E6%95%B0%E7%BB%84/" class="md-nav__link">
         数组
       </a>
     </li>
@@ -437,11 +436,62 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../shell/expr%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          expr命令
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         expr命令
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    字符串表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    整数表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    逻辑关系表达式
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -453,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/read%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../read%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         read命令
       </a>
     </li>
@@ -467,7 +517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/echo%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../echo%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         echo命令
       </a>
     </li>
@@ -481,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/printf%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../printf%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         printf命令
       </a>
     </li>
@@ -495,7 +545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/test%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%88%A4%E6%96%AD%E7%AC%A6%E5%8F%B7%5B%5D/" class="md-nav__link">
+      <a href="../test%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%88%A4%E6%96%AD%E7%AC%A6%E5%8F%B7%5B%5D/" class="md-nav__link">
         test命令与判断符号[]
       </a>
     </li>
@@ -509,7 +559,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+      <a href="../%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
         判断语句
       </a>
     </li>
@@ -523,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+      <a href="../%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
         循环语句
       </a>
     </li>
@@ -537,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../%E5%87%BD%E6%95%B0/" class="md-nav__link">
         函数
       </a>
     </li>
@@ -551,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/exit%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../exit%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         exit命令
       </a>
     </li>
@@ -565,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91/" class="md-nav__link">
+      <a href="../%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91/" class="md-nav__link">
         文件重定向
       </a>
     </li>
@@ -579,7 +629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../shell/%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+      <a href="../%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8%E8%84%9A%E6%9C%AC/" class="md-nav__link">
         引入外部脚本
       </a>
     </li>
@@ -634,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/aboutme/" class="md-nav__link">
+      <a href="../../../about/aboutme/" class="md-nav__link">
         关于作者
       </a>
     </li>
@@ -648,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../about/aboutwiki/" class="md-nav__link">
+      <a href="../../../about/aboutwiki/" class="md-nav__link">
         关于PJM Wiki
       </a>
     </li>
@@ -669,19 +719,152 @@
               </div>
             
             
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    字符串表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    整数表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    逻辑关系表达式
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/pjimming/PJM-Wiki/edit/master/docs/linux/command.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/pjimming/PJM-Wiki/edit/master/docs/linux/shell/expr命令.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-  <h1>常用文件管理命令</h1>
+  <h1>expr命令</h1>
 
+<p><code>expr</code>命令用于求表达式的值，格式为：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>expr 表达式
+</code></pre></div>
+</td></tr></table>
+<p>表达式说明：</p>
+<ul>
+<li>用空格隔开每一项</li>
+<li>用反斜杠放在shell特定的字符前面（发现表达式运行错误时，可以试试转义）</li>
+<li>对包含空格和其他特殊字符的字符串要用引号括起来</li>
+<li>expr会在<code>stdout</code>中输出结果。如果为逻辑关系表达式，则结果为真，<code>stdout</code>为1，否则为0。</li>
+<li>expr的<code>exit code</code>：如果为逻辑关系表达式，则结果为真，<code>exit code</code>为0，否则为1。</li>
+</ul>
+<hr />
+<h4 id="_1">字符串表达式</h4>
+<ul>
+<li><code>length STRING</code></li>
+</ul>
+<p>返回<code>STRING</code>的长度</p>
+<ul>
+<li><code>index STRING CHARSET</code></li>
+</ul>
+<p><code>CHARSET</code>中任意单个字符在<code>STRING</code>中最前面的字符位置，<strong>下标从1开始</strong>。如果在<code>STRING</code>中完全不存在<code>CHARSET</code>中的字符，则返回0。</p>
+<ul>
+<li><code>substr STRING POSITION LENGTH</code></li>
+</ul>
+<p>返回<code>STRING</code>字符串中从POSITION开始，长度最大为LENGTH的子串。如果POSITION或LENGTH为负数，0或非数值，则返回空字符串。</p>
+<p>示例：
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">str</span><span class="o">=</span><span class="s2">&quot;Hello World!&quot;</span>
+
+<span class="nb">echo</span> <span class="sb">`</span>expr length <span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span><span class="sb">`</span>  <span class="c1"># ``不是单引号，表示执行该命令，输出12</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr index <span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span> aWd<span class="sb">`</span>  <span class="c1"># 输出7，下标从1开始</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr substr <span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span> <span class="m">2</span> <span class="m">3</span><span class="sb">`</span>  <span class="c1"># 输出 ell</span>
+</code></pre></div>
+</td></tr></table></p>
+<h4 id="_2">整数表达式</h4>
+<p><code>expr</code>支持普通的算术操作，算术表达式优先级低于字符串表达式，高于逻辑关系表达式。</p>
+<ul>
+<li><code>+ -</code></li>
+</ul>
+<p>加减运算。两端参数会转换为整数，如果转换失败则报错。</p>
+<ul>
+<li><code>* / %</code></li>
+</ul>
+<p>乘，除，取模运算。两端参数会转换为整数，如果转换失败则报错。</p>
+<ul>
+<li><code>()</code> 可以该表优先级，但需要用反斜杠转义</li>
+</ul>
+<p>示例：
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">3</span>
+<span class="nv">b</span><span class="o">=</span><span class="m">4</span>
+
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> + <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出7</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> - <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出-1</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\*</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出12，*需要转义</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> / <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出0，整除</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> % <span class="nv">$b</span><span class="sb">`</span> <span class="c1"># 输出3</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="se">\(</span> <span class="nv">$a</span> + <span class="m">1</span> <span class="se">\)</span> <span class="se">\*</span> <span class="se">\(</span> <span class="nv">$b</span> + <span class="m">1</span> <span class="se">\)</span><span class="sb">`</span>  <span class="c1"># 输出20，值为(a + 1) * (b + 1)</span>
+</code></pre></div>
+</td></tr></table></p>
+<h4 id="_3">逻辑关系表达式</h4>
+<ul>
+<li><code>|</code></li>
+</ul>
+<p>如果第一个参数非空且非0，则返回第一个参数的值，否则返回第二个参数的值，但要求第二个参数的值也是非空或非0，否则返回0。如果第一个参数是非空或非0时，不会计算第二个参数。</p>
+<ul>
+<li><code>&amp;</code></li>
+</ul>
+<p>如果两个参数都非空且非0，则返回第一个参数，否则返回0。如果第一个参为0或为空，则不会计算第二个参数。</p>
+<ul>
+<li><code>&lt; &lt;= = == != &gt;= &gt;</code></li>
+</ul>
+<p>比较两端的参数，如果为true，则返回1，否则返回0。”==”是”=”的同义词。”expr”首先尝试将两端参数转换为整数，并做算术比较，如果转换失败，则按字符集排序规则做字符比较。</p>
+<ul>
+<li><code>()</code> 可以该表优先级，但需要用反斜杠转义</li>
+</ul>
+<p>示例：
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -696,25 +879,23 @@
 <span class="normal">12</span>
 <span class="normal">13</span>
 <span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>(1) ctrl c: 取消命令，并且换行
-(2) ctrl u: 清空本行命令
-(3) tab键：可以补全命令和文件名，如果补全不了快速按两下tab键，可以显示备选选项
-(4) ls: 列出当前目录下所有文件，蓝色的是文件夹，白色的是普通文件，绿色的是可执行文件
-(5) pwd: 显示当前路径
-(6) cd XXX: 进入XXX目录下, cd .. 返回上层目录
-(7) cp XXX YYY: 将XXX文件复制成YYY，XXX和YYY可以是一个路径，比如../dir_c/a.txt，表示上层目录下的dir_c文件夹下的文件a.txt
-(8) mkdir XXX: 创建目录XXX
-(9) rm XXX: 删除普通文件;  rm XXX -r: 删除文件夹
-(10) mv XXX YYY: 将XXX文件移动到YYY，和cp命令一样，XXX和YYY可以是一个路径；重命名也是用这个命令
-(11) touch XXX: 创建一个文件
-(12) cat XXX: 展示文件XXX中的内容
-(13) 复制文本
-    windows/Linux下：Ctrl + insert，Mac下：command + c
-(14) 粘贴文本
-    windows/Linux下：Shift + insert，Mac下：command + v
+<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">3</span>
+<span class="nv">b</span><span class="o">=</span><span class="m">4</span>
+
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\&gt;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出0，&gt;需要转义</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="s1">&#39;&lt;&#39;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出1，也可以将特殊字符用引号引起来</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="s1">&#39;&gt;=&#39;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出0</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\&lt;\=</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出1</span>
+
+<span class="nv">c</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">d</span><span class="o">=</span><span class="m">5</span>
+
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$c</span> <span class="se">\&amp;</span> <span class="nv">$d</span><span class="sb">`</span>  <span class="c1"># 输出0</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\&amp;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出3</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$c</span> <span class="se">\|</span> <span class="nv">$d</span><span class="sb">`</span>  <span class="c1"># 输出5</span>
+<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\|</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出3</span>
 </code></pre></div>
-</td></tr></table>
+</td></tr></table></p>
 
               
             </article>
@@ -728,7 +909,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="上一页: Welcome" rel="prev">
+        <a href="../%E6%95%B0%E7%BB%84/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 数组" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -737,20 +918,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              Welcome
+              数组
             </div>
           </div>
         </a>
       
       
         
-        <a href="../tmux_and_vim/" class="md-footer__link md-footer__link--next" aria-label="下一页: tmux和vim" rel="next">
+        <a href="../read%E5%91%BD%E4%BB%A4/" class="md-footer__link md-footer__link--next" aria-label="下一页: read命令" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              tmux和vim
+              read命令
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -784,12 +965,12 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
       
-        <script src="../../js/mathjax.js"></script>
+        <script src="../../../js/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
