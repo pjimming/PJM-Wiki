@@ -47,6 +47,10 @@ nav:
       - exit命令: linux/shell/exit命令.md
       - 文件重定向: linux/shell/文件重定向.md
       - 引入外部脚本: linux/shell/引入外部脚本.md
+    - git: linux/git.md
+    - 管道: linux/conduit.md
+    - 环境变量: linux/environment_variable.md
+  - Leetcode: leetcode/index.md
   - 关于:
     - 关于作者: about/aboutme.md
     - 关于PJM Wiki: about/aboutwiki.md
