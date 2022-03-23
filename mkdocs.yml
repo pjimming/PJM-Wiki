@@ -30,7 +30,23 @@ nav:
   - Linux:
     - 常用文件管理命令: linux/command.md
     - tmux和vim: linux/tmux_and_vim.md
-    - Shell: linux/shell.md
+    - Shell:
+      - 概论: linux/shell/概论.md
+      - 注释: linux/shell/注释.md
+      - 变量: linux/shell/变量.md
+      - 默认变量: linux/shell/默认变量.md
+      - 数组: linux/shell/数组.md
+      - expr命令: linux/shell/expr命令.md
+      - read命令: linux/shell/read命令.md
+      - echo命令: linux/shell/echo命令.md
+      - printf命令: linux/shell/printf命令.md
+      - test命令与判断符号[]: linux/shell/test命令与判断符号[].md
+      - 判断语句: linux/shell/判断语句.md
+      - 循环语句: linux/shell/循环语句.md
+      - 函数: linux/shell/函数.md
+      - exit命令: linux/shell/exit命令.md
+      - 文件重定向: linux/shell/文件重定向.md
+      - 引入外部脚本: linux/shell/引入外部脚本.md
   - 关于:
     - 关于作者: about/aboutme.md
     - 关于PJM Wiki: about/aboutwiki.md
