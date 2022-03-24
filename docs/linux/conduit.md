@@ -21,7 +21,7 @@
 ---
 
 #### 举例
-统计当前目录下所有python文件的总行数，其中`find`、`xargs`、`wc`等命令可以参考[常用命令]()这一节内容。
+统计当前目录下所有python文件的总行数，其中`find`、`xargs`、`wc`等命令可以参考[常用命令](/PJM-Wiki/linux/common_commond/)这一节内容。
 ```sh
 find . -name '*.py' | xargs cat | wc -l
 ```

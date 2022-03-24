@@ -21,7 +21,7 @@ echo $PATH
 ---
 
 #### 修改
-环境变量的定义、修改、删除操作可以参考[Shell-变量](https://pjimming.github.io/PJM-Wiki/linux/shell/%E5%8F%98%E9%87%8F/)这一节的内容。
+环境变量的定义、修改、删除操作可以参考[Shell-变量](/PJM-Wiki/linux/shell/变量/)这一节的内容。
 
 为了将对环境变量的修改应用到未来所有环境下，可以将修改命令放到`~/.bashrc`文件中。
 

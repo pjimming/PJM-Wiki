@@ -50,6 +50,7 @@ nav:
     - git: linux/git.md
     - 管道: linux/conduit.md
     - 环境变量: linux/environment_variable.md
+    - 常用命令: linux/common_commond.md
   - Leetcode: leetcode/index.md
   - 关于:
     - 关于作者: about/aboutme.md
