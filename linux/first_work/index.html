@@ -12,21 +12,21 @@
         <meta name="author" content="潘江明">
       
       
-        <link rel="canonical" href="https://pjimming.github.io/PJM-Wiki/linux/shell/echo%E5%91%BD%E4%BB%A4/">
+        <link rel="canonical" href="https://pjimming.github.io/PJM-Wiki/linux/first_work/">
       
-      <link rel="icon" href="../../../img/favicon.png">
+      <link rel="icon" href="../../img/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>echo命令 - PJM Wiki</title>
+        <title>WSL2的安装和使用 - PJM Wiki</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -45,7 +45,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,7 +69,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#wsl" class="md-skip">
           跳转至
         </a>
       
@@ -83,7 +83,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="PJM Wiki" class="md-header__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
+    <a href="../.." title="PJM Wiki" class="md-header__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              echo命令
+              WSL2的安装和使用
             
           </span>
         </div>
@@ -177,7 +177,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Welcome
     </a>
   </li>
@@ -194,7 +194,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../first_work/" class="md-tabs__link md-tabs__link--active">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Linux
       </a>
     </li>
@@ -210,7 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../leetcode/1/" class="md-tabs__link">
+      <a href="../../leetcode/1/" class="md-tabs__link">
         Leetcode
       </a>
     </li>
@@ -226,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../about/aboutme/" class="md-tabs__link">
+      <a href="../../about/aboutme/" class="md-tabs__link">
         关于
       </a>
     </li>
@@ -254,7 +254,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="PJM Wiki" class="md-nav__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
+    <a href="../.." title="PJM Wiki" class="md-nav__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -285,7 +285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Welcome
       </a>
     </li>
@@ -326,11 +326,123 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../first_work/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          WSL2的安装和使用
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         WSL2的安装和使用
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wsl" class="md-nav__link">
+    介绍 WSL
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wsl_1" class="md-nav__link">
+    设置 WSL
+  </a>
+  
+    <nav class="md-nav" aria-label="设置 WSL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wsl_2" class="md-nav__link">
+    开启 WSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu" class="md-nav__link">
+    安装 Ubuntu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    创建用户
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-terminal" class="md-nav__link">
+    Windows Terminal
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows Terminal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-terminal_1" class="md-nav__link">
+    Windows Terminal 介绍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-terminal_2" class="md-nav__link">
+    安装 Windows Terminal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-terminal_3" class="md-nav__link">
+    设置 Windows Terminal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    写在结尾
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -342,7 +454,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../command/" class="md-nav__link">
+      <a href="../command/" class="md-nav__link">
         常用文件管理命令
       </a>
     </li>
@@ -356,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tmux_and_vim/" class="md-nav__link">
+      <a href="../tmux_and_vim/" class="md-nav__link">
         tmux和vim
       </a>
     </li>
@@ -368,14 +480,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
       
       
       
@@ -398,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+      <a href="../shell/%E6%A6%82%E8%AE%BA/" class="md-nav__link">
         概论
       </a>
     </li>
@@ -412,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%B3%A8%E9%87%8A/" class="md-nav__link">
+      <a href="../shell/%E6%B3%A8%E9%87%8A/" class="md-nav__link">
         注释
       </a>
     </li>
@@ -426,7 +536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%8F%98%E9%87%8F/" class="md-nav__link">
+      <a href="../shell/%E5%8F%98%E9%87%8F/" class="md-nav__link">
         变量
       </a>
     </li>
@@ -440,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E9%BB%98%E8%AE%A4%E5%8F%98%E9%87%8F/" class="md-nav__link">
+      <a href="../shell/%E9%BB%98%E8%AE%A4%E5%8F%98%E9%87%8F/" class="md-nav__link">
         默认变量
       </a>
     </li>
@@ -454,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../shell/%E6%95%B0%E7%BB%84/" class="md-nav__link">
         数组
       </a>
     </li>
@@ -468,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../expr%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../shell/expr%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         expr命令
       </a>
     </li>
@@ -482,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../read%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../shell/read%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         read命令
       </a>
     </li>
@@ -494,97 +604,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          echo命令
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../shell/echo%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         echo命令
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    显示普通字符串
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    显示转义字符
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    显示变量
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    显示换行
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    显示不换行
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    显示结果定向至文件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    原样输出字符串，不进行转义或取变量(用单引号)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    显示命令的执行结果
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -596,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../printf%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../shell/printf%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         printf命令
       </a>
     </li>
@@ -610,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../test%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%88%A4%E6%96%AD%E7%AC%A6%E5%8F%B7%5B%5D/" class="md-nav__link">
+      <a href="../shell/test%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%88%A4%E6%96%AD%E7%AC%A6%E5%8F%B7%5B%5D/" class="md-nav__link">
         test命令与判断符号[]
       </a>
     </li>
@@ -624,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+      <a href="../shell/%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
         判断语句
       </a>
     </li>
@@ -638,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+      <a href="../shell/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
         循环语句
       </a>
     </li>
@@ -652,7 +676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../shell/%E5%87%BD%E6%95%B0/" class="md-nav__link">
         函数
       </a>
     </li>
@@ -666,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exit%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../shell/exit%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         exit命令
       </a>
     </li>
@@ -680,7 +704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91/" class="md-nav__link">
+      <a href="../shell/%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91/" class="md-nav__link">
         文件重定向
       </a>
     </li>
@@ -694,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+      <a href="../shell/%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8%E8%84%9A%E6%9C%AC/" class="md-nav__link">
         引入外部脚本
       </a>
     </li>
@@ -715,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../git/" class="md-nav__link">
+      <a href="../git/" class="md-nav__link">
         git
       </a>
     </li>
@@ -729,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../conduit/" class="md-nav__link">
+      <a href="../conduit/" class="md-nav__link">
         管道
       </a>
     </li>
@@ -743,7 +767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../environment_variable/" class="md-nav__link">
+      <a href="../environment_variable/" class="md-nav__link">
         环境变量
       </a>
     </li>
@@ -757,7 +781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../common_commond/" class="md-nav__link">
+      <a href="../common_commond/" class="md-nav__link">
         常用命令
       </a>
     </li>
@@ -805,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leetcode/1/" class="md-nav__link">
+      <a href="../../leetcode/1/" class="md-nav__link">
         剑指 Offer 03. 数组中重复的数字
       </a>
     </li>
@@ -853,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/aboutme/" class="md-nav__link">
+      <a href="../../about/aboutme/" class="md-nav__link">
         关于作者
       </a>
     </li>
@@ -867,7 +891,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/aboutwiki/" class="md-nav__link">
+      <a href="../../about/aboutwiki/" class="md-nav__link">
         关于PJM Wiki
       </a>
     </li>
@@ -906,57 +930,83 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    显示普通字符串
+  <a href="#wsl" class="md-nav__link">
+    介绍 WSL
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wsl_1" class="md-nav__link">
+    设置 WSL
+  </a>
+  
+    <nav class="md-nav" aria-label="设置 WSL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wsl_2" class="md-nav__link">
+    开启 WSL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu" class="md-nav__link">
+    安装 Ubuntu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    创建用户
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows-terminal" class="md-nav__link">
+    Windows Terminal
+  </a>
+  
+    <nav class="md-nav" aria-label="Windows Terminal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-terminal_1" class="md-nav__link">
+    Windows Terminal 介绍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-terminal_2" class="md-nav__link">
+    安装 Windows Terminal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows-terminal_3" class="md-nav__link">
+    设置 Windows Terminal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    显示转义字符
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    显示变量
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    显示换行
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    显示不换行
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    显示结果定向至文件
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    原样输出字符串，不进行转义或取变量(用单引号)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    显示命令的执行结果
+    写在结尾
   </a>
   
 </li>
@@ -973,90 +1023,46 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/pjimming/PJM-Wiki/edit/master/docs/linux/shell/echo命令.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/pjimming/PJM-Wiki/edit/master/docs/linux/first_work.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-  <h1>echo命令</h1>
+  <h1>WSL2的安装和使用</h1>
 
-<p><code>echo</code>用于输出字符串。命令格式：
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">echo</span> STRING
-</code></pre></div>
-</td></tr></table></p>
+<h3 id="wsl">介绍 <code>WSL</code></h3>
+<p><code>WSL</code> 是 <code>Windows Subsystem for Linux</code> 的缩写，译为适用于<code>Linux</code> 的 <code>windows</code> 子系统。<code>WSL</code> 功能推出之前，在 <code>Windows</code> 上运行 <code>Linux</code> 需要将 <code>Linux</code> 发行版安装在虚拟机（比如 VMware、VirtualBox），使用此方法过程比较繁琐，容易出错，而且使用虚拟机运行 <code>Linux</code> 个人觉得比较占用系统资源。现在使用 WSL ，只需要在微软商店安装相应的 <code>Linux</code> 发行版，就可以在本地环境中体验到 <code>Linux</code> 的所有功能。</p>
+<p>当然如果你想体验 <code>Linux</code> 发行版的图形界面，WSL 是不支持的，这个时候还只有使用虚拟机或者安装 <code>Linux</code> 在本地磁盘两种方法了。</p>
+<p>接下来我们就开始配置 <code>Windows</code> 终端 &amp; <code>WSL</code> 开发环境。</p>
 <hr />
-<h4 id="_1">显示普通字符串</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;Hello PJM Wiki&quot;</span>
-<span class="nb">echo</span> Hello PJM Wiki  <span class="c1"># 引号可以省略</span>
-</code></pre></div>
-</td></tr></table>
+<h3 id="wsl_1">设置 <code>WSL</code></h3>
+<h4 id="wsl_2">开启 WSL</h4>
+<p>打开「控制面板」&gt;「程序」&gt;「启用或关闭 Windows 功能 」，然后在「适用于 Linux 的 Windows 子系统」选项前面打勾。</p>
+<p>小技巧：使用快捷键 Win+s 打开搜索功能，在搜索框中输入关键字 <code>Windows 功能</code>，可以快速打开「启用或关闭 Windows 功能」。</p>
+<p><img alt="" src="../img/windows.png" /></p>
+<h4 id="ubuntu">安装 Ubuntu</h4>
+<p>在 微软商店 可以搜索到很多 Linux 发行版，我推荐 <a href="https://www.microsoft.com/zh-cn/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab">Ubuntu</a>，因为它对新手会比较友好一点。当然你可以根据个人喜好选择 Debian，kail Linux 或者 SUSE Linux 等等 Linux 发行版。</p>
+<p><img alt="" src="../img/ubuntu.png" /></p>
+<h4 id="_1">创建用户</h4>
+<p>安装完成后，第一次启动 Ubuntu 会要求创建一个用户和登录密码，全部设置完成后即可运行。</p>
 <hr />
-<h4 id="_2">显示转义字符</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;\&quot;Hello PJM Wiki\&quot;&quot;</span>  <span class="c1"># 注意只能使用双引号，如果使用单引号，则不转义</span>
-<span class="nb">echo</span> <span class="se">\&quot;</span>Hello PJM Wiki<span class="se">\&quot;</span>  <span class="c1"># 也可以省略双引号</span>
-</code></pre></div>
-</td></tr></table>
-<hr />
-<h4 id="_3">显示变量</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">name</span><span class="o">=</span>pjm
-<span class="nb">echo</span> <span class="s2">&quot;My name is </span><span class="nv">$name</span><span class="s2">&quot;</span>  <span class="c1"># 输出 My name is pjm</span>
-</code></pre></div>
-</td></tr></table>
-<hr />
-<h4 id="_4">显示换行</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">echo</span> -e <span class="s2">&quot;Hi\n&quot;</span>  <span class="c1"># -e 开启转义</span>
-<span class="nb">echo</span> <span class="s2">&quot;PJM Wiki&quot;</span>
-</code></pre></div>
-</td></tr></table>
-<p>输出结果：
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Hi
-
-PJM Wiki
-</code></pre></div>
-</td></tr></table></p>
-<hr />
-<h4 id="_5">显示不换行</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">echo</span> -e <span class="s2">&quot;Hi \c&quot;</span> <span class="c1"># -e 开启转义 \c 不换行</span>
-<span class="nb">echo</span> <span class="s2">&quot;PJM Wiki&quot;</span>
-</code></pre></div>
-</td></tr></table>
-<p>输出结果：
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Hi PJM Wiki
-</code></pre></div>
-</td></tr></table></p>
-<hr />
-<h4 id="_6">显示结果定向至文件</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="s2">&quot;Hello World&quot;</span> &gt; output.txt  <span class="c1"># 将内容以覆盖的方式输出到output.txt中</span>
-</code></pre></div>
-</td></tr></table>
-<hr />
-<h4 id="_7">原样输出字符串，不进行转义或取变量(用单引号)</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">name</span><span class="o">=</span>PJM Wiki
-<span class="nb">echo</span> <span class="s1">&#39;$name\&quot;&#39;</span>
-</code></pre></div>
-</td></tr></table>
-<p>输出结果
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$name\&quot;
-</code></pre></div>
-</td></tr></table></p>
-<hr />
-<h4 id="_8">显示命令的执行结果</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">echo</span> <span class="sb">`</span>date<span class="sb">`</span>
-</code></pre></div>
-</td></tr></table>
-<p>输出结果：
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Wed Mar 23 13:24:22 CST 2022
-</code></pre></div>
-</td></tr></table></p>
+<h3 id="windows-terminal">Windows Terminal</h3>
+<h4 id="windows-terminal_1">Windows Terminal 介绍</h4>
+<p>Windows 终端是一个面向命令行工具和 shell（如命令提示符、PowerShell 和适用于 Linux 的 Windows 子系统 (WSL)）用户的新式终端应用程序。 它的主要功能包括多个选项卡、窗格、Unicode 和 UTF-8 字符支持、GPU 加速文本呈现引擎，还可以用于创建你自己的主题并自定义文本、颜色、背景和快捷键绑定。</p>
+<h4 id="windows-terminal_2">安装 Windows Terminal</h4>
+<p><a href="https://www.microsoft.com/zh-cn/p/windows-terminal/9n0dx20hk701?rtc=1&amp;activetab=pivot:overviewtab">Windows Terminal</a></p>
+<p><img alt="" src="../img/wt.png" /></p>
+<h4 id="windows-terminal_3">设置 Windows Terminal</h4>
+<p>打开Windows terminal，打开设置菜单</p>
+<p><img alt="" src="../img/opensetting.png" /></p>
+<p>选择 Ubuntu 20.04</p>
+<p><img alt="" src="../img/setting.png" /></p>
+<p>至此，WSL2安装基本完成。</p>
+<h3 id="_2">写在结尾</h3>
+<p>Linux的学习是枯燥且乏味的。希望读者在接下去的学习中保持热情，多多实践。</p>
+<p>Linux的命令有很多，本教程只是列出了其中经常用到的一点点。在以后的工作学习中，希望读者能够边用边查。</p>
+<p>最后，终生学习，共勉。</p>
 
               
             </article>
@@ -1070,7 +1076,7 @@ PJM Wiki
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../read%E5%91%BD%E4%BB%A4/" class="md-footer__link md-footer__link--prev" aria-label="上一页: read命令" rel="prev">
+        <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="上一页: Welcome" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1079,20 +1085,20 @@ PJM Wiki
               <span class="md-footer__direction">
                 上一页
               </span>
-              read命令
+              Welcome
             </div>
           </div>
         </a>
       
       
         
-        <a href="../printf%E5%91%BD%E4%BB%A4/" class="md-footer__link md-footer__link--next" aria-label="下一页: printf命令" rel="next">
+        <a href="../command/" class="md-footer__link md-footer__link--next" aria-label="下一页: 常用文件管理命令" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              printf命令
+              常用文件管理命令
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1126,12 +1132,12 @@ PJM Wiki
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
       
-        <script src="../../../js/mathjax.js"></script>
+        <script src="../../js/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
