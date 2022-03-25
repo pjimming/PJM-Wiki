@@ -15,7 +15,7 @@ theme:
     - navigation.tabs
   language: 'zh'
   palette:
-    primary: 'blue'
+    primary: 'white'
     accent: 'red'
   favicon: img/favicon.png
   icon:
@@ -28,6 +28,7 @@ copyright: Copyright &copy; 2022 潘江明
 nav:
   - Welcome: index.md
   - Linux:
+    - WSL2的安装和使用: linux/first_work.md
     - 常用文件管理命令: linux/command.md
     - tmux和vim: linux/tmux_and_vim.md
     - Shell:
@@ -51,7 +52,8 @@ nav:
     - 管道: linux/conduit.md
     - 环境变量: linux/environment_variable.md
     - 常用命令: linux/common_commond.md
-  - Leetcode: leetcode/index.md
+  - Leetcode:
+    - 剑指 Offer 03. 数组中重复的数字: leetcode/1.md
   - 关于:
     - 关于作者: about/aboutme.md
     - 关于PJM Wiki: about/aboutwiki.md
@@ -63,8 +65,12 @@ extra:
     language: 'jp'
 
 
-# Latex
+# md extrc
 markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.snippets
   - pymdownx.highlight:
       linenums: true
   - pymdownx.superfences
