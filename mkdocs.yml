@@ -54,6 +54,16 @@ nav:
     - 常用命令: linux/common_commond.md
   - Leetcode:
     - 剑指 Offer 03. 数组中重复的数字: leetcode/1.md
+  - Java:
+    - 前言: java/index.md
+    - JavaSE:
+      - Java语法规范: java/javase/JavaSE笔记（一）.md
+      - Java对象和多态 （面向对象）: java/javase/JavaSE笔记（二）.md
+      - Java异常机制: java/javase/JavaSE笔记（三）.md
+      - Java泛型与集合类: java/javase/JavaSE笔记（四）.md
+      - Java I/O: java/javase/JavaSE笔记（五）.md
+      - Java多线程: java/javase/JavaSE笔记（六）.md
+      - Java反射和注解: java/javase/JavaSE笔记（七）.md
   - 关于:
     - 关于作者: about/aboutme.md
     - 关于PJM Wiki: about/aboutwiki.md
