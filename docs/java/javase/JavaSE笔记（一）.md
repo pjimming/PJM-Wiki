@@ -193,7 +193,7 @@ String就是Java中的字符串类型（注意，它是一个类，创建出来�
 
 思考：小数的范围该怎么定义呢？我们首先要了解的是小数在计算机里面是如何存放的：
 
-![image-20210817143234500](/Users/nagocoler/Library/Application Support/typora-user-images/image-20210817143234500.png)
+![image-20210817143234500](https://img-blog.csdnimg.cn/ced9044bdb8644a49415d83cb05e4a5c.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI1OTI4NDQ3,size_16,color_FFFFFF,t_70)
 
 根据国际标准 IEEE 754，任意一个二进制浮点数 V 可以表示成下面的形式：
 V = (-1)^S × M × 2^E
