@@ -12,21 +12,21 @@
         <meta name="author" content="潘江明">
       
       
-        <link rel="canonical" href="https://wiki.pjmcode.top/linux/shell/expr%E5%91%BD%E4%BB%A4/">
+        <link rel="canonical" href="https://wiki.pjmcode.top/leetcode/2/">
       
-      <link rel="icon" href="../../../img/favicon.png">
+      <link rel="icon" href="../../img/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>expr命令 - PJM Wiki</title>
+        <title>223. 矩形面积 - PJM Wiki</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -45,7 +45,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -83,7 +83,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="PJM Wiki" class="md-header__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
+    <a href="../.." title="PJM Wiki" class="md-header__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              expr命令
+              223. 矩形面积
             
           </span>
         </div>
@@ -177,10 +177,26 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../.." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Welcome
     </a>
   </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../linux/first_work/" class="md-tabs__link">
+        Linux
+      </a>
+    </li>
+  
 
       
         
@@ -194,23 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../first_work/" class="md-tabs__link md-tabs__link--active">
-        Linux
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-
-
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../leetcode/1/" class="md-tabs__link">
+      <a href="../1/" class="md-tabs__link md-tabs__link--active">
         Leetcode
       </a>
     </li>
@@ -226,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../java/" class="md-tabs__link">
+      <a href="../../java/" class="md-tabs__link">
         Java
       </a>
     </li>
@@ -242,7 +242,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../about/aboutme/" class="md-tabs__link">
+      <a href="../../about/aboutme/" class="md-tabs__link">
         关于
       </a>
     </li>
@@ -270,7 +270,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="PJM Wiki" class="md-nav__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
+    <a href="../.." title="PJM Wiki" class="md-nav__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -301,7 +301,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Welcome
       </a>
     </li>
@@ -314,14 +314,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -344,7 +342,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../first_work/" class="md-nav__link">
+      <a href="../../linux/first_work/" class="md-nav__link">
         WSL2的安装和使用
       </a>
     </li>
@@ -358,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../command/" class="md-nav__link">
+      <a href="../../linux/command/" class="md-nav__link">
         常用文件管理命令
       </a>
     </li>
@@ -372,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tmux_and_vim/" class="md-nav__link">
+      <a href="../../linux/tmux_and_vim/" class="md-nav__link">
         tmux和vim
       </a>
     </li>
@@ -384,14 +382,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
       
       
       
@@ -414,7 +410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+      <a href="../../linux/shell/%E6%A6%82%E8%AE%BA/" class="md-nav__link">
         概论
       </a>
     </li>
@@ -428,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%B3%A8%E9%87%8A/" class="md-nav__link">
+      <a href="../../linux/shell/%E6%B3%A8%E9%87%8A/" class="md-nav__link">
         注释
       </a>
     </li>
@@ -442,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%8F%98%E9%87%8F/" class="md-nav__link">
+      <a href="../../linux/shell/%E5%8F%98%E9%87%8F/" class="md-nav__link">
         变量
       </a>
     </li>
@@ -456,7 +452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E9%BB%98%E8%AE%A4%E5%8F%98%E9%87%8F/" class="md-nav__link">
+      <a href="../../linux/shell/%E9%BB%98%E8%AE%A4%E5%8F%98%E9%87%8F/" class="md-nav__link">
         默认变量
       </a>
     </li>
@@ -470,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../linux/shell/%E6%95%B0%E7%BB%84/" class="md-nav__link">
         数组
       </a>
     </li>
@@ -482,62 +478,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          expr命令
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../linux/shell/expr%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         expr命令
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    字符串表达式
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    整数表达式
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    逻辑关系表达式
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -549,7 +494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../read%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../linux/shell/read%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         read命令
       </a>
     </li>
@@ -563,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../echo%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../linux/shell/echo%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         echo命令
       </a>
     </li>
@@ -577,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../printf%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../linux/shell/printf%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         printf命令
       </a>
     </li>
@@ -591,7 +536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../test%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%88%A4%E6%96%AD%E7%AC%A6%E5%8F%B7%5B%5D/" class="md-nav__link">
+      <a href="../../linux/shell/test%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%88%A4%E6%96%AD%E7%AC%A6%E5%8F%B7%5B%5D/" class="md-nav__link">
         test命令与判断符号[]
       </a>
     </li>
@@ -605,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+      <a href="../../linux/shell/%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
         判断语句
       </a>
     </li>
@@ -619,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+      <a href="../../linux/shell/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
         循环语句
       </a>
     </li>
@@ -633,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%87%BD%E6%95%B0/" class="md-nav__link">
+      <a href="../../linux/shell/%E5%87%BD%E6%95%B0/" class="md-nav__link">
         函数
       </a>
     </li>
@@ -647,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exit%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+      <a href="../../linux/shell/exit%E5%91%BD%E4%BB%A4/" class="md-nav__link">
         exit命令
       </a>
     </li>
@@ -661,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91/" class="md-nav__link">
+      <a href="../../linux/shell/%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91/" class="md-nav__link">
         文件重定向
       </a>
     </li>
@@ -675,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+      <a href="../../linux/shell/%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8%E8%84%9A%E6%9C%AC/" class="md-nav__link">
         引入外部脚本
       </a>
     </li>
@@ -696,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../git/" class="md-nav__link">
+      <a href="../../linux/git/" class="md-nav__link">
         git
       </a>
     </li>
@@ -710,7 +655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../conduit/" class="md-nav__link">
+      <a href="../../linux/conduit/" class="md-nav__link">
         管道
       </a>
     </li>
@@ -724,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../environment_variable/" class="md-nav__link">
+      <a href="../../linux/environment_variable/" class="md-nav__link">
         环境变量
       </a>
     </li>
@@ -738,7 +683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../common_commond/" class="md-nav__link">
+      <a href="../../linux/common_commond/" class="md-nav__link">
         常用命令
       </a>
     </li>
@@ -758,12 +703,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -786,7 +733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../leetcode/1/" class="md-nav__link">
+      <a href="../1/" class="md-nav__link">
         剑指 Offer 03. 数组中重复的数字
       </a>
     </li>
@@ -798,11 +745,83 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../leetcode/2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          223. 矩形面积
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         223. 矩形面积
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    题目描述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    示例 1：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    示例 2：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    提示：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    思路
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    代码
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -848,7 +867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../java/" class="md-nav__link">
+      <a href="../../java/" class="md-nav__link">
         Java 前言
       </a>
     </li>
@@ -888,7 +907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+      <a href="../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
         Java语法规范
       </a>
     </li>
@@ -902,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-nav__link">
+      <a href="../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-nav__link">
         Java对象和多态 （面向对象）
       </a>
     </li>
@@ -916,7 +935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-nav__link">
+      <a href="../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-nav__link">
         Java异常机制
       </a>
     </li>
@@ -930,7 +949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" class="md-nav__link">
+      <a href="../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" class="md-nav__link">
         Java泛型与集合类
       </a>
     </li>
@@ -944,7 +963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" class="md-nav__link">
+      <a href="../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" class="md-nav__link">
         Java I/O
       </a>
     </li>
@@ -958,7 +977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89/" class="md-nav__link">
+      <a href="../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89/" class="md-nav__link">
         Java多线程
       </a>
     </li>
@@ -972,7 +991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/" class="md-nav__link">
+      <a href="../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/" class="md-nav__link">
         Java反射和注解
       </a>
     </li>
@@ -1027,7 +1046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/aboutme/" class="md-nav__link">
+      <a href="../../about/aboutme/" class="md-nav__link">
         关于作者
       </a>
     </li>
@@ -1041,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../about/aboutwiki/" class="md-nav__link">
+      <a href="../../about/aboutwiki/" class="md-nav__link">
         关于PJM Wiki
       </a>
     </li>
@@ -1081,21 +1100,42 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    字符串表达式
+    题目描述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    示例 1：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    示例 2：
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    整数表达式
+    提示：
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    逻辑关系表达式
+    思路
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    代码
   </a>
   
 </li>
@@ -1112,102 +1152,62 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/pjimming/PJM-Wiki/edit/master/docs/linux/shell/expr命令.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/pjimming/PJM-Wiki/edit/master/docs/leetcode/2.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-  <h1>expr命令</h1>
+  <h1>223. 矩形面积</h1>
 
-<p><code>expr</code>命令用于求表达式的值，格式为：</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>expr 表达式
+<p><a href="https://leetcode-cn.com/problems/rectangle-area/">原题链接</a></p>
+<h4 id="_1">题目描述</h4>
+<p>给你 <strong>二维</strong> 平面上两个 <strong>由直线构成且边与坐标轴平行/垂直</strong> 的矩形，请你计算并返回两个矩形覆盖的总面积。</p>
+<p>每个矩形由其 <strong>左下</strong> 顶点和 <strong>右上</strong> 顶点坐标表示：</p>
+<ul>
+<li>
+<p>第一个矩形由其左下顶点 <code>(ax1, ay1)</code> 和右上顶点 <code>(ax2, ay2)</code> 定义。</p>
+</li>
+<li>
+<p>第二个矩形由其左下顶点 <code>(bx1, by1)</code> 和右上顶点 <code>(bx2, by2)</code> 定义。
+ </p>
+</li>
+</ul>
+<h4 id="1">示例 1：</h4>
+<p><img alt="图片" src="https://assets.leetcode.com/uploads/2021/05/08/rectangle-plane.png" /></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>输入：ax1 = -3, ay1 = 0, ax2 = 3, ay2 = 4, bx1 = 0, by1 = -1, bx2 = 9, by2 = 2
+输出：45
 </code></pre></div>
 </td></tr></table>
-<p>表达式说明：</p>
-<ul>
-<li>用空格隔开每一项</li>
-<li>用反斜杠放在shell特定的字符前面（发现表达式运行错误时，可以试试转义）</li>
-<li>对包含空格和其他特殊字符的字符串要用引号括起来</li>
-<li>expr会在<code>stdout</code>中输出结果。如果为逻辑关系表达式，则结果为真，<code>stdout</code>为1，否则为0。</li>
-<li>expr的<code>exit code</code>：如果为逻辑关系表达式，则结果为真，<code>exit code</code>为0，否则为1。</li>
-</ul>
-<hr />
-<h4 id="_1">字符串表达式</h4>
-<ul>
-<li><code>length STRING</code></li>
-</ul>
-<p>返回<code>STRING</code>的长度</p>
-<ul>
-<li><code>index STRING CHARSET</code></li>
-</ul>
-<p><code>CHARSET</code>中任意单个字符在<code>STRING</code>中最前面的字符位置，<strong>下标从1开始</strong>。如果在<code>STRING</code>中完全不存在<code>CHARSET</code>中的字符，则返回0。</p>
-<ul>
-<li><code>substr STRING POSITION LENGTH</code></li>
-</ul>
-<p>返回<code>STRING</code>字符串中从POSITION开始，长度最大为LENGTH的子串。如果POSITION或LENGTH为负数，0或非数值，则返回空字符串。</p>
-<p>示例：
+<h4 id="2">示例 2：</h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">str</span><span class="o">=</span><span class="s2">&quot;Hello World!&quot;</span>
-
-<span class="nb">echo</span> <span class="sb">`</span>expr length <span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span><span class="sb">`</span>  <span class="c1"># ``不是单引号，表示执行该命令，输出12</span>
-<span class="nb">echo</span> <span class="sb">`</span>expr index <span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span> aWd<span class="sb">`</span>  <span class="c1"># 输出7，下标从1开始</span>
-<span class="nb">echo</span> <span class="sb">`</span>expr substr <span class="s2">&quot;</span><span class="nv">$str</span><span class="s2">&quot;</span> <span class="m">2</span> <span class="m">3</span><span class="sb">`</span>  <span class="c1"># 输出 ell</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>输入：ax1 = -2, ay1 = -2, ax2 = 2, ay2 = 2, bx1 = -2, by1 = -2, bx2 = 2, by2 = 2
+输出：16
 </code></pre></div>
-</td></tr></table></p>
-<h4 id="_2">整数表达式</h4>
-<p><code>expr</code>支持普通的算术操作，算术表达式优先级低于字符串表达式，高于逻辑关系表达式。</p>
+</td></tr></table>
+<h4 id="_2">提示：</h4>
+<p><code>-104 &lt;= ax1, ay1, ax2, ay2, bx1, by1, bx2, by2 &lt;= 104</code></p>
+<h4 id="_3">思路</h4>
+<p>观察图像，不难发现以下特征：</p>
 <ul>
-<li><code>+ -</code></li>
+<li>
+<p>矩形a的水平边在x轴上的投影为<code>[ax1, ax2]</code>，垂直边在y轴投影为<code>[ay1, ay2]</code>;</p>
+</li>
+<li>
+<p>矩形b的水平边在x轴上的投影为<code>[bx1, bx2]</code>，垂直边在y轴投影为<code>[by1, by2]</code>;</p>
+</li>
+<li>
+<p>若两矩阵重合，则重合矩形的水平边在x轴上的投影为<code>[max(ax1, bx1), min(ax2, bx2)]</code>, 垂直边在y轴上的投影为<code>[max(ay1, by1), min(ay2, by2)]</code>。</p>
+</li>
+<li>
+<p>若有重合矩形，答案即为<code>两矩形面积和 - 重合矩形面积</code></p>
+</li>
 </ul>
-<p>加减运算。两端参数会转换为整数，如果转换失败则报错。</p>
-<ul>
-<li><code>* / %</code></li>
-</ul>
-<p>乘，除，取模运算。两端参数会转换为整数，如果转换失败则报错。</p>
-<ul>
-<li><code>()</code> 可以该表优先级，但需要用反斜杠转义</li>
-</ul>
-<p>示例：
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">3</span>
-<span class="nv">b</span><span class="o">=</span><span class="m">4</span>
-
-<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> + <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出7</span>
-<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> - <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出-1</span>
-<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\*</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出12，*需要转义</span>
-<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> / <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出0，整除</span>
-<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> % <span class="nv">$b</span><span class="sb">`</span> <span class="c1"># 输出3</span>
-<span class="nb">echo</span> <span class="sb">`</span>expr <span class="se">\(</span> <span class="nv">$a</span> + <span class="m">1</span> <span class="se">\)</span> <span class="se">\*</span> <span class="se">\(</span> <span class="nv">$b</span> + <span class="m">1</span> <span class="se">\)</span><span class="sb">`</span>  <span class="c1"># 输出20，值为(a + 1) * (b + 1)</span>
-</code></pre></div>
-</td></tr></table></p>
-<h4 id="_3">逻辑关系表达式</h4>
-<ul>
-<li><code>|</code></li>
-</ul>
-<p>如果第一个参数非空且非0，则返回第一个参数的值，否则返回第二个参数的值，但要求第二个参数的值也是非空或非0，否则返回0。如果第一个参数是非空或非0时，不会计算第二个参数。</p>
-<ul>
-<li><code>&amp;</code></li>
-</ul>
-<p>如果两个参数都非空且非0，则返回第一个参数，否则返回0。如果第一个参为0或为空，则不会计算第二个参数。</p>
-<ul>
-<li><code>&lt; &lt;= = == != &gt;= &gt;</code></li>
-</ul>
-<p>比较两端的参数，如果为true，则返回1，否则返回0。”==”是”=”的同义词。”expr”首先尝试将两端参数转换为整数，并做算术比较，如果转换失败，则按字符集排序规则做字符比较。</p>
-<ul>
-<li><code>()</code> 可以该表优先级，但需要用反斜杠转义</li>
-</ul>
-<p>示例：
+<h4 id="_4">代码</h4>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1221,24 +1221,25 @@
 <span class="normal">11</span>
 <span class="normal">12</span>
 <span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">a</span><span class="o">=</span><span class="m">3</span>
-<span class="nv">b</span><span class="o">=</span><span class="m">4</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">computeArea</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">ax1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ay1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ax2</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ay2</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">bx1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">by1</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">bx2</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">by2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// 两矩形面积和</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">tot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ax2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ax1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">ay2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">ay1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">bx2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">bx1</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">by2</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">by1</span><span class="p">);</span><span class="w"></span>
 
-<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\&gt;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出0，&gt;需要转义</span>
-<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="s1">&#39;&lt;&#39;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出1，也可以将特殊字符用引号引起来</span>
-<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="s1">&#39;&gt;=&#39;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出0</span>
-<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\&lt;\=</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出1</span>
+<span class="w">        </span><span class="c1">// 重合矩形</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">ax2</span><span class="p">,</span><span class="w"> </span><span class="n">bx2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="w"> </span><span class="n">bx1</span><span class="p">);</span><span class="w">  </span><span class="c1">// x轴处投影</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">min</span><span class="p">(</span><span class="n">ay2</span><span class="p">,</span><span class="w"> </span><span class="n">by2</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">ay1</span><span class="p">,</span><span class="w"> </span><span class="n">by1</span><span class="p">);</span><span class="w">  </span><span class="c1">// y轴处投影</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">tot</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w">   </span><span class="c1">// 若存在重合矩形，tot减去一个重合矩形面积</span>
 
-<span class="nv">c</span><span class="o">=</span><span class="m">0</span>
-<span class="nv">d</span><span class="o">=</span><span class="m">5</span>
-
-<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$c</span> <span class="se">\&amp;</span> <span class="nv">$d</span><span class="sb">`</span>  <span class="c1"># 输出0</span>
-<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\&amp;</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出3</span>
-<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$c</span> <span class="se">\|</span> <span class="nv">$d</span><span class="sb">`</span>  <span class="c1"># 输出5</span>
-<span class="nb">echo</span> <span class="sb">`</span>expr <span class="nv">$a</span> <span class="se">\|</span> <span class="nv">$b</span><span class="sb">`</span>  <span class="c1"># 输出3</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">tot</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
+</div>
+</div>
+</div>
 
               
             </article>
@@ -1252,7 +1253,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../%E6%95%B0%E7%BB%84/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 数组" rel="prev">
+        <a href="../1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 剑指 Offer 03. 数组中重复的数字" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1261,20 +1262,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              数组
+              剑指 Offer 03. 数组中重复的数字
             </div>
           </div>
         </a>
       
       
         
-        <a href="../read%E5%91%BD%E4%BB%A4/" class="md-footer__link md-footer__link--next" aria-label="下一页: read命令" rel="next">
+        <a href="../../java/" class="md-footer__link md-footer__link--next" aria-label="下一页: Java 前言" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              read命令
+              Java 前言
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -1308,12 +1309,12 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
       
-        <script src="../../../js/mathjax.js"></script>
+        <script src="../../js/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
