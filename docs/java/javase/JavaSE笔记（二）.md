@@ -541,7 +541,7 @@ public class Main {
 
 Java支持对类属性访问的保护，也就是说，不希望外部类访问类中的属性或是方法，只允许内部调用，这种情况下我们就需要用到权限控制符。
 
-![image-20210819160939950](/Users/nagocoler/Library/Application Support/typora-user-images/image-20210819160939950.png)
+![image-20210819160939950](https://tse1-mm.cn.bing.net/th/id/R-C.5fd3cde1fdcb21fe8001f67228a78ff8?rik=o23Wb7tNcTKVkg&riu=http%3a%2f%2fimages.cnitblog.com%2fblog%2f541454%2f201310%2f30091454-5e28fdbbd92f4d0292fb528b1c197613.png&ehk=pDdS8MMFD22Gl0kDefRYY2KRJo8rHrHKkYLXdGvQM0A%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1)
 
 权限控制符可以声明在方法、成员变量、类前面，一旦声明private，只能类内部访问！
 
