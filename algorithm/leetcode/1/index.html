@@ -854,6 +854,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../206/" class="md-nav__link">
+        206. 反转链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../223/" class="md-nav__link">
         223. 矩形面积
       </a>
@@ -903,6 +917,20 @@
     <li class="md-nav__item">
       <a href="../../offer/3/" class="md-nav__link">
         03. 数组中重复的数字
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../offer/24/" class="md-nav__link">
+        24. 反转链表
       </a>
     </li>
   
@@ -1277,13 +1305,13 @@
 <h4 id="_2">提示：</h4>
 <ul>
 <li>
-<p><code>2 &lt;= nums.length &lt;= 104</code></p>
+<p>2 &lt;= nums.length &lt;= <span class="arithmatex">\(10^4\)</span></p>
 </li>
 <li>
-<p><code>-109 &lt;= nums[i] &lt;= 109</code></p>
+<p><span class="arithmatex">\(-10^9\)</span> &lt;= nums[i] &lt;= <span class="arithmatex">\(10^9\)</span></p>
 </li>
 <li>
-<p><code>-109 &lt;= target &lt;= 109</code></p>
+<p><span class="arithmatex">\(-10^9\)</span> &lt;= target &lt;= <span class="arithmatex">\(10^9\)</span></p>
 </li>
 <li>
 <p><strong>只会存在一个有效答案</strong></p>
@@ -1292,9 +1320,7 @@
 <p><strong>进阶</strong>：你可以想出一个时间复杂度小于 <span class="arithmatex">\(O(n^2)\)</span> 的算法吗？</p>
 <hr />
 <h4 id="_3">思路</h4>
-<ol>
-<li>首先说一个<span class="arithmatex">\(O(n^2)\)</span>的做法。在遍历到每一个数的时候，再遍历一遍数组，找到相加等于<code>target</code>的时候，返回两数坐标。注意，两下标不能<strong>相等</strong></li>
-</ol>
+<p>首先说一个<span class="arithmatex">\(O(n^2)\)</span>的做法。在遍历到每一个数的时候，再遍历一遍数组，找到相加等于<code>target</code>的时候，返回两数坐标。注意，两下标不能<strong>相等</strong></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1332,9 +1358,7 @@
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<ol>
-<li>仔细观察，能不能找到一种在<span class="arithmatex">\(O(1)\)</span>的复杂度内找到<strong>当前数</strong>在整个数组中对应的数，使它们的和为<code>target</code>？答案是可以。快速查找可以联想到建立哈希表。通过遍历数组，查找哈希表内是否存在与之对应的和为<code>target</code>的数。若存在，<code>break</code>；反之，将当前数插入到哈希表内。由于不用对哈希表排序，所以使用无序哈希，时间复杂度为<span class="arithmatex">\(O(n)\)</span></li>
-</ol>
+<p>仔细观察，能不能找到一种在<span class="arithmatex">\(O(1)\)</span>的复杂度内找到<strong>当前数</strong>在整个数组中对应的数，使它们的和为<code>target</code>？答案是可以。快速查找可以联想到建立哈希表。通过遍历数组，查找哈希表内是否存在与之对应的和为<code>target</code>的数。若存在，<code>break</code>；反之，将当前数插入到哈希表内。由于不用对哈希表排序，所以使用无序哈希，时间复杂度为<span class="arithmatex">\(O(n)\)</span></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1403,13 +1427,13 @@
       
       
         
-        <a href="../223/" class="md-footer__link md-footer__link--next" aria-label="下一页: 223. 矩形面积" rel="next">
+        <a href="../206/" class="md-footer__link md-footer__link--next" aria-label="下一页: 206. 反转链表" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              223. 矩形面积
+              206. 反转链表
             </div>
           </div>
           <div class="md-footer__button md-icon">
