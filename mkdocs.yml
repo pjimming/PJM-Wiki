@@ -55,6 +55,7 @@ nav:
   - Algorithm:
     - leetcode:
       - 1. 两数之和: algorithm/leetcode/1.md
+      - 150. 逆波兰表达式求值: algorithm/leetcode/150.md
       - 206. 反转链表: algorithm/leetcode/206.md
       - 223. 矩形面积: algorithm/leetcode/223.md
       - 1603. 设计停车系统: algorithm/leetcode/1603.md
