@@ -889,6 +889,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../191/" class="md-nav__link">
+        191. 位1的个数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../206/" class="md-nav__link">
         206. 反转链表
       </a>
@@ -1360,18 +1374,10 @@
 </td></tr></table>
 <h4 id="_2">提示：</h4>
 <ul>
-<li>
-<p><span class="arithmatex">\(2\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(nums.length\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(10^4\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(-10^9\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(nums[i]\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(10^9\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(-10^9\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(target\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(10^9\)</span></p>
-</li>
-<li>
-<p><strong>只会存在一个有效答案</strong></p>
-</li>
+<li><span class="arithmatex">\(2\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(nums.length\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(10^4\)</span></li>
+<li><span class="arithmatex">\(-10^9\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(nums[i]\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(10^9\)</span></li>
+<li><span class="arithmatex">\(-10^9\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(target\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(10^9\)</span></li>
+<li><strong>只会存在一个有效答案</strong></li>
 </ul>
 <p><strong>进阶</strong>：你可以想出一个时间复杂度小于 <span class="arithmatex">\(O(n^2)\)</span> 的算法吗？</p>
 <hr />
@@ -1418,12 +1424,8 @@
 <p>答案是可以。快速查找可以联想到建立哈希表。</p>
 <p>通过遍历数组，查找哈希表内是否存在与之对应的和为<code>target</code>的数。</p>
 <ul>
-<li>
-<p>若存在，<code>break</code>；</p>
-</li>
-<li>
-<p>若不存在，将当前数插入到哈希表内。</p>
-</li>
+<li>若存在，<code>break</code>；</li>
+<li>若不存在，将当前数插入到哈希表内。</li>
 </ul>
 <p>由于不用对哈希表排序，所以使用无序哈希 （查找为 <span class="arithmatex">\(O(1)\)</span> ） ，因此总时间复杂度为<span class="arithmatex">\(O(n)\)</span></p>
 <hr />

@@ -909,6 +909,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../191/" class="md-nav__link">
+        191. 位1的个数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../206/" class="md-nav__link">
         206. 反转链表
       </a>
@@ -1419,32 +1433,20 @@
 </td></tr></table>
 <h4 id="_2">提示：</h4>
 <ul>
-<li>
-<p><span class="arithmatex">\(1\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(tokens.length\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(10^4\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(tokens[i]\)</span> 是一个算符（<code>"+"</code>、<code>"-"</code>、<code>"*"</code> 或 <code>"/"</code>），或是在范围 <span class="arithmatex">\([-200, 200]\)</span> 内的一个整数
- </p>
-</li>
+<li><span class="arithmatex">\(1\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(tokens.length\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(10^4\)</span></li>
+<li><span class="arithmatex">\(tokens[i]\)</span> 是一个算符（<code>"+"</code>、<code>"-"</code>、<code>"*"</code> 或 <code>"/"</code>），或是在范围 <span class="arithmatex">\([-200, 200]\)</span> 内的一个整数
+ </li>
 </ul>
 <h4 id="_3">逆波兰表达式：</h4>
 <p>逆波兰表达式是一种后缀表达式，所谓后缀就是指算符写在后面。</p>
 <ul>
-<li>
-<p>平常使用的算式则是一种中缀表达式，如 <code>( 1 + 2 ) * ( 3 + 4 )</code> 。</p>
-</li>
-<li>
-<p>该算式的逆波兰表达式写法为 <code>( ( 1 2 + ) ( 3 4 + ) * )</code> 。</p>
-</li>
+<li>平常使用的算式则是一种中缀表达式，如 <code>( 1 + 2 ) * ( 3 + 4 )</code> 。</li>
+<li>该算式的逆波兰表达式写法为 <code>( ( 1 2 + ) ( 3 4 + ) * )</code> 。</li>
 </ul>
 <p>逆波兰表达式主要有以下两个优点：</p>
 <ul>
-<li>
-<p>去掉括号后表达式无歧义，上式即便写成 <code>1 2 + 3 4 + *</code> 也可以依据次序计算出正确结果。</p>
-</li>
-<li>
-<p>适合用栈操作运算：遇到数字则入栈；遇到算符则取出栈顶两个数字进行计算，并将结果压入栈中</p>
-</li>
+<li>去掉括号后表达式无歧义，上式即便写成 <code>1 2 + 3 4 + *</code> 也可以依据次序计算出正确结果。</li>
+<li>适合用栈操作运算：遇到数字则入栈；遇到算符则取出栈顶两个数字进行计算，并将结果压入栈中</li>
 </ul>
 <hr />
 <h4 id="_4">思路&emsp;</h4>
@@ -1456,6 +1458,7 @@
 </ul>
 <p>扫描完成后，栈内的数就是结果，<strong>有且仅有一个</strong>。</p>
 <p>时间复杂度分析：每个元素仅被遍历一次，且每次遍历时仅涉及常数次操作，所以时间复杂度是 <span class="arithmatex">\(O(n)\)</span> 。</p>
+<hr />
 <h4 id="_5">代码</h4>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label></div>
 <div class="tabbed-content">
@@ -1541,13 +1544,13 @@
       
       
         
-        <a href="../206/" class="md-footer__link md-footer__link--next" aria-label="下一页: 206. 反转链表" rel="next">
+        <a href="../191/" class="md-footer__link md-footer__link--next" aria-label="下一页: 191. 位1的个数" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              206. 反转链表
+              191. 位1的个数
             </div>
           </div>
           <div class="md-footer__button md-icon">

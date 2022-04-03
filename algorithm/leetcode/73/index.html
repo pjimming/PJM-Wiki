@@ -909,6 +909,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../191/" class="md-nav__link">
+        191. 位1的个数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../206/" class="md-nav__link">
         206. 反转链表
       </a>
@@ -1392,45 +1406,25 @@
 </td></tr></table>
 <h4 id="_2">提示：</h4>
 <ul>
-<li>
-<p><span class="arithmatex">\(m\)</span> <span class="arithmatex">\(=\)</span> <span class="arithmatex">\(matrix.length\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(n\)</span> <span class="arithmatex">\(=\)</span> <span class="arithmatex">\(matrix[0].length\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(1\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(m, n\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(200\)</span></p>
-</li>
-<li>
-<p><span class="arithmatex">\(-2^{31}\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(matrix[i][j]\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(2^{31} - 1\)</span></p>
-</li>
+<li><span class="arithmatex">\(m\)</span> <span class="arithmatex">\(=\)</span> <span class="arithmatex">\(matrix.length\)</span></li>
+<li><span class="arithmatex">\(n\)</span> <span class="arithmatex">\(=\)</span> <span class="arithmatex">\(matrix[0].length\)</span></li>
+<li><span class="arithmatex">\(1\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(m, n\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(200\)</span></li>
+<li><span class="arithmatex">\(-2^{31}\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(matrix[i][j]\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(2^{31} - 1\)</span></li>
 </ul>
 <h4 id="_3">进阶：</h4>
 <ul>
-<li>
-<p>一个直观的解决方案是使用  <span class="arithmatex">\(O(mn)\)</span> 的额外空间，但这并不是一个好的解决方案。</p>
-</li>
-<li>
-<p>一个简单的改进方案是使用 <span class="arithmatex">\(O(m + n)\)</span> 的额外空间，但这仍然不是最好的解决方案。</p>
-</li>
-<li>
-<p>你能想出一个仅使用常量空间的解决方案吗？</p>
-</li>
+<li>一个直观的解决方案是使用  <span class="arithmatex">\(O(mn)\)</span> 的额外空间，但这并不是一个好的解决方案。</li>
+<li>一个简单的改进方案是使用 <span class="arithmatex">\(O(m + n)\)</span> 的额外空间，但这仍然不是最好的解决方案。</li>
+<li>你能想出一个仅使用常量空间的解决方案吗？</li>
 </ul>
 <hr />
 <h4 id="_4">思路</h4>
 <h6 id="onm">原地算法 <span class="arithmatex">\(O(nm)\)</span></h6>
 <p>我们可以使用两个标记变量 <code>row0</code> , <code>col0</code> 分别记录第一行和第一列是否包含0。</p>
 <ol>
-<li>
-<p>预处理出两个变量记录第一行和第一列是否有0。</p>
-</li>
-<li>
-<p>遍历整个矩阵，用矩阵的第一行和第一列记录对应的行和列是否有0。</p>
-</li>
-<li>
-<p>把含有0的行和列都置成0。</p>
-</li>
+<li>预处理出两个变量记录第一行和第一列是否有0。</li>
+<li>遍历整个矩阵，用矩阵的第一行和第一列记录对应的行和列是否有0。</li>
+<li>把含有0的行和列都置成0。</li>
 </ol>
 <h4 id="_5">复杂度分析</h4>
 <p><strong>时间复杂度：</strong><span class="arithmatex">\(O(mn)\)</span>，其中 <span class="arithmatex">\(m\)</span> 是矩阵的行数，<span class="arithmatex">\(n\)</span> 是矩阵的列数。我们至多只需要遍历该矩阵两次。</p>

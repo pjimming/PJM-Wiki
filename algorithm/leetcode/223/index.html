@@ -810,6 +810,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../191/" class="md-nav__link">
+        191. 位1的个数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../206/" class="md-nav__link">
         206. 反转链表
       </a>
@@ -1324,13 +1338,8 @@
 <p>给你 <strong>二维</strong> 平面上两个 <strong>由直线构成且边与坐标轴平行/垂直</strong> 的矩形，请你计算并返回两个矩形覆盖的总面积。</p>
 <p>每个矩形由其 <strong>左下</strong> 顶点和 <strong>右上</strong> 顶点坐标表示：</p>
 <ul>
-<li>
-<p>第一个矩形由其左下顶点 <code>(ax1, ay1)</code> 和右上顶点 <code>(ax2, ay2)</code> 定义。</p>
-</li>
-<li>
-<p>第二个矩形由其左下顶点 <code>(bx1, by1)</code> 和右上顶点 <code>(bx2, by2)</code> 定义。
- </p>
-</li>
+<li>第一个矩形由其左下顶点 <code>(ax1, ay1)</code> 和右上顶点 <code>(ax2, ay2)</code> 定义。</li>
+<li>第二个矩形由其左下顶点 <code>(bx1, by1)</code> 和右上顶点 <code>(bx2, by2)</code> 定义。</li>
 </ul>
 <h4 id="1">示例 1：</h4>
 <p><img alt="图片" src="https://assets.leetcode.com/uploads/2021/05/08/rectangle-plane.png" /></p>
@@ -1346,23 +1355,17 @@
 </code></pre></div>
 </td></tr></table>
 <h4 id="_2">提示：</h4>
-<p><span class="arithmatex">\(-10^4\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(ax1\)</span> ,  <span class="arithmatex">\(ay1\)</span> , <span class="arithmatex">\(ax2\)</span> ,  <span class="arithmatex">\(ay2\)</span>  ,  <span class="arithmatex">\(bx1\)</span>  ,  <span class="arithmatex">\(by1\)</span>  ,  <span class="arithmatex">\(bx2\)</span>  ,  <span class="arithmatex">\(by2\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(10^4\)</span></p>
+<ul>
+<li><span class="arithmatex">\(-10^4\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(ax1\)</span> ,  <span class="arithmatex">\(ay1\)</span> , <span class="arithmatex">\(ax2\)</span> ,  <span class="arithmatex">\(ay2\)</span>  ,  <span class="arithmatex">\(bx1\)</span>  ,  <span class="arithmatex">\(by1\)</span>  ,  <span class="arithmatex">\(bx2\)</span>  ,  <span class="arithmatex">\(by2\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(10^4\)</span></li>
+</ul>
 <hr />
 <h4 id="_3">思路</h4>
 <p>观察图像，不难发现以下特征：</p>
 <ul>
-<li>
-<p>矩形a的水平边在x轴上的投影为<code>[ax1, ax2]</code>，垂直边在y轴投影为<code>[ay1, ay2]</code>;</p>
-</li>
-<li>
-<p>矩形b的水平边在x轴上的投影为<code>[bx1, bx2]</code>，垂直边在y轴投影为<code>[by1, by2]</code>;</p>
-</li>
-<li>
-<p>若两矩阵重合，则重合矩形的水平边在x轴上的投影为<code>[max(ax1, bx1), min(ax2, bx2)]</code>, 垂直边在y轴上的投影为<code>[max(ay1, by1), min(ay2, by2)]</code>。</p>
-</li>
-<li>
-<p>若有重合矩形，答案即为<code>两矩形面积和 - 重合矩形面积</code></p>
-</li>
+<li>矩形a的水平边在x轴上的投影为<code>[ax1, ax2]</code>，垂直边在y轴投影为<code>[ay1, ay2]</code>;</li>
+<li>矩形b的水平边在x轴上的投影为<code>[bx1, bx2]</code>，垂直边在y轴投影为<code>[by1, by2]</code>;</li>
+<li>若两矩阵重合，则重合矩形的水平边在x轴上的投影为<code>[max(ax1, bx1), min(ax2, bx2)]</code>, 垂直边在y轴上的投影为<code>[max(ay1, by1), min(ay2, by2)]</code>。</li>
+<li>若有重合矩形，答案即为<code>两矩形面积和 - 重合矩形面积</code></li>
 </ul>
 <h4 id="_4">代码</h4>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label></div>

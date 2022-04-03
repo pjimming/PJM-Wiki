@@ -810,6 +810,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../191/" class="md-nav__link">
+        191. 位1的个数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../206/" class="md-nav__link">
         206. 反转链表
       </a>
@@ -1310,16 +1324,12 @@
 <p>请你给一个停车场设计一个停车系统。停车场总共有三种不同大小的车位：大，中和小，每种尺寸分别有固定数目的车位。</p>
 <p>请你实现 <code>ParkingSystem</code> 类：</p>
 <ul>
-<li>
-<p><code>ParkingSystem(int big, int medium, int small)</code> 初始化 <code>ParkingSystem</code> 类，三个参数分别对应每种停车位的数目。</p>
-</li>
-<li>
-<p><code>bool addCar(int carType)</code> 检查是否有 <code>carType</code> 对应的停车位。 <code>carType</code> 有三种类型：大，中，小，分别用数字 <code>1</code>， <code>2</code> 和 <code>3</code> 表示。<strong>一辆车只能停在</strong>  <code>carType</code> 对应尺寸的停车位中。如果没有空车位，请返回 <code>false</code> ，否则将该车停入车位并返回 <code>true</code> 。
- </p>
-</li>
+<li><code>ParkingSystem(int big, int medium, int small)</code> 初始化 <code>ParkingSystem</code> 类，三个参数分别对应每种停车位的数目。</li>
+<li><code>bool addCar(int carType)</code> 检查是否有 <code>carType</code> 对应的停车位。 <code>carType</code> 有三种类型：大，中，小，分别用数字 <code>1</code>， <code>2</code> 和 <code>3</code> 表示。<strong>一辆车只能停在</strong>  <code>carType</code> 对应尺寸的停车位中。如果没有空车位，请返回 <code>false</code> ，否则将该车停入车位并返回 <code>true</code> 。
+ </li>
 </ul>
 <h4 id="1">示例 1：</h4>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1346,18 +1356,11 @@ parkingSystem.addCar(3); // 返回 false ，因为没有空的小车位
 parkingSystem.addCar(1); // 返回 false ，因为没有空的大车位，唯一一个大车位已经被占据了
 </code></pre></div>
 </td></tr></table>
- </p>
 <h4 id="_2">提示：</h4>
 <ul>
-<li>
-<p><span class="arithmatex">\(0\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(big\)</span> , <span class="arithmatex">\(medium\)</span> , <span class="arithmatex">\(small\)</span> <span class="arithmatex">\(≤\)</span> 1000</p>
-</li>
-<li>
-<p><span class="arithmatex">\(carType\)</span> 取值为 <span class="arithmatex">\(1\)</span> ， <span class="arithmatex">\(2\)</span>  或 <span class="arithmatex">\(3\)</span></p>
-</li>
-<li>
-<p>最多会调用 <code>addCar</code> 函数 <span class="arithmatex">\(1000\)</span> 次</p>
-</li>
+<li><span class="arithmatex">\(0\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(big\)</span> , <span class="arithmatex">\(medium\)</span> , <span class="arithmatex">\(small\)</span> <span class="arithmatex">\(≤\)</span> 1000</li>
+<li><span class="arithmatex">\(carType\)</span> 取值为 <span class="arithmatex">\(1\)</span> ， <span class="arithmatex">\(2\)</span>  或 <span class="arithmatex">\(3\)</span></li>
+<li>最多会调用 <code>addCar</code> 函数 <span class="arithmatex">\(1000\)</span> 次</li>
 </ul>
 <hr />
 <h4 id="_3">思路</h4>
