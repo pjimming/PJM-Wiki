@@ -13,6 +13,7 @@ theme:
   name: material
   features:
     - navigation.tabs
+    - navigation.top
   language: 'zh'
   palette:
     primary: 'white'
@@ -20,6 +21,22 @@ theme:
   favicon: img/favicon.png
   icon:
     logo: material/library
+
+  palette:
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: white
+    accent: red
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: cyan
+    accent: deep purple
+    toggle:
+      icon: material/weather-night
+      name: Switch to light mode
 
 # copyright
 copyright: Copyright &copy; 2022 <a href="https://pjmcode.top" target="_blank" rel="noopener noreferrer">潘江明</a>
@@ -78,6 +95,8 @@ nav:
   - 关于:
     - 关于作者: about/aboutme.md
     - 关于PJM Wiki: about/aboutwiki.md
+
+
 
 
 # extra
