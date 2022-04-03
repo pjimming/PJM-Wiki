@@ -780,6 +780,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../73/" class="md-nav__link">
+        73. 矩阵置零
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -1382,7 +1396,7 @@
 </code></pre></div>
 </td></tr></table>
 <h4 id="3">示例 3：</h4>
-<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1403,14 +1417,13 @@
 = 22
 </code></pre></div>
 </td></tr></table>
- </p>
 <h4 id="_2">提示：</h4>
 <ul>
 <li>
-<p><span class="arithmatex">\(1\)</span> &lt;= <code>tokens.length</code> &lt;= <span class="arithmatex">\(10^4\)</span></p>
+<p><span class="arithmatex">\(1\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(tokens.length\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(10^4\)</span></p>
 </li>
 <li>
-<p><code>tokens[i]</code> 是一个算符（<code>"+"</code>、<code>"-"</code>、<code>"*"</code> 或 <code>"/"</code>），或是在范围 <code>[-200, 200]</code> 内的一个整数
+<p><span class="arithmatex">\(tokens[i]\)</span> 是一个算符（<code>"+"</code>、<code>"-"</code>、<code>"*"</code> 或 <code>"/"</code>），或是在范围 <span class="arithmatex">\([-200, 200]\)</span> 内的一个整数
  </p>
 </li>
 </ul>
@@ -1436,8 +1449,12 @@
 <hr />
 <h4 id="_4">思路&emsp;</h4>
 <h6 id="on">栈操作&emsp; <span class="arithmatex">\(O(n)\)</span></h6>
-<p>通过逆波兰表达式的特点，可知：遍历所有元素。如果当前元素是整数，则压入栈内；如果是运算符，将栈顶两个元素取出并做相应的运算，最后把结果压入栈内。</p>
-<p>扫描完成后，栈内的数就是结果且仅有一个。</p>
+<p>通过逆波兰表达式的特点，可知：遍历所有元素。</p>
+<ul>
+<li>如果当前元素是整数，则压入栈内；</li>
+<li>如果是运算符，将栈顶两个元素取出并做相应的运算，最后把结果压入栈内。</li>
+</ul>
+<p>扫描完成后，栈内的数就是结果，<strong>有且仅有一个</strong>。</p>
 <p>时间复杂度分析：每个元素仅被遍历一次，且每次遍历时仅涉及常数次操作，所以时间复杂度是 <span class="arithmatex">\(O(n)\)</span> 。</p>
 <h4 id="_5">代码</h4>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label></div>
@@ -1508,7 +1525,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 1. 两数之和" rel="prev">
+        <a href="../73/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 73. 矩阵置零" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1517,7 +1534,7 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              1. 两数之和
+              73. 矩阵置零
             </div>
           </div>
         </a>
