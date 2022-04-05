@@ -77,6 +77,7 @@ nav:
       - 191. 位1的个数: algorithm/leetcode/191.md
       - 206. 反转链表: algorithm/leetcode/206.md
       - 223. 矩形面积: algorithm/leetcode/223.md
+      - 341. 扁平化嵌套列表迭代器: algorithm/leetcode/341.md
       - 1603. 设计停车系统: algorithm/leetcode/1603.md
     - 剑指offer:
       - 03. 数组中重复的数字: algorithm/offer/3.md
