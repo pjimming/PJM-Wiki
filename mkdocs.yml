@@ -79,6 +79,7 @@ nav:
       - 223. 矩形面积: algorithm/leetcode/223.md
       - 341. 扁平化嵌套列表迭代器: algorithm/leetcode/341.md
       - 456. 132 模式: algorithm/leetcode/456.md
+      - 1143. 最长公共子序列: algorithm/leetcode/1143.md
       - 1603. 设计停车系统: algorithm/leetcode/1603.md
     - 剑指offer:
       - 03. 数组中重复的数字: algorithm/offer/3.md
