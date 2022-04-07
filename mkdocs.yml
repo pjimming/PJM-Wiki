@@ -72,6 +72,7 @@ nav:
   - Algorithm:
     - leetcode:
       - 1. 两数之和: algorithm/leetcode/1.md
+      - 21. 合并两个有序链表: algorithm/leetcode/21.md
       - 73. 矩阵置零: algorithm/leetcode/73.md
       - 82. 删除排序链表中的重复元素 II: algorithm/leetcode/82.md
       - 150. 逆波兰表达式求值: algorithm/leetcode/150.md
@@ -85,6 +86,7 @@ nav:
     - 剑指offer:
       - 03. 数组中重复的数字: algorithm/offer/3.md
       - 24. 反转链表: algorithm/offer/24.md
+      - 25. 合并两个排序的链表: algorithm/offer/25.md
       - 65. 不用加减乘除做加法: algorithm/offer/65.md
   - Java:
     - Java 前言: java/index.md
