@@ -73,6 +73,7 @@ nav:
     - leetcode:
       - 1. 两数之和: algorithm/leetcode/1.md
       - 73. 矩阵置零: algorithm/leetcode/73.md
+      - 82. 删除排序链表中的重复元素 II: algorithm/leetcode/82.md
       - 150. 逆波兰表达式求值: algorithm/leetcode/150.md
       - 191. 位1的个数: algorithm/leetcode/191.md
       - 206. 反转链表: algorithm/leetcode/206.md
