@@ -33,7 +33,7 @@ theme:
   - media: "(prefers-color-scheme: dark)"
     scheme: slate
     primary: cyan
-    accent: deep purple
+    accent: red
     toggle:
       icon: material/weather-night
       name: Switch to light mode
