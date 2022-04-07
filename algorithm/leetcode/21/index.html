@@ -12,14 +12,14 @@
         <meta name="author" content="潘江明">
       
       
-        <link rel="canonical" href="https://wiki.pjmcode.top/algorithm/leetcode/456/">
+        <link rel="canonical" href="https://wiki.pjmcode.top/algorithm/leetcode/21/">
       
       <link rel="icon" href="../../../img/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>456. 132 模式 - PJM Wiki</title>
+        <title>21. 合并两个有序链表 - PJM Wiki</title>
       
     
     
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              456. 132 模式
+              21. 合并两个有序链表
             
           </span>
         </div>
@@ -802,11 +802,103 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../21/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          21. 合并两个有序链表
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         21. 合并两个有序链表
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    题目描述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    示例 1：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    示例 2：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    示例 3：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    提示：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    算法和思路
+  </a>
+  
+    <nav class="md-nav" aria-label="算法和思路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on" class="md-nav__link">
+    二路归并 &emsp; \(O(n)\)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    代码
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -914,110 +1006,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          456. 132 模式
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../456/" class="md-nav__link">
         456. 132 模式
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    题目描述
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    示例 1：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    示例 2：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    示例 3：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    提示：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    算法与思路
-  </a>
-  
-    <nav class="md-nav" aria-label="算法与思路">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#on" class="md-nav__link">
-    (单调栈) &emsp; \(O(n)\)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    复杂度分析
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    代码
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1455,22 +1448,15 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    算法与思路
+    算法和思路
   </a>
   
-    <nav class="md-nav" aria-label="算法与思路">
+    <nav class="md-nav" aria-label="算法和思路">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#on" class="md-nav__link">
-    (单调栈) &emsp; \(O(n)\)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    复杂度分析
+    二路归并 &emsp; \(O(n)\)
   </a>
   
 </li>
@@ -1481,7 +1467,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     代码
   </a>
   
@@ -1499,71 +1485,55 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/pjimming/PJM-Wiki/edit/master/docs/algorithm/leetcode/456.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/pjimming/PJM-Wiki/edit/master/docs/algorithm/leetcode/21.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-  <h1>456. 132 模式</h1>
+  <h1>21. 合并两个有序链表</h1>
 
-<p><a href="https://leetcode-cn.com/problems/132-pattern">原题链接</a></p>
+<p><a href="https://leetcode-cn.com/problems/merge-two-sorted-lists">原题链接</a></p>
 <h4 id="_1">题目描述</h4>
-<p>给你一个整数数组 <span class="arithmatex">\(nums\)</span> ，数组中共有 <span class="arithmatex">\(n\)</span> 个整数。</p>
-<p><strong>132 模式的子序列</strong> 由三个整数 <span class="arithmatex">\(nums[i]\)</span>、<span class="arithmatex">\(nums[j]\)</span> 和 <span class="arithmatex">\(nums[k]\)</span> 组成，并同时满足：<span class="arithmatex">\(i &lt; j &lt; k\)</span> 和 <span class="arithmatex">\(nums[i] &lt; nums[k] &lt; nums[j]\)</span> 。</p>
-<p>如果 <span class="arithmatex">\(nums\)</span> 中存在 <strong>132 模式的子序列</strong> ，返回 <span class="arithmatex">\(true\)</span> ；否则，返回 <span class="arithmatex">\(false\)</span> 。</p>
+<p>将两个升序链表合并为一个新的 <strong>升序</strong> 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 </p>
 <h4 id="1">示例 1：</h4>
+<p><img alt="示例一" src="https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg" /></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>输入：nums = [1,2,3,4]
-输出：false
-解释：序列中不存在 132 模式的子序列。
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>输入：l1 = [1,2,4], l2 = [1,3,4]
+输出：[1,1,2,3,4,4]
 </code></pre></div>
 </td></tr></table>
 <h4 id="2">示例 2：</h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>输入：nums = [3,1,4,2]
-输出：true
-解释：序列中有 1 个 132 模式的子序列： [1, 4, 2] 。
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>输入：l1 = [], l2 = []
+输出：[]
 </code></pre></div>
 </td></tr></table>
 <h4 id="3">示例 3：</h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>输入：nums = [-1,3,2,0]
-输出：true
-解释：序列中有 3 个 132 模式的的子序列：[-1, 3, 2]、[-1, 3, 0] 和 [-1, 2, 0] 。
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>输入：l1 = [], l2 = [0]
+输出：[0]
 </code></pre></div>
 </td></tr></table>
 <h4 id="_2">提示：</h4>
 <ul>
-<li><span class="arithmatex">\(n\)</span> <span class="arithmatex">\(=\)</span> <span class="arithmatex">\(nums.length\)</span></li>
-<li><span class="arithmatex">\(1\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(n\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(2 * 10^5\)</span></li>
-<li><span class="arithmatex">\(-10^9\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(nums[i]\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(10^9\)</span></li>
+<li>两个链表的节点数目范围是 <span class="arithmatex">\([0, 50]\)</span></li>
+<li><span class="arithmatex">\(-100\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(Node.val\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(100\)</span></li>
+<li><span class="arithmatex">\(l1\)</span> 和 <span class="arithmatex">\(l2\)</span> 均按 <strong>非递减顺序</strong> 排列</li>
 </ul>
 <hr />
-<h4 id="_3">算法与思路</h4>
-<h6 id="on">(单调栈) &emsp; <span class="arithmatex">\(O(n)\)</span></h6>
-<p>我们可以来考虑把每个数当成 <strong>132 模式的子序列</strong> 中 <code>1</code> 的情况，记为 <span class="arithmatex">\(a[i]\)</span> ，当且仅当存在两个数 <span class="arithmatex">\(a[j], a[k]\)</span>，满足 <span class="arithmatex">\(i &lt; j &lt; k\)</span>，<span class="arithmatex">\(a[j] &gt; a[k] &gt; a[i]\)</span> 时，<strong>132 模式的子序列</strong> 存在。</p>
-<p>在满足以上 <strong>充要条件</strong> 中得出 <span class="arithmatex">\(a[j]\)</span> 与 <span class="arithmatex">\(a[k]\)</span> 是 <strong>单调递减</strong> 的。</p>
-<p>在单调栈中，从栈底到栈顶的元素是严格单调递减的。当给定阈值 <span class="arithmatex">\(x\)</span> 时，我们只需要不断地弹出栈顶的元素，直到栈为空或者 <span class="arithmatex">\(x\)</span> 严格小于栈顶元素。此时我们再将 <span class="arithmatex">\(x\)</span> 入栈，这样就维护了栈的单调性。</p>
-<p>因此可以维护一个单调栈来判断当前 <span class="arithmatex">\(a[i]\)</span> 是否满足条件。</p>
+<h4 id="_3">算法和思路</h4>
+<h6 id="on">二路归并 &emsp; <span class="arithmatex">\(O(n)\)</span></h6>
 <ol>
-<li>维护 <span class="arithmatex">\(a[j], a[k]\)</span> 的单调栈操作可以 <strong>从右往左</strong> 遍历数组，每次判断当前数是否 <strong>小于</strong> <span class="arithmatex">\(a[k]\)</span>。<ul>
-<li>为了方便起见，可以定义一个 <span class="arithmatex">\(right\)</span> 来记录当前数为 <span class="arithmatex">\(a[i]\)</span> 的情况下，<span class="arithmatex">\(a[k]\)</span> 的<strong>最大值</strong>。</li>
-<li>若满足条件，返回 <span class="arithmatex">\(true\)</span>；</li>
-<li>若不满足，继续进行下列操作。</li>
-</ul>
-</li>
-<li>如果栈顶元素 <strong>小于</strong> 当前数 <span class="arithmatex">\(a[i]\)</span>，弹出栈顶元素，直到栈顶元素 <strong>大于</strong> 当前数 <span class="arithmatex">\(a[i]\)</span>。</li>
-<li>将当前数 <span class="arithmatex">\(a[i]\)</span> 插入栈内，继续遍历下一个数，直到遍历完这个数组，返回 <span class="arithmatex">\(false\)</span>。</li>
+<li>新建头部的保护结点 <span class="arithmatex">\(dummy\)</span>，设置 <span class="arithmatex">\(cur\)</span> 指针指向 <span class="arithmatex">\(dummy\)</span>。</li>
+<li>若当前<span class="arithmatex">\(l1\)</span>指针指向的结点的值 <span class="arithmatex">\(val\)</span> 比 <span class="arithmatex">\(l2\)</span> 指针指向的结点的值 <span class="arithmatex">\(val\)</span> 小，则令 <span class="arithmatex">\(cur\)</span> 的 <span class="arithmatex">\(next\)</span> 指针指向 <span class="arithmatex">\(l1\)</span>，且 <span class="arithmatex">\(l1\)</span> 后移；否则指向 <span class="arithmatex">\(l2\)</span>，且 <span class="arithmatex">\(l2\)</span> 后移。</li>
+<li>然后 <span class="arithmatex">\(cur\)</span> 指针按照上一部设置好的位置后移。</li>
+<li>循环以上步骤直到 <span class="arithmatex">\(l1\)</span> 或 <span class="arithmatex">\(l2\)</span> 为空。</li>
+<li>将剩余的 <span class="arithmatex">\(l1\)</span> 或 <span class="arithmatex">\(l2\)</span> 接到 <span class="arithmatex">\(cur\)</span> 指针后边。</li>
 </ol>
-<h6 id="_4">复杂度分析</h6>
-<p><strong>时间复杂度：</strong>O(n)。枚举 <span class="arithmatex">\(i\)</span> 的次数为 <span class="arithmatex">\(O(n)\)</span>，由于每一个元素最多被加入和弹出单调栈各一次，因此操作单调栈的时间复杂度一共为 <span class="arithmatex">\(O(n)\)</span>，总时间复杂度为 <span class="arithmatex">\(O(n)\)</span>。</p>
-<p><strong>空间复杂度：</strong><span class="arithmatex">\(O(n)\)</span>，即为单调栈需要使用的空间。</p>
+<p><strong>时间复杂度：</strong>两个链表各遍历一次，所以时间复杂度为 <span class="arithmatex">\(O(n)\)</span>。</p>
 <hr />
-<h4 id="_5">代码</h4>
+<h4 id="_4">代码</h4>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1582,20 +1552,52 @@
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * Definition for singly-linked list.</span>
+<span class="cm"> * struct ListNode {</span>
+<span class="cm"> *     int val;</span>
+<span class="cm"> *     ListNode *next;</span>
+<span class="cm"> *     ListNode() : val(0), next(nullptr) {}</span>
+<span class="cm"> *     ListNode(int x) : val(x), next(nullptr) {}</span>
+<span class="cm"> *     ListNode(int x, ListNode *next) : val(x), next(next) {}</span>
+<span class="cm"> * };</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">find132pattern</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">nums</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">INT_MIN</span><span class="p">;</span><span class="w">    </span><span class="c1">// 起初定义为最小值，保证单调性</span>
-<span class="w">        </span><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span><span class="w"></span>
-<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">s</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">right</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">top</span><span class="p">());</span><span class="w"></span>
-<span class="w">                </span><span class="n">s</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">ListNode</span><span class="o">*</span><span class="w"> </span><span class="n">mergeTwoLists</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span><span class="w"> </span><span class="n">list1</span><span class="p">,</span><span class="w"> </span><span class="n">ListNode</span><span class="o">*</span><span class="w"> </span><span class="n">list2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">ListNode</span><span class="o">*</span><span class="w"> </span><span class="n">dummy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ListNode</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">ListNode</span><span class="o">*</span><span class="w"> </span><span class="n">cur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dummy</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">list1</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">list2</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">list1</span><span class="o">-&gt;</span><span class="n">val</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">list2</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list1</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="n">list1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list1</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list2</span><span class="p">;</span><span class="w"></span>
+<span class="w">                </span><span class="n">list2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">list2</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
-<span class="w">            </span><span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">            </span><span class="n">cur</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">list1</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">nullptr</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">list1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">list2</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">dummy</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
@@ -1621,7 +1623,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../341/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 341. 扁平化嵌套列表迭代器" rel="prev">
+        <a href="../1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 1. 两数之和" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1630,20 +1632,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              341. 扁平化嵌套列表迭代器
+              1. 两数之和
             </div>
           </div>
         </a>
       
       
         
-        <a href="../1143/" class="md-footer__link md-footer__link--next" aria-label="下一页: 1143. 最长公共子序列" rel="next">
+        <a href="../73/" class="md-footer__link md-footer__link--next" aria-label="下一页: 73. 矩阵置零" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              1143. 最长公共子序列
+              73. 矩阵置零
             </div>
           </div>
           <div class="md-footer__button md-icon">

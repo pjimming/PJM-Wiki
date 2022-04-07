@@ -51,6 +51,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://wiki.pjmcode.top/algorithm/leetcode/21/</loc>
+         <lastmod>2022-04-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://wiki.pjmcode.top/algorithm/leetcode/223/</loc>
          <lastmod>2022-04-07</lastmod>
          <changefreq>daily</changefreq>
@@ -77,6 +82,11 @@
     </url>
     <url>
          <loc>https://wiki.pjmcode.top/algorithm/offer/24/</loc>
+         <lastmod>2022-04-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://wiki.pjmcode.top/algorithm/offer/25/</loc>
          <lastmod>2022-04-07</lastmod>
          <changefreq>daily</changefreq>
     </url>
