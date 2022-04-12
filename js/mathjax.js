@@ -19,3 +19,8 @@ window.MathJax = {
     loader: { load: ['[tex]/color'] },
     tex: { packages: { '[+]': ['color'] } }
 };
+
+window.MathJax = {
+    loader: { load: ['[tex]/boldsymbol'] },
+    tex: { packages: { '[+]': ['boldsymbol'] } }
+};
