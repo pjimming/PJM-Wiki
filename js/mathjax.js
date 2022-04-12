@@ -11,7 +11,11 @@ window.MathJax = {
     }
 };
 
-document$.subscribe(() => { 
+document$.subscribe(() => {
     MathJax.typesetPromise()
 })
 
+window.MathJax = {
+    loader: { load: ['[tex]/color'] },
+    tex: { packages: { '[+]': ['color'] } }
+};
