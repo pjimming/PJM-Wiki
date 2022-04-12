@@ -90,6 +90,8 @@ nav:
       - 65. 不用加减乘除做加法: algorithm/offer/65.md
     - 程序员面试金典:
       - 17.21. 直方图的水量: algorithm/mst/17_21.md
+    - 线段树:
+      - 线段树简介: algorithm/segmentTree/1.md
   - Java:
     - Java 前言: java/index.md
     - JavaSE:
