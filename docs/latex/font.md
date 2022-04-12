@@ -100,6 +100,39 @@ ${\displaystyle \mathbf {nopqrstuvwxyz} }$
 
 ${\displaystyle \mathbf {0123456789} }$
 
+### 粗体希腊字母
+
+`\boldsymbol{\Alpha\Beta\Gamma\Delta\Epsilon\Zeta\Eta\Theta}`
+
+${\displaystyle {\boldsymbol {\mathrm {A} \mathrm {B} \Gamma \Delta \mathrm {E} \mathrm {Z} \mathrm {H} \Theta }}}$
+
+`\boldsymbol{\Iota\Kappa\Lambda\Mu\Nu\Xi\Pi\Rho}`
+
+${\displaystyle {\boldsymbol {\mathrm {I} \mathrm {K} \Lambda \mathrm {M} \mathrm {N} \Xi \Pi \mathrm {P} }}}$
+
+`\boldsymbol{\Sigma\Tau\Upsilon\Phi\Chi\Psi\Omega}`
+
+${\displaystyle {\boldsymbol {\Sigma \mathrm {T} \Upsilon \Phi \mathrm {X} \Psi \Omega }}}$
+
+`\boldsymbol{\alpha\beta\gamma\delta\epsilon\zeta\eta\theta}`
+
+${\displaystyle {\boldsymbol {\alpha \beta \gamma \delta \epsilon \zeta \eta \theta}}}$
+
+`\boldsymbol{\iota\kappa\lambda\mu\nu\xi\pi\rho}`
+
+${\displaystyle {\boldsymbol {\iota \kappa \lambda \mu \nu \xi \pi \rho}}}$
+
+`\boldsymbol{\sigma\tau\upsilon\phi\chi\psi\omega}`
+
+${\displaystyle {\boldsymbol {\sigma \tau \upsilon \phi \chi \psi \omega}}}$
+
+`\boldsymbol{\varepsilon\digamma\varkappa\varpi}`
+
+${\displaystyle {\boldsymbol {\varepsilon \digamma \varkappa \varpi}}}$
+
+`\boldsymbol{\varrho\varsigma\vartheta\varphi}`
+
+${\displaystyle {\boldsymbol {\varrho \varsigma \vartheta \varphi}}}$
 
 ### 斜体（拉丁字母默认）
 
