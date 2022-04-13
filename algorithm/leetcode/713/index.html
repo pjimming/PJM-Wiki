@@ -12,14 +12,14 @@
         <meta name="author" content="潘江明">
       
       
-        <link rel="canonical" href="https://wiki.pjmcode.top/algorithm/leetcode/150/">
+        <link rel="canonical" href="https://wiki.pjmcode.top/algorithm/leetcode/713/">
       
       <link rel="icon" href="../../../img/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>150. 逆波兰表达式求值 - PJM Wiki</title>
+        <title>713. 乘积小于K的子数组 - PJM Wiki</title>
       
     
     
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              150. 逆波兰表达式求值
+              713. 乘积小于K的子数组
             
           </span>
         </div>
@@ -860,110 +860,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          150. 逆波兰表达式求值
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../150/" class="md-nav__link">
         150. 逆波兰表达式求值
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    题目描述
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    示例 1：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    示例 2：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    示例 3：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    提示：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    逆波兰表达式：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    思路&emsp;
-  </a>
-  
-    <nav class="md-nav" aria-label="思路&emsp;">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#on" class="md-nav__link">
-    栈操作&emsp; \(O(n)\)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    代码
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1043,11 +944,110 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../713/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          713. 乘积小于K的子数组
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         713. 乘积小于K的子数组
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    题目描述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    示例 1:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    示例 2:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    提示:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    算法与思路
+  </a>
+  
+    <nav class="md-nav" aria-label="算法与思路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on" class="md-nav__link">
+    双指针 &emsp; \(O(n)\)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rightleftn-on" class="md-nav__link">
+    时间复杂度：一重枚举所有的right端点，而left只需要移动n次，所以时间复杂度为 \(O(n)\)。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o1" class="md-nav__link">
+    空间复杂度：只会用到常数个变量，所以为 \(O(1)\)。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    代码
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1683,50 +1683,36 @@
       
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
-    示例 1：
+    示例 1:
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
-    示例 2：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    示例 3：
+    示例 2:
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    提示：
+    提示:
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    逆波兰表达式：
+    算法与思路
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    思路&emsp;
-  </a>
-  
-    <nav class="md-nav" aria-label="思路&emsp;">
+    <nav class="md-nav" aria-label="算法与思路">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#on" class="md-nav__link">
-    栈操作&emsp; \(O(n)\)
+    双指针 &emsp; \(O(n)\)
   </a>
   
 </li>
@@ -1737,7 +1723,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#rightleftn-on" class="md-nav__link">
+    时间复杂度：一重枚举所有的right端点，而left只需要移动n次，所以时间复杂度为 \(O(n)\)。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o1" class="md-nav__link">
+    空间复杂度：只会用到常数个变量，所以为 \(O(1)\)。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
     代码
   </a>
   
@@ -1755,87 +1755,69 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/pjimming/PJM-Wiki/edit/master/docs/algorithm/leetcode/150.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/pjimming/PJM-Wiki/edit/master/docs/algorithm/leetcode/713.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-  <h1>150. 逆波兰表达式求值</h1>
+  <h1>713. 乘积小于K的子数组</h1>
 
-<p><a href="https://leetcode-cn.com/problems/evaluate-reverse-polish-notation">原题链接</a></p>
+<p><a href="https://leetcode-cn.com/problems/subarray-product-less-than-k/">原题链接</a></p>
 <h4 id="_1">题目描述</h4>
-<p>根据 <a href="https://baike.baidu.com/item/%E9%80%86%E6%B3%A2%E5%85%B0%E5%BC%8F/128437">逆波兰表示法</a>，求表达式的值。</p>
-<p>有效的算符包括 <code>+</code>、<code>-</code>、<code>*</code>、<code>/</code> 。每个运算对象可以是整数，也可以是另一个逆波兰表达式。</p>
-<p><strong>注意</strong> 两个整数之间的除法只保留整数部分。</p>
-<p>可以保证给定的逆波兰表达式总是有效的。换句话说，表达式总会得出有效数值且不存在除数为 0 的情况。</p>
-<h4 id="1">示例 1：</h4>
+<p>给定一个正整数数组 <span class="arithmatex">\(nums\)</span> 和整数 <span class="arithmatex">\(k\)</span> 。</p>
+<p>请找出该数组内<strong>乘积小于</strong> <span class="arithmatex">\(k\)</span> 的<strong>连续的子数组</strong>的个数。</p>
+<h4 id="1">示例 1:</h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>输入：tokens = [&quot;2&quot;,&quot;1&quot;,&quot;+&quot;,&quot;3&quot;,&quot;*&quot;]
-输出：9
-解释：该算式转化为常见的中缀算术表达式为：((2 + 1) * 3) = 9
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>输入: nums = [10,5,2,6], k = 100
+输出: 8
+解释: 8个乘积小于100的子数组分别为: [10], [5], [2], [6], [10,5], [5,2], [2,6], [5,2,6]。
+需要注意的是 [10,5,2] 并不是乘积小于100的子数组。
 </code></pre></div>
 </td></tr></table>
-<h4 id="2">示例 2：</h4>
+<h4 id="2">示例 2:</h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>输入：tokens = [&quot;4&quot;,&quot;13&quot;,&quot;5&quot;,&quot;/&quot;,&quot;+&quot;]
-输出：6
-解释：该算式转化为常见的中缀算术表达式为：(4 + (13 / 5)) = 6
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>输入: nums = [1,2,3], k = 0
+输出: 0
 </code></pre></div>
 </td></tr></table>
-<h4 id="3">示例 3：</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>输入：tokens = [&quot;10&quot;,&quot;6&quot;,&quot;9&quot;,&quot;3&quot;,&quot;+&quot;,&quot;-11&quot;,&quot;*&quot;,&quot;/&quot;,&quot;*&quot;,&quot;17&quot;,&quot;+&quot;,&quot;5&quot;,&quot;+&quot;]
-输出：22
-解释：该算式转化为常见的中缀算术表达式为：
-  ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
-= ((10 * (6 / (12 * -11))) + 17) + 5
-= ((10 * (6 / -132)) + 17) + 5
-= ((10 * 0) + 17) + 5
-= (0 + 17) + 5
-= 17 + 5
-= 22
-</code></pre></div>
-</td></tr></table>
-<h4 id="_2">提示：</h4>
+<h4 id="_2">提示:</h4>
 <ul>
-<li><span class="arithmatex">\(1\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(tokens.length\)</span> <span class="arithmatex">\(≤\)</span> <span class="arithmatex">\(10^4\)</span></li>
-<li><span class="arithmatex">\(tokens[i]\)</span> 是一个算符（<code>"+"</code>、<code>"-"</code>、<code>"*"</code> 或 <code>"/"</code>），或是在范围 <span class="arithmatex">\([-200, 200]\)</span> 内的一个整数
- </li>
-</ul>
-<h4 id="_3">逆波兰表达式：</h4>
-<p>逆波兰表达式是一种后缀表达式，所谓后缀就是指算符写在后面。</p>
-<ul>
-<li>平常使用的算式则是一种中缀表达式，如 <code>( 1 + 2 ) * ( 3 + 4 )</code> 。</li>
-<li>该算式的逆波兰表达式写法为 <code>( ( 1 2 + ) ( 3 4 + ) * )</code> 。</li>
-</ul>
-<p>逆波兰表达式主要有以下两个优点：</p>
-<ul>
-<li>去掉括号后表达式无歧义，上式即便写成 <code>1 2 + 3 4 + *</code> 也可以依据次序计算出正确结果。</li>
-<li>适合用栈操作运算：遇到数字则入栈；遇到算符则取出栈顶两个数字进行计算，并将结果压入栈中</li>
+<li><span class="arithmatex">\(1 \le nums.length \le 3 * 10^4\)</span></li>
+<li><span class="arithmatex">\(1 \le nums[i] \le 1000\)</span></li>
+<li><span class="arithmatex">\(0 \le k \le 10^6\)</span></li>
 </ul>
 <hr />
-<h4 id="_4">思路&emsp;</h4>
-<h6 id="on">栈操作&emsp; <span class="arithmatex">\(O(n)\)</span></h6>
-<p>通过逆波兰表达式的特点，可知：遍历所有元素。</p>
+<h4 id="_3">算法与思路</h4>
+<h6 id="on">双指针 &emsp; <span class="arithmatex">\(O(n)\)</span></h6>
+<p>我们可以在数组内设置一个滑动窗口，对于每个 <span class="arithmatex">\(right\)</span>，我们需要找到一个最小的 <span class="arithmatex">\(left\)</span>，满足</p>
+<div class="arithmatex">\[\prod_{i=left}^{right} nums[i] &lt; k\]</div>
+<p>由于当 <span class="arithmatex">\(left\)</span> 增加的时候，这个乘积是单调不增的，因此可以使用双指针算法，单调移动 <span class="arithmatex">\(left\)</span>。</p>
+<p>我们一重循环枚举每个 <span class="arithmatex">\(right\)</span>，同时 <span class="arithmatex">\(left\)</span> 单调增加。</p>
 <ul>
-<li>如果当前元素是整数，则压入栈内；</li>
-<li>如果是运算符，将栈顶两个元素取出并做相应的运算，最后把结果压入栈内。</li>
+<li>在循环的每一步中，先将乘积乘以 <span class="arithmatex">\(nums[right]\)</span>。</li>
+<li>此时需要向右移动 <span class="arithmatex">\(left\)</span>，直到满足乘积小于 <span class="arithmatex">\(k\)</span> 的条件。</li>
+<li>在每次移动 <span class="arithmatex">\(left\)</span> 的操作中，需要将乘积除以 <span class="arithmatex">\(nums[left]\)</span>。</li>
+<li>当 <span class="arithmatex">\(left\)</span> 移动完成后，对于当前的 <span class="arithmatex">\(right\)</span>，就包含了 <span class="arithmatex">\(right-left+1\)</span> 个乘积小于 <span class="arithmatex">\(k\)</span> 的连续子数组。</li>
 </ul>
-<p>扫描完成后，栈内的数就是结果，<strong>有且仅有一个</strong>。</p>
-<p>时间复杂度分析：每个元素仅被遍历一次，且每次遍历时仅涉及常数次操作，所以时间复杂度是 <span class="arithmatex">\(O(n)\)</span> 。</p>
 <hr />
-<h4 id="_5">代码</h4>
+<p>为什么是 <span class="arithmatex">\(right-left+1\)</span>？设 <span class="arithmatex">\(length=right-left+1\)</span>。</p>
+<p>对于每个 <span class="arithmatex">\(right\)</span>，连续数组区间需要包含 <span class="arithmatex">\(nums[right]\)</span>，即：</p>
+<ul>
+<li>区间长度为 <span class="arithmatex">\(1\)</span> 的连续数组个数为 <span class="arithmatex">\(1\)</span> 个；</li>
+<li>区间长度为 <span class="arithmatex">\(2\)</span> 的连续数组个数为 <span class="arithmatex">\(1\)</span> 个；</li>
+<li>区间长度为 <span class="arithmatex">\(3\)</span> 的连续数组个数为 <span class="arithmatex">\(1\)</span> 个；</li>
+<li>...</li>
+<li>区间长度为 <span class="arithmatex">\(length-1\)</span> 的连续数组个数为 <span class="arithmatex">\(1\)</span> 个；</li>
+<li>区间长度为 <span class="arithmatex">\(length\)</span> 的连续数组个数为 <span class="arithmatex">\(1\)</span> 个。</li>
+</ul>
+<p>可以得出，有 <span class="arithmatex">\(length\)</span> 个 <span class="arithmatex">\(1\)</span>，最终个数为 <span class="arithmatex">\(length\)</span>，即 <span class="arithmatex">\(right-left+1\)</span>。</p>
+<h4 id="rightleftn-on">时间复杂度：一重枚举所有的right端点，而left只需要移动n次，所以时间复杂度为 <span class="arithmatex">\(O(n)\)</span>。</h4>
+<h4 id="o1">空间复杂度：只会用到常数个变量，所以为 <span class="arithmatex">\(O(1)\)</span>。</h4>
+<hr />
+<h4 id="_4">代码</h4>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -1854,36 +1836,20 @@
 <span class="normal">13</span>
 <span class="normal">14</span>
 <span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="k">public</span><span class="o">:</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">evalRPN</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">tokens</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">num</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">tokens</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">string</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tokens</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
-<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;+&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="p">.</span><span class="n">top</span><span class="p">();</span><span class="w"> </span><span class="n">num</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="w"></span>
-<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">num</span><span class="p">.</span><span class="n">top</span><span class="p">();</span><span class="w"> </span><span class="n">num</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span><span class="w"></span>
-
-<span class="w">                </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;+&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;-&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;*&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
-<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;/&quot;</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-
-<span class="w">                </span><span class="n">num</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
-<span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                </span><span class="n">num</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">atoi</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">c_str</span><span class="p">()));</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">numSubarrayProductLessThanK</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">nums</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">k</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="n">r</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">t</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">r</span><span class="p">];</span><span class="w"></span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">k</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                </span><span class="n">t</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="n">nums</span><span class="p">[</span><span class="n">l</span><span class="p">];</span><span class="w"></span>
+<span class="w">                </span><span class="n">l</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
 <span class="w">            </span><span class="p">}</span><span class="w"></span>
+<span class="w">            </span><span class="n">res</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">num</span><span class="p">.</span><span class="n">top</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
@@ -1909,7 +1875,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../82/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 82. 删除排序链表中的重复元素 II" rel="prev">
+        <a href="../456/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 456. 132 模式" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1918,20 +1884,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              82. 删除排序链表中的重复元素 II
+              456. 132 模式
             </div>
           </div>
         </a>
       
       
         
-        <a href="../191/" class="md-footer__link md-footer__link--next" aria-label="下一页: 191. 位1的个数" rel="next">
+        <a href="../1143/" class="md-footer__link md-footer__link--next" aria-label="下一页: 1143. 最长公共子序列" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              191. 位1的个数
+              1143. 最长公共子序列
             </div>
           </div>
           <div class="md-footer__button md-icon">
