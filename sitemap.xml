@@ -121,6 +121,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://wiki.pjmcode.top/algorithm/segmentTree/3/</loc>
+         <lastmod>2022-04-13</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://wiki.pjmcode.top/java/</loc>
          <lastmod>2022-04-13</lastmod>
          <changefreq>daily</changefreq>

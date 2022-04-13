@@ -1024,20 +1024,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rightleftn-on" class="md-nav__link">
-    时间复杂度：一重枚举所有的right端点，而left只需要移动n次，所以时间复杂度为 \(O(n)\)。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#o1" class="md-nav__link">
-    空间复杂度：只会用到常数个变量，所以为 \(O(1)\)。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     代码
   </a>
@@ -1272,6 +1258,20 @@
     <li class="md-nav__item">
       <a href="../../segmentTree/2/" class="md-nav__link">
         最大数(单点修改，区间查询)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../segmentTree/3/" class="md-nav__link">
+        Can you answer these queries III(单点修改，区间查询)
       </a>
     </li>
   
@@ -1723,20 +1723,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rightleftn-on" class="md-nav__link">
-    时间复杂度：一重枚举所有的right端点，而left只需要移动n次，所以时间复杂度为 \(O(n)\)。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#o1" class="md-nav__link">
-    空间复杂度：只会用到常数个变量，所以为 \(O(1)\)。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     代码
   </a>
@@ -1765,7 +1751,7 @@
 
 <p><a href="https://leetcode-cn.com/problems/subarray-product-less-than-k/">原题链接</a></p>
 <h4 id="_1">题目描述</h4>
-<p>给定一个正整数数组 <span class="arithmatex">\(nums\)</span> 和整数 <span class="arithmatex">\(k\)</span> 。</p>
+<p>给定一个正整数数组 <code>nums</code> 和整数 <code>k</code> 。</p>
 <p>请找出该数组内<strong>乘积小于</strong> <span class="arithmatex">\(k\)</span> 的<strong>连续的子数组</strong>的个数。</p>
 <h4 id="1">示例 1:</h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -1814,8 +1800,8 @@
 <li>区间长度为 <span class="arithmatex">\(length\)</span> 的连续数组个数为 <span class="arithmatex">\(1\)</span> 个。</li>
 </ul>
 <p>可以得出，有 <span class="arithmatex">\(length\)</span> 个 <span class="arithmatex">\(1\)</span>，最终个数为 <span class="arithmatex">\(length\)</span>，即 <span class="arithmatex">\(right-left+1\)</span>。</p>
-<h4 id="rightleftn-on">时间复杂度：一重枚举所有的right端点，而left只需要移动n次，所以时间复杂度为 <span class="arithmatex">\(O(n)\)</span>。</h4>
-<h4 id="o1">空间复杂度：只会用到常数个变量，所以为 <span class="arithmatex">\(O(1)\)</span>。</h4>
+<p><strong>时间复杂度：</strong>一重枚举所有的right端点，而left只需要移动n次，所以时间复杂度为 <span class="arithmatex">\(O(n)\)</span>。</p>
+<p><strong>空间复杂度：</strong>只会用到常数个变量，所以为 <span class="arithmatex">\(O(1)\)</span>。</p>
 <hr />
 <h4 id="_4">代码</h4>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">C++</label></div>
