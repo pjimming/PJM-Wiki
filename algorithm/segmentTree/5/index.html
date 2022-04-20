@@ -12,14 +12,14 @@
         <meta name="author" content="潘江明">
       
       
-        <link rel="canonical" href="https://wiki.pjmcode.top/algorithm/segmentTree/3/">
+        <link rel="canonical" href="https://wiki.pjmcode.top/algorithm/segmentTree/5/">
       
       <link rel="icon" href="../../../img/favicon.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
     
     
       
-        <title>Can you answer these queries III(单点修改，区间查询) - PJM Wiki</title>
+        <title>Interval GCD(单点修改，区间查询) - PJM Wiki</title>
       
     
     
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Can you answer these queries III(单点修改，区间查询)
+              Interval GCD(单点修改，区间查询)
             
           </span>
         </div>
@@ -1262,6 +1262,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../3/" class="md-nav__link">
+        Can you answer these queries III(单点修改，区间查询)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -1272,12 +1286,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Can you answer these queries III(单点修改，区间查询)
+          Interval GCD(单点修改，区间查询)
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Can you answer these queries III(单点修改，区间查询)
+        Interval GCD(单点修改，区间查询)
       </a>
       
         
@@ -1302,20 +1316,74 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    题目翻译
+    输入格式
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    数据范围
+    输出格式
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    数据范围
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    输入样例：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    输出样例：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    前置知识
+  </a>
+  
+    <nav class="md-nav" aria-label="前置知识">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    更相减损术
+  </a>
+  
+    <nav class="md-nav" aria-label="更相减损术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    证明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
     算法与思路
   </a>
   
@@ -1337,29 +1405,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     建树操作
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     修改操作
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     查询操作
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    具体转移流程
   </a>
   
 </li>
@@ -1370,7 +1431,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     代码(无注释)
   </a>
   
@@ -1378,7 +1439,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     运行结果
   </a>
   
@@ -1393,20 +1454,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../5/" class="md-nav__link">
-        Interval GCD(单点修改，区间查询)
-      </a>
     </li>
   
 
@@ -1817,20 +1864,74 @@
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    题目翻译
+    输入格式
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    数据范围
+    输出格式
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    数据范围
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    输入样例：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    输出样例：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    前置知识
+  </a>
+  
+    <nav class="md-nav" aria-label="前置知识">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    更相减损术
+  </a>
+  
+    <nav class="md-nav" aria-label="更相减损术">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    证明
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
     算法与思路
   </a>
   
@@ -1852,29 +1953,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_11" class="md-nav__link">
     建树操作
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_12" class="md-nav__link">
     修改操作
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_13" class="md-nav__link">
     查询操作
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    具体转移流程
   </a>
   
 </li>
@@ -1885,7 +1979,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+  <a href="#_14" class="md-nav__link">
     代码(无注释)
   </a>
   
@@ -1893,7 +1987,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
+  <a href="#_15" class="md-nav__link">
     运行结果
   </a>
   
@@ -1916,68 +2010,109 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/pjimming/PJM-Wiki/edit/master/docs/algorithm/segmentTree/3.md" title="编辑此页" class="md-content__button md-icon">
+<a href="https://github.com/pjimming/PJM-Wiki/edit/master/docs/algorithm/segmentTree/5.md" title="编辑此页" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-  <h1>Can you answer these queries III(单点修改，区间查询)</h1>
+  <h1>Interval GCD(单点修改，区间查询)</h1>
 
-<p><a href="https://vjudge.net/problem/SPOJ-GSS3">原题链接</a></p>
+<p><a href="https://ac.nowcoder.com/acm/contest/1033/B">原题链接</a></p>
 <h4 id="_1">题目描述</h4>
-<p><img alt="题目描述" src="../img/canyou.png" /></p>
-<h4 id="_2">题目翻译</h4>
-<p>给定长度为 <span class="arithmatex">\(N\)</span> 的数列 <span class="arithmatex">\(A\)</span>，以及 <span class="arithmatex">\(M\)</span> 条指令，每条指令可能是以下两种之一：</p>
+<p>给定一个长度为 <span class="arithmatex">\(N\)</span> 的数列 <span class="arithmatex">\(A\)</span>，以及 <span class="arithmatex">\(M\)</span> 条指令，每条指令可能是以下两种之一：</p>
+<ul>
+<li><code>C l r d</code>，表示把 <span class="arithmatex">\(A[l],A[l+1],…,A[r]\)</span> 都加上 <span class="arithmatex">\(d\)</span>。</li>
+<li><code>Q l r</code>，表示询问 <span class="arithmatex">\(A[l],A[l+1],…,A[r]\)</span> 的最大公约数(<span class="arithmatex">\(GCD\)</span>)。</li>
+</ul>
+<p>对于每个询问，输出一个整数表示答案。</p>
+<h4 id="_2">输入格式</h4>
+<p>第一行两个整数 <span class="arithmatex">\(N,M\)</span>。</p>
+<p>第二行 <span class="arithmatex">\(N\)</span> 个整数 <span class="arithmatex">\(A[i]\)</span>。</p>
+<p>接下来 <span class="arithmatex">\(M\)</span> 行表示 <span class="arithmatex">\(M\)</span> 条指令，每条指令的格式如题目描述所示。</p>
+<h4 id="_3">输出格式</h4>
+<p>对于每个询问，输出一个整数表示答案。</p>
+<p>每个答案占一行。</p>
+<h4 id="_4">数据范围</h4>
+<ul>
+<li><span class="arithmatex">\(N≤500000,M≤100000\)</span></li>
+<li><span class="arithmatex">\(1≤A[i]≤10^{18}\)</span></li>
+<li><span class="arithmatex">\(|d|≤10^{18}\)</span></li>
+</ul>
+<h4 id="_5">输入样例：</h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>5 5
+1 3 5 7 9
+Q 1 5
+C 1 5 1
+Q 1 5
+C 3 3 6
+Q 2 4
+</code></pre></div>
+</td></tr></table>
+<h4 id="_6">输出样例：</h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>1
+2
+4
+</code></pre></div>
+</td></tr></table>
+<hr />
+<h2 id="_7">前置知识</h2>
+<h3 id="_8">更相减损术</h3>
+<blockquote>
+<p>可半者半之，不可半者，副置分母、子之数，以少减多，更相减损，求其等也。以等数约之。——出自《九章算术》</p>
+</blockquote>
+<p>翻译：（如果需要对分数进行约分，那么）可以折半的话，就折半（也就是用2来约分）。如果不可以折半的话，那么就比较分母和分子的大小，用大数减去小数，互相减来减去，一直到减数与差相等为止，用这个相等的数字来约分。</p>
+<h4 id="_9">证明</h4>
+<p>设 <span class="arithmatex">\(gcd(x,y)=d\)</span>，则满足 <span class="arithmatex">\(x=k1*d\)</span>，<span class="arithmatex">\(y=k2*d\)</span>，易得 <span class="arithmatex">\(k1\)</span> 与 <span class="arithmatex">\(k2\)</span> 互质。</p>
+<p>情况<span class="arithmatex">\(1\)</span>：<span class="arithmatex">\(x=y\)</span>。显然，<span class="arithmatex">\(gcd(x,y)=x=gcd(x,0)=gcd(x,y-x)\)</span>。</p>
+<p>情况<span class="arithmatex">\(2\)</span>：用反证法。</p>
+<p>假设 <span class="arithmatex">\(k1,(k2 - k1)\)</span> 不互质，</p>
+<p>令 <span class="arithmatex">\(gcb(k1.k2-k1) = m\)</span> (<span class="arithmatex">\(m\)</span>为正整数且<span class="arithmatex">\(m&gt;1\)</span>);</p>
 <ul>
 <li>
-<p><code>0 x y</code>，把 <span class="arithmatex">\(A[x]\)</span> 改成 <span class="arithmatex">\(y\)</span>。</p>
+<p><span class="arithmatex">\(k1 = m*a\)</span>, <span class="arithmatex">\(k2 - k1 = m*b\)</span></p>
 </li>
 <li>
-<p><code>1 x y</code>，查询区间 <span class="arithmatex">\([x,y]\)</span> 中的<strong>最大连续子段和</strong>，即 </p>
+<p><span class="arithmatex">\(k2 = (a+b)m\)</span></p>
 </li>
 </ul>
-<div class="arithmatex">\[\max_{x \le l \le r \le y}\sum_{i = l}^r A[i]\]</div>
-<p>对于每个查询指令，输出一个整数表示答案。</p>
-<h4 id="_3">数据范围</h4>
+<p>即 <span class="arithmatex">\(k1,k2\)</span> 有公约数 <span class="arithmatex">\(m\)</span>，与 <span class="arithmatex">\(k1,k2\)</span> 互质矛盾</p>
+<p>所以假设不成立</p>
+<p>即 <span class="arithmatex">\(k1,(k2 - k1)\)</span> 互质</p>
+<p>所以 <span class="arithmatex">\(gcb(x,y-x)=gcd(k1*d,k2*d-k1*d) = d = gcb(x,y)\)</span></p>
+<p>综上，<span class="arithmatex">\(gcd(x,y)=gcd(x,y-x)\)</span>。</p>
+<p>命题得证</p>
+<p>当然，此结论可用数学归纳法推广到一般，<strong>该性质对多个整数都成立</strong>。</p>
+<p>即：<span class="arithmatex">\(gcd(x,y,z,...)=gcd(x,y-x,z-y,...)\)</span>。</p>
+<p>直观证明：</p>
+<p>对于 <span class="arithmatex">\(gcd(x,y,z)=gcd(x,y-x,z-y):\)</span></p>
+<div class="arithmatex">\[gcd(x,y,z)=gcd(x,gcd(y,z))=gcd(x,gcd(y,z-y))=\]</div>
+<div class="arithmatex">\[gcd(x,y,z-y)=gcd(gcd(x,y),z-y)=\]</div>
+<div class="arithmatex">\[gcd(gcd(x,y-x),z-y)=gcd(x,y-x,z-y)\]</div>
+<p>更多项依次类推。</p>
+<hr />
+<h2 id="_10">算法与思路</h2>
+<p>首先，节点内信息需要包含我们所需要查询的答案，即区间内的最大公约数，记为 <span class="arithmatex">\(v\)</span>。</p>
+<p>根据<a href="#_8">更相减损术</a>，如果我们有一个长度为 <span class="arithmatex">\(n\)</span> 的数列 <span class="arithmatex">\(A\)</span>，记为 <span class="arithmatex">\(A[1],A[2],...A[n]\)</span>。对于区间 <span class="arithmatex">\([l, r]\)</span>，有</p>
+<div class="arithmatex">\[v=gcd(A[l],A[l+1]-A[l],...A[r]-A[r-1])\]</div>
+<p>可以发现，除了第一项，后面所有项都为 <span class="arithmatex">\(A[i+1]-A[i]\)</span>，是明显的差分。同时第一项 <span class="arithmatex">\(A[l]\)</span>，可以看作是区间 <span class="arithmatex">\([1,l]\)</span> 所有差分数的和。</p>
+<p>因此，节点内还需要一个信息，记为 <span class="arithmatex">\(sum\)</span>，表示区间内差分数的总和。</p>
+<p>左右子节点向父节点的转移函数为：</p>
 <ul>
-<li><span class="arithmatex">\(N≤500000,M≤500000\)</span></li>
-<li><span class="arithmatex">\(−10000≤A[i],\ y≤10000\)</span></li>
+<li><span class="arithmatex">\(u.sum = l.sum + r.sum;\)</span></li>
+<li><span class="arithmatex">\(u.v = gcd(l.v, r.v);\)</span></li>
 </ul>
-<hr />
-<h3 id="_4">算法与思路</h3>
-<p>首先，确定线段树节点所包含的信息。要求区间内<strong>最大连续子段和</strong>，因此线段树节点中必须要有一个数 <span class="arithmatex">\(tmax\)</span> 用来存储当前区间 <span class="arithmatex">\([l, r]\)</span> 的<strong>最大连续字段和</strong>。</p>
-<p>考虑子节点向父节点转移，单独有 <span class="arithmatex">\(tmax\)</span> 并不够。当父节点的<strong>最大连续子段和</strong>是跨越左右子节点时，并不能保证可以直接由 <span class="arithmatex">\(tmax\)</span> 转移过来。</p>
-<p>此时我们需要左子节点的<strong>最大后缀和</strong> {<span class="arithmatex">\(rmax\)</span>} 以及右子节点的<strong>最大前缀和</strong> {<span class="arithmatex">\(lmax\)</span>}。</p>
-<p>由于左右子节点互相独立，因此向父节点转移的 <span class="arithmatex">\(tmax\)</span> 无非是以下三种情况：</p>
-<ol>
-<li>左子节点的<strong>最大连续子段和</strong> <span class="arithmatex">\(l.tmax\)</span>；</li>
-<li>右子节点的<strong>最大连续子段和</strong> <span class="arithmatex">\(r.tmax\)</span>；</li>
-<li>左子节点的<strong>最大后缀和</strong> {<span class="arithmatex">\(l.rmax\)</span>} + 右子节点的<strong>最大前缀和</strong> {<span class="arithmatex">\(r.lmax\)</span>}。</li>
-</ol>
-<p>父节点 <span class="arithmatex">\(u.tmax\)</span> 即为：</p>
-<div class="arithmatex">\[u.tmax = max(l.rmax + r.lmax,\ max(l.tmax,\ r.tmax));\]</div>
-<hr />
-<p>那么父节点的 <span class="arithmatex">\(lmax\)</span> 和 <span class="arithmatex">\(rmax\)</span> 是否可以通过<strong>当前已知信息</strong>直接转移呢？答案是<strong>不能</strong>。</p>
-<p>父节点的<strong>最大前缀和</strong> <span class="arithmatex">\(lmax\)</span> 可能会是以下两种情况：</p>
-<ol>
-<li>左子节点的<strong>最大前缀和</strong> <span class="arithmatex">\(l.lmax\)</span>；</li>
-<li>左子节点的<strong>全部元素和</strong> <span class="arithmatex">\(\sum_{i=l}^{mid} A[i]\)</span> + 右子节点的<strong>最大前缀和</strong> <span class="arithmatex">\(r.lmax\)</span>。</li>
-</ol>
-<p>即</p>
-<div class="arithmatex">\[u.lmax=max(l.lmax,\ l.sum+r.lmax);\]</div>
-<p>同理，父节点的<strong>最大后缀和</strong>的两种情况为：</p>
-<ol>
-<li>右子节点的<strong>最大后缀和</strong> <span class="arithmatex">\(r.rmax\)</span>；</li>
-<li>右子节点的<strong>全部元素和</strong> <span class="arithmatex">\(\sum_{i=mid+1}^{r} A[i]\)</span> + 左子节点的<strong>最大后缀和</strong> <span class="arithmatex">\(l.rmax\)</span>。</li>
-</ol>
-<p>即</p>
-<div class="arithmatex">\[u.rmax=max(r.rmax,\ r.sum+l.rmax);\]</div>
-<p>由上述可见，我们还需要一个 <span class="arithmatex">\(sum\)</span> 来存储当前节点<strong>区间内所有元素的和</strong>。而父节点的 <span class="arithmatex">\(sum\)</span> 可以直接由左右子节点的 <span class="arithmatex">\(sum\)</span> 计算得出。</p>
-<p>即</p>
-<div class="arithmatex">\[u.sum=l.sum+r.sum;\]</div>
 <hr />
 <h4 id="node">线段树节点 <span class="arithmatex">\(node\)</span></h4>
+<p>注意，<span class="arithmatex">\(a[i]\)</span> 和 <span class="arithmatex">\(d\)</span> 最大值为 <span class="arithmatex">\(10^{18}\)</span>，需要用 <code>long long</code> 来存储。
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1987,18 +2122,18 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/************************************</span>
-<span class="cm">*   sum : sum of [l, r]             *</span>
-<span class="cm">*   lmax: 最大前缀和                 *</span>
-<span class="cm">*   rmax: 最大后缀和                 *</span>
-<span class="cm">*   tmax: 区间[l, r]最大连续子段和    *</span>
-<span class="cm">************************************/</span><span class="w"></span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">typedef</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">LL</span><span class="p">;</span><span class="w"></span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  sum: 区间[l, r]的和</span>
+<span class="cm"> *  v: 区间[l, r]中的最大公约数</span>
+<span class="cm"> */</span><span class="w"></span>
 <span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">lmax</span><span class="p">,</span><span class="w"> </span><span class="n">rmax</span><span class="p">,</span><span class="w"> </span><span class="n">tmax</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">N</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="n">LL</span><span class="w"> </span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">N</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">];</span><span class="w"></span>
 </code></pre></div>
-</td></tr></table>
+</td></tr></table></p>
 <hr />
 <h4 id="pushup">pushup操作</h4>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -2010,11 +2145,15 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">pushup</span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">&amp;</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">&amp;</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">&amp;</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">LL</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="n">LL</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">LL</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">    </span><span class="c1">// 欧几里得算法</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">pushup</span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">&amp;</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">&amp;</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">&amp;</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">u</span><span class="p">.</span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">sum</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">u</span><span class="p">.</span><span class="n">lmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">lmax</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">lmax</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">u</span><span class="p">.</span><span class="n">rmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">rmax</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">rmax</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">u</span><span class="p">.</span><span class="n">tmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">rmax</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">lmax</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">tmax</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">tmax</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">u</span><span class="p">.</span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gcd</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">v</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">pushup</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -2022,17 +2161,9 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<p>这里使用了重载函数操作，简洁代码。</p>
 <hr />
-<h4 id="_5">建树操作</h4>
-<p>回到最初题目要求，建立一颗区间为 <span class="arithmatex">\([1,n]\)</span> 的线段树。</p>
-<p>当 <span class="arithmatex">\(l=r\)</span> 时，题目要求该区间内至少含有一个数(<span class="arithmatex">\(l \le r\)</span>)，因此当前节点的 <span class="arithmatex">\(tmax, lmax, rmax, sum\)</span> 都为 <span class="arithmatex">\(A[r]\)</span>。</p>
-<ul>
-<li><span class="arithmatex">\(tr[u].l = l;\)</span></li>
-<li><span class="arithmatex">\(tr[u].r = r;\)</span></li>
-<li><span class="arithmatex">\(tr[u].lmax = tr[u].rmax = tr[u].tmax = tr[u].sum = w[r];\)</span></li>
-</ul>
-<p>同时，也要注意，每次递归完左右子节点后，要将当前父节点的信息修改，即 执行 <code>pushup(u)</code> 操作。
+<h4 id="_11">建树操作</h4>
+<p>叶子节点处的最大公约数为 <span class="arithmatex">\(w[r] - w[r-1]\)</span>，<span class="arithmatex">\(sum\)</span> 为差分，因此也为 <span class="arithmatex">\(w[r]-w[r-1]\)</span>。
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2044,104 +2175,49 @@
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">build</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">r</span><span class="p">],</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">r</span><span class="p">],</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">r</span><span class="p">],</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">r</span><span class="p">]};</span><span class="w"> </span><span class="c1">// 找到叶子节点</span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">};</span><span class="w">                 </span><span class="c1">// 设当前节点区间为[l, r]</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">build</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">// 叶子节点</span>
+<span class="w">        </span><span class="n">LL</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">r</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="n">build</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">);</span><span class="w">          </span><span class="c1">// 建立左子树</span>
-<span class="w">        </span><span class="n">build</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w">  </span><span class="c1">// 建立右子树</span>
+<span class="w">        </span><span class="n">build</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">);</span><span class="w">          </span><span class="c1">// 建左子树</span>
+<span class="w">        </span><span class="n">build</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w">  </span><span class="c1">// 建右子树</span>
 <span class="w">        </span><span class="n">pushup</span><span class="p">(</span><span class="n">u</span><span class="p">);</span><span class="w">                      </span><span class="c1">// 修改父节点</span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-
-<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
-
-<span class="w">    </span><span class="n">build</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
-
-<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">op</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">op</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// 修改</span>
-<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// 查询</span>
-<span class="w">        </span><span class="p">}</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table></p>
 <hr />
-<h4 id="_6">修改操作</h4>
-<p>每次从 <span class="arithmatex">\(1\)</span> 号节点开始找，找到位置位于 <span class="arithmatex">\(x\)</span> 的数，把它修改为 <span class="arithmatex">\(v\)</span>。</p>
-<p>设已找到位于 <span class="arithmatex">\(x\)</span> 处的节点，记为 <span class="arithmatex">\(tr[u]\)</span>。</p>
-<p>易得知当前区间即为 <span class="arithmatex">\([x,x]\)</span>，题目要求该区间内至少含有一个数(<span class="arithmatex">\(l \le r\)</span>)，修改 <span class="arithmatex">\(A[x]=y\)</span>，因此当前节点的 <span class="arithmatex">\(tmax, lmax, rmax, sum\)</span> 都为 <span class="arithmatex">\(v=y=A[x]\)</span>。</p>
-<ul>
-<li><span class="arithmatex">\(tr[u].l = tr[u].r = x;\)</span></li>
-<li><span class="arithmatex">\(tr[u].lmax = tr[u].rmax = tr[u].tmax = tr[u].sum = v;\)</span></li>
-</ul>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">modify</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">r</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">};</span><span class="w">   </span><span class="c1">// 找到了</span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<h4 id="_12">修改操作</h4>
+<p>把位于 <span class="arithmatex">\(x\)</span> 处的节点增加 <span class="arithmatex">\(v\)</span>。
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">modify</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">LL</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">r</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 找到叶子节点</span>
+<span class="w">        </span><span class="n">LL</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">r</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">mid</span><span class="p">)</span><span class="w"> </span><span class="n">modify</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span><span class="w"> </span><span class="c1">// x位于当前区间的左半子区间</span>
-<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">modify</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span><span class="w">      </span><span class="c1">// x位于当前区间的右半子区间</span>
-<span class="w">        </span><span class="n">pushup</span><span class="p">(</span><span class="n">u</span><span class="p">);</span><span class="w">                          </span><span class="c1">// 修改父节点的相关信息</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">mid</span><span class="p">)</span><span class="w"> </span><span class="n">modify</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span><span class="w"> </span><span class="c1">// 在左子树内</span>
+<span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">modify</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span><span class="w">      </span><span class="c1">// 在右子树内</span>
+<span class="w">        </span><span class="n">pushup</span><span class="p">(</span><span class="n">u</span><span class="p">);</span><span class="w">                          </span><span class="c1">// 修改父节点</span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-</td></tr></table>
+</td></tr></table></p>
 <hr />
-<h4 id="_7">查询操作</h4>
-<p>查询的时候我们会遇到四种情况。</p>
-<ol>
-<li>
-<p>当前节点区间被 <span class="arithmatex">\([l,r]\)</span> 所包含，即返回当前节点的信息 <code>return tr[u];</code></p>
-</li>
-<li>
-<p>查询的区间在当前节点的<strong>左半区间</strong> (<span class="arithmatex">\(r \le mid\)</span>)，</p>
-<p>递归搜索左子树，即 <code>query(u &lt;&lt; 1, l, r);</code></p>
-</li>
-<li>
-<p>查询的区间在当前节点的<strong>右半区间</strong> (<span class="arithmatex">\(l &gt; mid\)</span>)，</p>
-<p>递归搜索右子树，即 <code>query(u &lt;&lt; 1 | 1, l, r);</code></p>
-</li>
-<li>
-<p>查询的区间<strong>横跨左右区间</strong>，递归搜索左子树和右子树，最后将搜索得到的 <span class="arithmatex">\(left\)</span> 和 <span class="arithmatex">\(right\)</span> 子树的信息合并，得到当前节点 <span class="arithmatex">\(res\)</span> 的信息，即 <code>pushup(res, left, right);</code>，最后返回 <span class="arithmatex">\(res\)</span> 即可。</p>
-</li>
-</ol>
-<p>由上述可知，<code>query</code>函数不能单单只返回一个 <span class="arithmatex">\(int\)</span> 型变量，应该返回整个节点的信息，所以定义<code>query</code>函数的返回类型为 <span class="arithmatex">\(node\)</span>。</p>
+<h4 id="_13">查询操作</h4>
+<p>同样分为四种情况。
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2169,14 +2245,11 @@
 <span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">node</span><span class="w"> </span><span class="nf">query</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">   </span><span class="c1">// 从节点u开始，查找区间[l, r]的信息</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">node</span><span class="w"> </span><span class="nf">query</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="c1">// 1. 包含在区间内</span>
 <span class="w">    </span><span class="c1">//      Tl-----Tr</span>
-<span class="w">    </span><span class="c1">//   L-------------R  </span>
+<span class="w">    </span><span class="c1">//   L-------------R </span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">r</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">];</span><span class="w"></span>
-
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">r</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 
 <span class="w">    </span><span class="c1">// 2. 在当前的左半区间</span>
@@ -2196,18 +2269,14 @@
 <span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">query</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">query</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">node</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// 合并答案</span>
-<span class="w">        </span><span class="n">pushup</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">pushup</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">left</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">);</span><span class="w">   </span><span class="c1">// 合并答案</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
-</td></tr></table>
+</td></tr></table></p>
 <hr />
-<h4 id="_8">具体转移流程</h4>
-<p><img alt="流程" src="https://cdn.acwing.com/media/article/image/2019/09/21/8330_ed752596dc-CH4301.jpg" /></p>
-<hr />
-<h3 id="_9">代码(无注释)</h3>
+<h2 id="_14">代码(无注释)</h2>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2285,23 +2354,40 @@
 <span class="normal">75</span>
 <span class="normal">76</span>
 <span class="normal">77</span>
-<span class="normal">78</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp"></span>
 <span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">typedef</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="kt">long</span><span class="w"> </span><span class="n">LL</span><span class="p">;</span><span class="w"></span>
 
 <span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500010</span><span class="p">;</span><span class="w"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
+<span class="n">LL</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">N</span><span class="p">];</span><span class="w"></span>
 <span class="k">struct</span><span class="w"> </span><span class="nc">node</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">tmax</span><span class="p">,</span><span class="w"> </span><span class="n">lmax</span><span class="p">,</span><span class="w"> </span><span class="n">rmax</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">N</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">4</span><span class="p">];</span><span class="w"></span>
+<span class="w">    </span><span class="n">LL</span><span class="w"> </span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">N</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">];</span><span class="w"></span>
+
+<span class="n">LL</span><span class="w"> </span><span class="nf">gcd</span><span class="p">(</span><span class="n">LL</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">LL</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">pushup</span><span class="p">(</span><span class="n">node</span><span class="w"> </span><span class="o">&amp;</span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">&amp;</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="o">&amp;</span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">u</span><span class="p">.</span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">sum</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">u</span><span class="p">.</span><span class="n">lmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">lmax</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">lmax</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">u</span><span class="p">.</span><span class="n">rmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">rmax</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="n">rmax</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">u</span><span class="p">.</span><span class="n">tmax</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">rmax</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">lmax</span><span class="p">,</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">tmax</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">tmax</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="n">u</span><span class="p">.</span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gcd</span><span class="p">(</span><span class="n">l</span><span class="p">.</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">.</span><span class="n">v</span><span class="p">);</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">pushup</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -2309,9 +2395,11 @@
 <span class="p">}</span><span class="w"></span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">build</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">r</span><span class="p">],</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">r</span><span class="p">],</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">r</span><span class="p">],</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">r</span><span class="p">]};</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">LL</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">r</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">r</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span><span class="w"></span>
+<span class="w">        </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="n">build</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="n">build</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w"></span>
@@ -2319,9 +2407,11 @@
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">modify</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">r</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">};</span><span class="w"></span>
-<span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">modify</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">u</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">LL</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">r</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">LL</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">v</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">mid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tr</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">r</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">mid</span><span class="p">)</span><span class="w"> </span><span class="n">modify</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="k">else</span><span class="w"> </span><span class="n">modify</span><span class="p">(</span><span class="n">u</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">);</span><span class="w"></span>
@@ -2345,19 +2435,24 @@
 <span class="p">}</span><span class="w"></span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"></span>
 
 <span class="w">    </span><span class="n">build</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">m</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">op</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">op</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"></span>
 <span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">m</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">op</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"></span>
-<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">op</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">modify</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">op</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">r</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">op</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;Q&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">query</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">node</span><span class="w"> </span><span class="n">right</span><span class="p">({</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">});</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">r</span><span class="p">)</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">query</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">abs</span><span class="p">(</span><span class="n">gcd</span><span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="p">.</span><span class="n">v</span><span class="p">))</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">query</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">).</span><span class="n">tmax</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">LL</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="w"></span>
+<span class="w">            </span><span class="n">modify</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="n">modify</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="n">x</span><span class="p">);</span><span class="w"></span>
 <span class="w">        </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="p">}</span><span class="w"></span>
 
@@ -2365,8 +2460,8 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
-<h4 id="_10">运行结果</h4>
-<p><img alt="运行结果" src="../img/accanyou.png" /></p>
+<h4 id="_15">运行结果</h4>
+<p><img alt="accept" src="../img/ac5.png" /></p>
 
               
             </article>
@@ -2385,7 +2480,7 @@
     <nav class="md-footer__inner md-grid" aria-label="页脚">
       
         
-        <a href="../4/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Bin Packing Problem(单点修改，区间查询)" rel="prev">
+        <a href="../3/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Can you answer these queries III(单点修改，区间查询)" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -2394,20 +2489,20 @@
               <span class="md-footer__direction">
                 上一页
               </span>
-              Bin Packing Problem(单点修改，区间查询)
+              Can you answer these queries III(单点修改，区间查询)
             </div>
           </div>
         </a>
       
       
         
-        <a href="../5/" class="md-footer__link md-footer__link--next" aria-label="下一页: Interval GCD(单点修改，区间查询)" rel="next">
+        <a href="../../../java/" class="md-footer__link md-footer__link--next" aria-label="下一页: Java 前言" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              Interval GCD(单点修改，区间查询)
+              Java 前言
             </div>
           </div>
           <div class="md-footer__button md-icon">
