@@ -75,6 +75,7 @@ nav:
     - leetcode:
       - 1. 两数之和: algorithm/leetcode/1.md
       - 21. 合并两个有序链表: algorithm/leetcode/21.md
+      - 61. 旋转链表: algorithm/leetcode/61.md
       - 73. 矩阵置零: algorithm/leetcode/73.md
       - 82. 删除排序链表中的重复元素 II: algorithm/leetcode/82.md
       - 150. 逆波兰表达式求值: algorithm/leetcode/150.md
@@ -101,8 +102,8 @@ nav:
       - Can you answer these queries III(单点修改，区间查询): algorithm/segmentTree/3.md
       - Interval GCD(单点修改，区间查询): algorithm/segmentTree/5.md
       - 【模板】线段树1(区间修改，区间查询): algorithm/segmentTree/6.md
-    # - My Problem:
-    #   - 方毓乔买咖啡: algorithm/myproblem/fyqbuycoffee.md
+    - My Problem:
+      - 方毓乔买咖啡: algorithm/myproblem/fyqbuycoffee.md
   - Java:
     - JavaSE:
       - Java语法规范: java/javase/JavaSE笔记（一）.md
