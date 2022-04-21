@@ -1,0 +1,3714 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="PJM Wiki 是一个计算机知识整合的站点">
+      
+      
+        <meta name="author" content="潘江明">
+      
+      
+        <link rel="canonical" href="https://wiki.pjmcode.top/java/jvm/JVM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/">
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>走进JVM - PJM Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#jvm" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="PJM Wiki" class="md-header__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PJM Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              走进JVM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pjimming/PJM-Wiki/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pjimming/PJM-Wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        Welcome
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../linux/first_work/" class="md-tabs__link">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../algorithm/leetcode/1/" class="md-tabs__link">
+        Algorithm
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-tabs__link md-tabs__link--active">
+        Java
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../latex/basic/" class="md-tabs__link">
+        LaTeX
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/aboutme/" class="md-tabs__link">
+        关于
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="PJM Wiki" class="md-nav__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    PJM Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pjimming/PJM-Wiki/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pjimming/PJM-Wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Welcome
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Welcome" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Welcome
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/acm/" class="md-nav__link">
+        我的算法竞赛之路
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/first_work/" class="md-nav__link">
+        WSL2的安装和使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/command/" class="md-nav__link">
+        常用文件管理命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/tmux_and_vim/" class="md-nav__link">
+        tmux和vim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Shell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Shell" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Shell
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+        概论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E6%B3%A8%E9%87%8A/" class="md-nav__link">
+        注释
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E5%8F%98%E9%87%8F/" class="md-nav__link">
+        变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E9%BB%98%E8%AE%A4%E5%8F%98%E9%87%8F/" class="md-nav__link">
+        默认变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/expr%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        expr命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/read%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        read命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/echo%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        echo命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/printf%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        printf命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/test%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%88%A4%E6%96%AD%E7%AC%A6%E5%8F%B7%5B%5D/" class="md-nav__link">
+        test命令与判断符号[]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+        判断语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+        循环语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/exit%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        exit命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91/" class="md-nav__link">
+        文件重定向
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        引入外部脚本
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/git/" class="md-nav__link">
+        git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/conduit/" class="md-nav__link">
+        管道
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/environment_variable/" class="md-nav__link">
+        环境变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/common_commond/" class="md-nav__link">
+        常用命令
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Algorithm
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Algorithm" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Algorithm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          leetcode
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="leetcode" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          leetcode
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/1/" class="md-nav__link">
+        1. 两数之和
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/21/" class="md-nav__link">
+        21. 合并两个有序链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/73/" class="md-nav__link">
+        73. 矩阵置零
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/82/" class="md-nav__link">
+        82. 删除排序链表中的重复元素 II
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/150/" class="md-nav__link">
+        150. 逆波兰表达式求值
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/191/" class="md-nav__link">
+        191. 位1的个数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/206/" class="md-nav__link">
+        206. 反转链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/223/" class="md-nav__link">
+        223. 矩形面积
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/341/" class="md-nav__link">
+        341. 扁平化嵌套列表迭代器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/456/" class="md-nav__link">
+        456. 132 模式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/713/" class="md-nav__link">
+        713. 乘积小于K的子数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/1011/" class="md-nav__link">
+        1011. 在 D 天内送达包裹的能力
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/1143/" class="md-nav__link">
+        1143. 最长公共子序列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/1603/" class="md-nav__link">
+        1603. 设计停车系统
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          剑指offer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="剑指offer" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          剑指offer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/offer/3/" class="md-nav__link">
+        03. 数组中重复的数字
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/offer/24/" class="md-nav__link">
+        24. 反转链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/offer/25/" class="md-nav__link">
+        25. 合并两个排序的链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/offer/65/" class="md-nav__link">
+        65. 不用加减乘除做加法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          程序员面试金典
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="程序员面试金典" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          程序员面试金典
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/mst/17_21/" class="md-nav__link">
+        17.21. 直方图的水量
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          线段树
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="线段树" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          线段树
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/segmentTree/1/" class="md-nav__link">
+        线段树简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/segmentTree/2/" class="md-nav__link">
+        最大数(单点修改，区间查询)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/segmentTree/4/" class="md-nav__link">
+        Bin Packing Problem(单点修改，区间查询)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/segmentTree/3/" class="md-nav__link">
+        Can you answer these queries III(单点修改，区间查询)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/segmentTree/5/" class="md-nav__link">
+        Interval GCD(单点修改，区间查询)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/segmentTree/6/" class="md-nav__link">
+        【模板】线段树1(区间修改，区间查询)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Java
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Java" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          JavaSE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaSE" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          JavaSE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+        Java语法规范
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-nav__link">
+        Java对象和多态 （面向对象）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-nav__link">
+        Java异常机制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" class="md-nav__link">
+        Java泛型与集合类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" class="md-nav__link">
+        Java I/O
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89/" class="md-nav__link">
+        Java多线程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/" class="md-nav__link">
+        Java反射和注解
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          JavaWeb
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaWeb" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          JavaWeb
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/JavaWeb%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+        Java网络编程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/JavaWeb%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-nav__link">
+        数据库基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/JavaWeb%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-nav__link">
+        Java与数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/JavaWeb%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" class="md-nav__link">
+        前端基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/JavaWeb%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" class="md-nav__link">
+        JavaWeb后端
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          JavaSSM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaSSM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          JavaSSM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ssm/JavaSSM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+        Spring框架技术
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ssm/JavaSSM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-nav__link">
+        SpringMVC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ssm/JavaSSM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-nav__link">
+        SpringSecurity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ssm/JavaSSM%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" class="md-nav__link">
+        MySQL高级
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          SpringBoot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SpringBoot" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          SpringBoot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sb/SpringBoot%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+        SpringBoot一站式开发
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sb/SpringBoot%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-nav__link">
+        Git版本控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sb/SpringBoot%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-nav__link">
+        Redis数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sb/SpringBoot%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" class="md-nav__link">
+        SpringBoot其他框架
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sb/SpringBoot%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" class="md-nav__link">
+        Linux操作系统与项目部署
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          JVM虚拟机
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JVM虚拟机" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          JVM虚拟机
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          走进JVM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        走进JVM
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    技术概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    现在与未来
+  </a>
+  
+    <nav class="md-nav" aria-label="现在与未来">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    虚拟机的发展历程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    虚拟机发展的未来
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jdk8" class="md-nav__link">
+    手动编译JDK8
+  </a>
+  
+    <nav class="md-nav" aria-label="手动编译JDK8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    环境配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    开始折腾
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jvm_1" class="md-nav__link">
+    JVM启动流程探究
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jni" class="md-nav__link">
+    JNI调用本地方法
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JVM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-nav__link">
+        JVM内存管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../JVM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-nav__link">
+        类与加载类
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          JUC并发编程
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JUC并发编程" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          JUC并发编程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../juc/JUC%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+        再谈多线程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../juc/JUC%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-nav__link">
+        多线程编程核心
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../juc/JUC%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-nav__link">
+        并发编程进阶
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        鸣谢
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          LaTeX
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="LaTeX" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          LaTeX
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../latex/basic/" class="md-nav__link">
+        基础语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../latex/symbols/" class="md-nav__link">
+        函数、符号及特殊字符
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../latex/env/" class="md-nav__link">
+        矩阵、条件表达式、方程组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../latex/font/" class="md-nav__link">
+        字体
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../latex/links/" class="md-nav__link">
+        外部链接
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../latex/colors/" class="md-nav__link">
+        颜色
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          关于
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="关于" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          关于
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/aboutme/" class="md-nav__link">
+        关于作者
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/aboutwiki/" class="md-nav__link">
+        关于PJM Wiki
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    技术概述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    现在与未来
+  </a>
+  
+    <nav class="md-nav" aria-label="现在与未来">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    虚拟机的发展历程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    虚拟机发展的未来
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jdk8" class="md-nav__link">
+    手动编译JDK8
+  </a>
+  
+    <nav class="md-nav" aria-label="手动编译JDK8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    环境配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    开始折腾
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jvm_1" class="md-nav__link">
+    JVM启动流程探究
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jni" class="md-nav__link">
+    JNI调用本地方法
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/pjimming/PJM-Wiki/edit/master/docs/java/jvm/JVM笔记（一）.md" title="编辑此页" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+<h1 id="jvm">走进JVM</h1>
+<p>JVM相对于Java应用层的学习难度更大，<strong>开篇推荐掌握的预备知识：</strong>C/C++(关键)、微机原理与接口技术、计算机组成原理、操作系统、数据结构与算法、编译原理（不推荐刚学完JavaSE的同学学习），如果没有掌握推荐的一半以上的预备知识，可能学习起来会比较吃力。</p>
+<p><strong>本套课程中需要用到的开发工具：</strong>CLion、IDEA、Jetbrains Gateway</p>
+<p>此阶段，我们需要深入探讨Java的底层执行原理，了解Java程序运行的本质。开始之前，推荐各位都入手一本《深入理解Java虚拟机 第三版》这本书对于JVM的讲述非常地详细：</p>
+<p><img alt="点击查看图片来源" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimages-cn.ssl-images-amazon.cn%2Fimages%2FI%2F81zGZfnLdwL.__BG0%2C0%2C0%2C0_FMpng_AC_UL320_SR250%2C320_.jpg&amp;refer=http%3A%2F%2Fimages-cn.ssl-images-amazon.cn&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1645933645&amp;t=1f5da62f1510b166c33f05b94a830b48" /></p>
+<p>我们在JavaSE阶段的开篇就进行介绍了，我们的Java程序之所以能够实现跨平台，本质就是因为它是运行在虚拟机之上的，而不同平台只需要安装对应平台的Java虚拟机即可运行（在JRE中包含），所有的Java程序都采用统一的标准，在任何平台编译出来的字节码文件(.class)也是同样的，最后实际上是将编译后的字节码交给JVM处理执行。</p>
+<p><img alt="点击查看图片来源" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2018.cnblogs.com%2Fblog%2F314515%2F201912%2F314515-20191231163244928-184981058.png&amp;refer=http%3A%2F%2Fimg2018.cnblogs.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1645942605&amp;t=53b5ab5873cf233ff45f9fefb8aa87e8" /></p>
+<p>也正是得益于这种统一规范，除了Java以外，还有多种JVM语言，比如Kotlin、Groovy等，它们的语法虽然和Java不一样，但是最终编译得到的字节码文件，和Java是同样的规范，同样可以交给JVM处理。</p>
+<p><img alt="点击查看图片来源" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg2020.cnblogs.com%2Fblog%2F2004486%2F202008%2F2004486-20200825201006756-1741469951.png&amp;refer=http%3A%2F%2Fimg2020.cnblogs.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1645942643&amp;t=4624e818442fd4bc90b26df9a9f7e5d1" /></p>
+<p>所以，JVM是我们需要去关注的一个部分，通过了解Java的底层运作机制，我们的技术会得到质的提升。</p>
+<h2 id="_1">技术概述</h2>
+<p>首先我们要了解虚拟机的具体定义，我们所接触过的虚拟机有安装操作系统的虚拟机，也有我们的Java虚拟机，而它们所面向的对象不同，Java虚拟机只是面向单一应用程序的虚拟机，但是它和我们接触的系统级虚拟机一样，我们也可以为其分配实际的硬件资源，比如最大内存大小等。</p>
+<p>并且Java虚拟机并没有采用传统的PC架构，比如现在的HotSpot虚拟机，实际上采用的是<code>基于栈的指令集架构</code>，而我们的传统程序设计一般都是<code>基于寄存器的指令集架构</code>，这里我们需要回顾一下<code>计算机组成原理</code>中的CPU结构：</p>
+<p><img alt="点击查看图片来源" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fupload-images.jianshu.io%2Fupload_images%2F9251733-5b4556af04fa3e5e.png&amp;refer=http%3A%2F%2Fupload-images.jianshu.io&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1645971181&amp;t=c9aaa14cb580afd4bc5dca3319c5344b" /></p>
+<p>其中，<strong>AX，BX，CX，DX 称作为数据寄存器：</strong></p>
+<ul>
+<li>AX (Accumulator)：累加寄存器，也称之为累加器；</li>
+<li>BX (Base)：基地址寄存器；</li>
+<li>CX (Count)：计数器寄存器；</li>
+<li>DX (Data)：数据寄存器；</li>
+</ul>
+<p>这些寄存器可以用来传送数据和暂存数据，并且它们还可以细分为一个8位的高位寄存器和一个8位的低位寄存器，除了这些通用功能，它们各自也有自己的一些专属职责，比如AX就是一个专用于累加的寄存器，用的也比较多。</p>
+<p><strong>SP 和 BP 又称作为指针寄存器：</strong></p>
+<ul>
+<li>SP (Stack Pointer)：堆栈指针寄存器，与SS配合使用，用于访问栈顶；</li>
+<li>BP (Base Pointer)：基指针寄存器，可用作SS的一个相对基址位置，用它可直接存取堆栈中的数据；</li>
+</ul>
+<p><strong>SI 和 DI 又称作为变址寄存器：</strong></p>
+<ul>
+<li>SI (Source Index)：源变址寄存器；</li>
+<li>DI (Destination Index)：目的变址寄存器；</li>
+</ul>
+<p>主要用于存放存储单元在段内的偏移量，用它们可实现多种存储器操作数的寻址方式，为以不同的地址形式访问存储单元提供方便。</p>
+<p><strong>控制寄存器：</strong></p>
+<ul>
+<li>IP (Instruction Pointer)：指令指针寄存器；</li>
+<li>FLAG：标志寄存器；</li>
+</ul>
+<p><strong>段寄存器：</strong></p>
+<ul>
+<li>CS (Code Segment)：代码段寄存器；</li>
+<li>DS (Data Segment)：数据段寄存器；</li>
+<li>SS (Stack Segment)：堆栈段寄存器；</li>
+<li>ES (Extra Segment)：附加段寄存器；</li>
+</ul>
+<p>这里我们分别比较一下在x86架构下C语言和arm架构下编译之后的汇编指令不同之处：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">     </span><span class="c1">//实现一个最简的a+b功能，并存入变量c</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>gcc -S main.c
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    .file   &quot;main.c&quot;
+    .text
+    .globl  main
+    .type   main, @function
+main:
+.LFB0:
+    .cfi_startproc  ;rbp寄存器是64位CPU下的基址寄存器，和8086CPU的16位bp一样
+    pushq   %rbp     ;该函数中需要用到rbp寄存器，所以需要先把他原来的值压栈保护起来
+    .cfi_def_cfa_offset 16
+    .cfi_offset 6, -16
+    movq    %rsp, %rbp    ;rsp是64位下的栈指针寄存器，这里是将rsp的值丢给rbp，因为局部变量是存放在栈中的，之后会使用rbp来访问局部变量
+    .cfi_def_cfa_register 6
+    movl    $10, -12(%rbp)    ;将10存入rbp所指向位置-12的位置 -&gt;  int a = 10;
+    movl    $20, -8(%rbp)     ;将20存入rbp所指向位置-8的位置  -&gt; int b = 20;
+    movl    -12(%rbp), %edx   ;将变量a的值交给DX寄存器（32位下叫edx，因为是int，这里只使用了32位）
+    movl    -8(%rbp), %eax    ;同上，变量b的值丢给AX寄存器
+    addl    %edx, %eax        ;将DX和AX寄存器中的值相加，并将结果存在AX中  -&gt;  tmp = a + b
+    movl    %eax, -4(%rbp)    ;将20存入rbp所指向位置-4的位置  -&gt; int c = tmp;与上面合在一起就是int c = a + b;
+    movl    -4(%rbp), %eax    ;根据约定，将函数返回值放在AX   -&gt; return c;
+    popq    %rbp     ;函数执行完毕，出栈
+    .cfi_def_cfa 7, 8
+    ret      ;函数返回
+    .cfi_endproc
+.LFE0:
+    .size   main, .-main
+    .ident  &quot;GCC: (Ubuntu 7.5.0-6ubuntu2) 7.5.0&quot;
+    .section    .note.GNU-stack,&quot;&quot;,@progbits
+</code></pre></div>
+</td></tr></table>
+<p>在arm架构下（Apple M1 Pro芯片）编译的结果为：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>    .section   __TEXT,__text,regular,pure_instructions
+   .build_version macos, 12, 0    sdk_version 12, 1
+   .globl _main                           ; -- Begin function main
+   .p2align   2
+_main:                                  ; @main
+   .cfi_startproc
+; %bb.0:
+   sub    sp, sp, #16                     ; =16
+   .cfi_def_cfa_offset 16
+   str    wzr, [sp, #12]
+   mov    w8, #10
+   str    w8, [sp, #8]
+   mov    w8, #20
+   str    w8, [sp, #4]
+   ldr    w8, [sp, #8]
+   ldr    w9, [sp, #4]
+   add    w8, w8, w9
+   str    w8, [sp]
+   ldr    w0, [sp]
+   add    sp, sp, #16                     ; =16
+   ret
+   .cfi_endproc
+                                        ; -- End function
+.subsections_via_symbols
+</code></pre></div>
+</td></tr></table>
+<p>我们发现，在不同的CPU架构下，实际上得到的汇编代码也不一样，并且在arm架构下并没有和x86架构一样的寄存器结构，因此只能使用不同的汇编指令操作来实现。所以这也是为什么C语言不支持跨平台的原因，我们只能将同样的代码在不同的平台上编译之后才能在对应的平台上运行我们的程序。而Java利用了JVM，它提供了很好的平台无关性（当然，JVM本身是不跨平台的），我们的Java程序编译之后，并不是可以由平台直接运行的程序，而是由JVM运行，同时，我们前面说了，JVM（如HotSpot虚拟机），实际上采用的是<code>基于栈的指令集架构</code>，它并没有依赖于寄存器，而是更多的利用操作栈来完成，这样不仅设计和实现起来更简单，并且也能够更加方便地实现跨平台，不太依赖于硬件的支持。</p>
+<p>这里我们对一个类进行反编译查看：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">test</span><span class="p">(){</span>    <span class="c1">//和上面的例子一样</span>
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">c</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>javap -v target/classes/com/test/Main.class <span class="c1">#使用javap命令对class文件进行反编译</span>
+</code></pre></div>
+</td></tr></table>
+<p>得到如下结果：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>...
+public int test();
+    descriptor: ()I
+    flags: ACC_PUBLIC
+    Code:
+      stack=2, locals=4, args_size=1
+         0: bipush        10
+         2: istore_1
+         3: bipush        20
+         5: istore_2
+         6: iload_1
+         7: iload_2
+         8: iadd
+         9: istore_3
+        10: iload_3
+        11: ireturn
+      LineNumberTable:
+        line 5: 0
+        line 6: 3
+        line 7: 6
+        line 8: 10
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      12     0  this   Lcom/test/Main;
+            3       9     1     a   I
+            6       6     2     b   I
+           10       2     3     c   I
+</code></pre></div>
+</td></tr></table>
+<p>我们可以看到，java文件编译之后，也会生成类似于C语言那样的汇编指令，但是这些命令都是交给JVM去执行的命令（实际上虚拟机提供了一个类似于物理机的运行环境，也有程序计数器之类的东西），最下方存放的是本地变量（局部变量）表，表示此方法中出现的本地变量，实际上this也在其中，所以我们才能在非静态方法中使用<code>this</code>关键字，在最上方标记了方法的返回值类型、访问权限等。首先介绍一下例子中出现的命令代表什么意思：</p>
+<ul>
+<li>bipush   将单字节的常量值推到栈顶</li>
+<li>istore_1   将栈顶的int类型数值存入到第二个本地变量</li>
+<li>istore_2   将栈顶的int类型数值存入到第三个本地变量</li>
+<li>istore_3   将栈顶的int类型数值存入到第四个本地变量</li>
+<li>iload_1    将第二个本地变量推向栈顶</li>
+<li>iload_2    将第三个本地变量推向栈顶</li>
+<li>iload_3   将第四个本地变量推向栈顶</li>
+<li>iadd   将栈顶的两个int类型变量相加，并将结果压入栈顶</li>
+<li>ireturn   方法的返回操作</li>
+</ul>
+<p>有关详细的指令介绍列表可以参考《深入理解Java虚拟机 第三版》附录C。</p>
+<p>JVM运行字节码时，所有的操作基本都是围绕两种数据结构，一种是堆栈（本质是栈结构），还有一种是队列，如果JVM执行某条指令时，该指令需要对数据进行操作，那么被操作的数据在指令执行前，必须要压到堆栈上，JVM会自动将栈顶数据作为操作数。如果堆栈上的数据需要暂时保存起来时，那么它就会被存储到局部变量队列上。</p>
+<p>我们从第一条指令来依次向下解读，显示方法相关属性：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>descriptor: ()I     //参数以及返回值类型，()I就表示没有形式参数，返回值为基本类型int
+flags: ACC_PUBLIC   //public访问权限
+Code:
+  stack=2, locals=4, args_size=1    //stack表示要用到的最大栈深度，本地变量数，堆栈上最大对象数量（这里指的是this）
+</code></pre></div>
+</td></tr></table>
+<p>有关descriptor的详细属性介绍，我们会放在之后的类结构中进行讲解。</p>
+<p>接着我们来看指令：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>0: bipush        10     //0是程序偏移地址，然后是指令，最后是操作数
+2: istore_1
+</code></pre></div>
+</td></tr></table>
+<p>这一步操作实际上就是使用<code>bipush</code>将10推向栈顶，接着使用<code>istore_1</code>将当前栈顶数据存放到第二个局部变量中，也就是a，所以这一步执行的是<code>int a = 10</code>操作。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>3: bipush        20
+5: istore_2
+</code></pre></div>
+</td></tr></table>
+<p>同上，这里执行的是<code>int b = 20</code>操作。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>6: iload_1
+7: iload_2
+8: iadd
+</code></pre></div>
+</td></tr></table>
+<p>这里是将第二和第三个局部变量放到栈中，也就是取a和b的值到栈中，最后<code>iadd</code>操作将栈中的两个值相加，结果依然放在栈顶。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>9: istore_3
+10: iload_3
+11: ireturn
+</code></pre></div>
+</td></tr></table>
+<p>将栈顶数据存放到第四个局部变量中，也就是c，执行的是<code>int c = 30</code>，最后取出c的值放入栈顶，使用<code>ireturn</code>返回栈顶值，也就是方法的返回值。</p>
+<p>至此，方法执行完毕。</p>
+<p>实际上我们发现，JVM执行的命令基本都是入栈出栈等，而且大部分指令都是没有操作数的，传统的汇编指令有一操作数、二操作数甚至三操作数的指令，Java相比C编译出来的汇编指令，执行起来会更加复杂，实现某个功能的指令条数也会更多，所以Java的执行效率实际上是不如C/C++的，虽然能够很方便地实现跨平台，但是性能上大打折扣，所以在性能要求比较苛刻的Android上，采用的是定制版的JVM，并且是基于寄存器的指令集架构。此外，在某些情况下，我们还可以使用JNI机制来通过Java调用C/C++编写的程序以提升性能（也就是本地方法，使用到native关键字）</p>
+<hr />
+<h2 id="_2">现在与未来</h2>
+<p>随着时代的变迁，JVM的实现多种多样，而我们还要从最初的虚拟机说起。</p>
+<h3 id="_3">虚拟机的发展历程</h3>
+<p>在1996，Java1.0面世时，第一款商用虚拟机Sun Classic VM开始了它的使命，这款虚拟机提供了一个Java解释器，也就是将我们的class文件进行读取，最后像上面一样得到一条一条的命令，JVM再将指令依次执行。虽然这样的运行方式非常的简单易懂，但是它的效率实际上是很低的，就像你耳机里一边在放六级听力，你必须同时记在脑海里面然后等着问问题，再去选择问题的答案一样，更重要的是同样的代码每次都需要重新翻译再执行。</p>
+<p>这个时候我们就需要更加高效的方式来运行Java程序，随着后面的发展，现在大多数的主流的JVM都包含即时<strong>编译器</strong>。JVM会根据当前代码的进行判断，当虚拟机发现某个方法或代码块的运行特别频繁时，就会把这些代码认定为“热点代码”。为了提高热点代码的执行效率，在运行时，虚拟机将会把这些代码编译成与本地平台相关的机器码，并进行各种层次的优化，完成这个任务的编译器称为即时编译器（Just In Time Compiler）</p>
+<p><img alt="img" src="https://img2018.cnblogs.com/blog/955092/201911/955092-20191118100603404-2016014845.jpg" /></p>
+<p>在JDK1.4时，Sun Classic VM完全退出了历史舞台，取而代之的是至今都在使用的HotSpot VM，它是目前使用最广泛的虚拟机，拥有上面所说的热点代码探测技术、准确式内存管理（虚拟机可以知道内存中某个位置的数据具体是什么类型）等技术，而我们之后的章节都是基于HotSpot虚拟机进行讲解。</p>
+<h3 id="_4">虚拟机发展的未来</h3>
+<p>2018年4月，Oracle Labs公开了最新的GraalVM，它是一种全新的虚拟机，它能够实现所有的语言统一运行在虚拟机中。</p>
+<p><img alt="img" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fatoracle.cn%2FUploads%2Fgraalvm%2Fgraalvm.png&amp;refer=http%3A%2F%2Fatoracle.cn&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1646031057&amp;t=1cfa58c28f680c3f23eb85bde2d31e1f" /></p>
+<p>Graal VM被官方称为“Universal VM”和“Polyglot VM”，这是一个在HotSpot虚拟机基础上增强而成的跨语言全栈虚拟机，可以作为“任何语言”的运行平台使用，这里“任何语言”包括了Java、Scala、Groovy、Kotlin等基于Java虚拟机之上的语言，还包括了C、C++、Rust等基于LLVM的语言，同时支持其他像JavaScript、Ruby、Python和R语言等等。Graal VM可以无额外开销地混合使用这些编程语言，支持不同语言中混用对方的接口和对象，也能够支持这些语言使用已经编写好的本地库文件。</p>
+<p>Graal VM的基本工作原理是将这些语言的源代码（例如JavaScript）或源代码编译后的中间格式（例如LLVM字节码）通过解释器转换为能被Graal VM接受的中间表示（Intermediate Representation，IR），譬如设计一个解释器专门对LLVM输出的字节码进行转换来支持C和C++语言，这个过程称为“程序特化”（Specialized，也常称为Partial Evaluation）。Graal VM提供了Truffle工具集来快速构建面向一种新语言的解释器，并用它构建了一个称为Sulong的高性能LLVM字节码解释器。</p>
+<p>目前最新的SpringBoot已经提供了本地运行方案：https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/</p>
+<blockquote>
+<p>Spring Native支持使用<a href="https://www.graalvm.org/">GraalVM</a><a href="https://www.graalvm.org/reference-manual/native-image/">原生镜像</a>编译器将Spring应用程序编译为本机可执行文件。</p>
+<p>与Java虚拟机相比，原生映像可以为许多类型的工作负载实现更简单、更加持续的托管。包括微服务、非常适合容器的功能工作负载和<a href="https://kubernetes.io/">Kubernetes</a></p>
+<p>使用本机映像提供了关键优势，如即时启动、即时峰值性能和减少内存消耗。</p>
+<p>GraalVM原生项目预计随着时间的推移会改进一些缺点和权衡。构建本机映像是一个比常规应用程序慢的繁重过程。热身后的本机映像运行时优化较少。最后，它不如JVM成熟，行为各不相同。</p>
+<p>常规JVM和此原生映像平台的主要区别是：</p>
+<ul>
+<li>从主入口点对应用程序进行静态分析，在构建时进行。</li>
+<li>未使用的部件将在构建时删除。</li>
+<li>反射、资源和动态代理需要配置。</li>
+<li>Classpath在构建时是固定的。</li>
+<li>没有类惰性加载：可执行文件中运送的所有内容将在启动时加载到内存中。</li>
+<li>一些代码将在构建时运行。</li>
+<li>Java应用程序的某些方面有一些不受完全支持<a href="https://www.graalvm.org/reference-manual/native-image/Limitations/">的限制</a>。</li>
+</ul>
+<p>该项目的目标是孵化对Spring Native的支持，Spring Native是Spring JVM的替代品，并提供旨在打包在轻量级容器中的原生部署选项。在实践中，目标是在这个新平台上支持您的Spring应用程序，几乎未经修改。</p>
+</blockquote>
+<p>优点：</p>
+<ol>
+<li>立即启动，一般启动时间小于100ms</li>
+<li>更低的内存消耗</li>
+<li>独立部署，不再需要JVM</li>
+<li>同样的峰值性能要比JVM消耗的内存小</li>
+</ol>
+<p>缺点：</p>
+<ol>
+<li>构建时间长</li>
+<li>只支持新的Springboot版本（2.4.4+）</li>
+</ol>
+<hr />
+<h2 id="jdk8">手动编译JDK8</h2>
+<p>学习JVM最关键的是研究底层C/C++源码，我们首先需要搭建一个测试环境，方便我们之后对底层源码进行调试。但是编译这一步的坑特别多，请务必保证跟教程中的环境一致，尤其是编译环境，版本不能太高，因为JDK8属于比较早期的版本了，否则会遇到各种各样奇奇怪怪的问题。</p>
+<h3 id="_5">环境配置</h3>
+<ul>
+<li>操作系统：Ubuntu 20.04 Server</li>
+<li>硬件配置：i7-4790 4C8T/ 16G内存 / 128G硬盘 （不能用树莓派或是arm芯片Mac的虚拟机，配置越高越好，不然卡爆）</li>
+<li>调试工具：Jetbrains Gateway（服务器运行CLion Backend程序，界面在Mac上显示）</li>
+<li>OpenJDK源码：https://codeload.github.com/openjdk/jdk/zip/refs/tags/jdk8-b120</li>
+<li>编译环境：</li>
+<li>gcc-4.8</li>
+<li>g++-4.8</li>
+<li>make-3.81</li>
+<li>openjdk-8</li>
+</ul>
+<h3 id="_6">开始折腾</h3>
+<p>首选需要在我们的测试服务器上安装Ubuntu 20.04 Server系统，并通过ssh登录到服务器：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Welcome to Ubuntu <span class="m">20</span>.04.3 LTS <span class="o">(</span>GNU/Linux <span class="m">5</span>.4.0-96-generic x86_64<span class="o">)</span>
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat <span class="m">29</span> Jan <span class="m">2022</span> <span class="m">10</span>:33:03 AM UTC
+
+  System load:  <span class="m">0</span>.08               Processes:               <span class="m">156</span>
+  Usage of /:   <span class="m">5</span>.5% of <span class="m">108</span>.05GB   Users logged <span class="k">in</span>:         <span class="m">0</span>
+  Memory usage: <span class="m">5</span>%                 IPv4 address <span class="k">for</span> enp2s0: <span class="m">192</span>.168.10.66
+  Swap usage:   <span class="m">0</span>%                 IPv4 address <span class="k">for</span> enp2s0: <span class="m">192</span>.168.10.75
+  Temperature:  <span class="m">32</span>.0 C
+
+
+<span class="m">37</span> updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+
+Last login: Sat Jan <span class="m">29</span> <span class="m">10</span>:27:06 <span class="m">2022</span>
+nagocoler@ubuntu-server:~$ 
+</code></pre></div>
+</td></tr></table>
+<p>先安装一些基本的依赖：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install build-essential libxrender-dev xorg-dev libasound2-dev libcups2-dev gawk zip libxtst-dev libxi-dev libxt-dev gobjc
+</code></pre></div>
+</td></tr></table>
+<p>接着我们先将JDK的编译环境配置好，首先是安装gcc和g++的4.8版本，但是最新的源没有这个版本了，我们先导入旧版软件源：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo vim /etc/apt/sources.list
+</code></pre></div>
+</td></tr></table>
+<p>在最下方添加旧版源地址并保存：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>deb http://archive.ubuntu.com/ubuntu xenial main
+deb http://archive.ubuntu.com/ubuntu xenial universe
+</code></pre></div>
+</td></tr></table>
+<p>接着更新一下apt源信息，并安装gcc和g++：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt update
+sudo apt install gcc-4.8 g++-4.8
+</code></pre></div>
+</td></tr></table>
+<p>接着配置：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 <span class="m">100</span>
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 <span class="m">100</span>
+</code></pre></div>
+</td></tr></table>
+<p>最后查看版本是否为4.8版本：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>nagocoler@ubuntu-server:~$ gcc --version
+gcc <span class="o">(</span>Ubuntu <span class="m">4</span>.8.5-4ubuntu2<span class="o">)</span> <span class="m">4</span>.8.5
+Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2015</span> Free Software Foundation, Inc.
+This is free software<span class="p">;</span> see the <span class="nb">source</span> <span class="k">for</span> copying conditions.  There is NO
+warranty<span class="p">;</span> not even <span class="k">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+nagocoler@ubuntu-server:~$ g++ --version
+g++ <span class="o">(</span>Ubuntu <span class="m">4</span>.8.5-4ubuntu2<span class="o">)</span> <span class="m">4</span>.8.5
+Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2015</span> Free Software Foundation, Inc.
+This is free software<span class="p">;</span> see the <span class="nb">source</span> <span class="k">for</span> copying conditions.  There is NO
+warranty<span class="p">;</span> not even <span class="k">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre></div>
+</td></tr></table>
+<p>接着安装make 3.81版本，需要从官方下载：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>wget https://ftp.gnu.org/gnu/make/make-3.81.tar.gz
+</code></pre></div>
+</td></tr></table>
+<p>下载好之后进行解压，并进入目录：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>tar -zxvf make-3.81.tar.gz 
+<span class="nb">cd</span> make-3.81/
+</code></pre></div>
+</td></tr></table>
+<p>接着我们修改一下代码，打开<code>glob/glob.c</code>文件：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">...</span><span class="w"></span>
+<span class="cp">#ifdef  HAVE_CONFIG_H</span>
+<span class="cp">#</span><span class="w"> </span><span class="cp">include</span><span class="w"> </span><span class="cpf">&lt;config.h&gt;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+
+<span class="cp">#define __alloca alloca   &lt;- 添加这一句</span>
+<span class="cm">/* Enable GNU extensions </span>
+<span class="cm">...</span>
+</code></pre></div>
+</td></tr></table>
+<p>接着进行配置并完成编译和安装：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>bash configure
+sudo make install
+</code></pre></div>
+</td></tr></table>
+<p>安装完成后，将make已经变成3.81版本了：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>nagocoler@ubuntu-server:~/make-3.81$ make -verison
+GNU Make <span class="m">3</span>.81
+Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2006</span>  Free Software Foundation, Inc.
+This is free software<span class="p">;</span> see the <span class="nb">source</span> <span class="k">for</span> copying conditions.
+There is NO warranty<span class="p">;</span> not even <span class="k">for</span> MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+</code></pre></div>
+</td></tr></table>
+<p>由于JDK中某些代码是Java编写的，所以我们还需要安装一个启动JDK，启动JDK可以是当前版本或低一版本，比如我们要编译JDK8的源码，那么就可以使用JDK7、JDK8作为启动JDK，对源码中的一些java文件进行编译。这里我们选择安装OpenJDK8作为启动JDK：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>sudo apt install openjdk-8-jdk
+</code></pre></div>
+</td></tr></table>
+<p>这样，我们的系统环境就准备完成了，接着我们需要下载OpenJDK8的源码（已经放在网盘了）解压：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>unzip jdk-jdk8-b120.zip
+</code></pre></div>
+</td></tr></table>
+<p>接着我们需要安装JetBrains Gateway在我们的服务器上导入项目，这里我们使用CLion后端，等待下载远程后端，这样我们的Linux服务器上虽然没有图形化界面，但是依然可以使用IDEA、CLion等工具，只是服务器上只有后端程序，而界面由我们电脑上的前端程序提供（目前此功能还在Beta阶段，暂不支持arm架构的Linux服务器）整个过程根据服务器配置决定可能需要5-20分钟。</p>
+<p>完成之后，我们操作起来就很方便了，界面和IDEA其实差不多，我们打开终端，开始进行配置：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>bash configure --with-debug-level<span class="o">=</span>slowdebug --enable-debug-symbols <span class="nv">ZIP_DEBUGINFO_FIELS</span><span class="o">=</span><span class="m">0</span>
+</code></pre></div>
+</td></tr></table>
+<p>配置完成后，再次确认是否和教程中的配置信息一致：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Configuration summary:
+* Debug level:    slowdebug
+* JDK variant:    normal
+* JVM variants:   server
+* OpenJDK target: OS: linux, CPU architecture: x86, address length: 64
+
+Tools summary:
+* Boot JDK:       openjdk version &quot;1.8.0_312&quot; OpenJDK Runtime Environment (build 1.8.0_312-8u312-b07-0ubuntu1~20.04-b07) OpenJDK 64-Bit Server VM (build 25.312-b07, mixed mode)  (at /usr/lib/jvm/java-8-openjdk-amd64)
+* C Compiler:     gcc-4.8 (Ubuntu 4.8.5-4ubuntu2) version 4.8.5 (at /usr/bin/gcc-4.8)
+* C++ Compiler:   g++-4.8 (Ubuntu 4.8.5-4ubuntu2) version 4.8.5 (at /usr/bin/g++-4.8)
+
+Build performance summary:
+* Cores to use:   3
+* Memory limit:   3824 MB
+* ccache status:  not installed (consider installing)
+
+WARNING: The result of this configuration has overridden an older
+configuration. You *should* run &#39;make clean&#39; to make sure you get a
+proper build. Failure to do so might result in strange build problems.
+</code></pre></div>
+</td></tr></table>
+<p>接着我们需要修改几个文件，不然一会会编译失败，首先是<code>hotspot/make/linux/Makefile</code>文件：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>原有的 SUPPORTED_OS_VERSION = 2.4% 2.5% 2.6% 3%
+修改为 SUPPORTED_OS_VERSION = 2.4% 2.5% 2.6% 3% 4% 5%
+</code></pre></div>
+</td></tr></table>
+<p>接着是<code>hotspot/make/linux/makefiles/gcc.make</code>文件：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>原有的 WARNINGS_ARE_ERRORS = -Werror
+修改为 #WARNINGS_ARE_ERRORS = -Werror
+</code></pre></div>
+</td></tr></table>
+<p>接着是<code>nashorn/make/BuildNashorn.gmk</code>文件：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>  $(CP) -R -p $(NASHORN_OUTPUTDIR)/nashorn_classes/* $(@D)/
+  $(FIXPATH) $(JAVA) \
+原有的 -cp &quot;$(NASHORN_OUTPUTDIR)/nasgen_classes$(PATH_SEP)$(NASHORN_OUTPUTDIR)/nashorn_classes&quot; \
+修改为  -Xbootclasspath/p:&quot;$(NASHORN_OUTPUTDIR)/nasgen_classes$(PATH_SEP)$(NASHORN_OUTPUTDIR)/nashorn_classes&quot; \
+   jdk.nashorn.internal.tools.nasgen.Main $(@D) jdk.nashorn.internal.objects $(@D)
+</code></pre></div>
+</td></tr></table>
+<p>OK，修改完成，接着我们就可以开始编译了：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>make all
+</code></pre></div>
+</td></tr></table>
+<p>整个编译过程大概需要持续10-20分钟，请耐心等待。构建完成后提示：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>----- Build times -------
+Start 2022-01-29 11:36:35
+End   2022-01-29 11:48:20
+00:00:30 corba
+00:00:25 demos
+00:02:39 docs
+00:03:05 hotspot
+00:00:27 images
+00:00:17 jaxp
+00:00:31 jaxws
+00:03:02 jdk
+00:00:38 langtools
+00:00:11 nashorn
+00:11:45 TOTAL
+-------------------------
+Finished building OpenJDK for target &#39;all&#39;
+</code></pre></div>
+</td></tr></table>
+<p>只要按照我们的教程一步步走，别漏了，应该是直接可以完成的，当然难免可能有的同学出现了奇奇怪怪的问题，加油，慢慢折腾，总会成功的~</p>
+<p>接着我们就可以创建一个测试配置了，首先打开设置页面，找到<code>自定义构建目标</code>：</p>
+<p><img alt="image-20220129195318339" src="https://tva1.sinaimg.cn/large/008i3skNly1gyux37s99nj31b80u076s.jpg" /></p>
+<p>点击<code>应用</code>即可，接着打开运行配置，添加一个新的自定义配置：</p>
+<p><img alt="image-20220129195459914" src="https://tva1.sinaimg.cn/large/008i3skNly1gyux3axcknj31ai0u0wgy.jpg" /></p>
+<p>选择我们编译完成的java程序，然后测试-version查看版本信息，去掉下方的构建。</p>
+<p>接着直接运行即可：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>/home/nagocoler/jdk-jdk8-b120/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java -version
+openjdk version &quot;1.8.0-internal-debug&quot;
+OpenJDK Runtime Environment (build 1.8.0-internal-debug-nagocoler_2022_01_29_11_36-b00)
+OpenJDK 64-Bit Server VM (build 25.0-b62-debug, mixed mode)
+
+Process finished with exit code 0
+</code></pre></div>
+</td></tr></table>
+<p>我们可以将工作目录修改到其他地方，接着我们创建一个Java文件并完成编译，然后测试能否使用我们编译的JDK运行：</p>
+<p><img alt="image-20220129195801789" src="https://tva1.sinaimg.cn/large/008i3skNly1gyux3dp9bsj31ai0u0wh5.jpg" /></p>
+<p>在此目录下编写一个Java程序，然后编译：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span><span class="p">{</span>
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hello World!&quot;</span><span class="p">);</span>
+        <span class="p">}</span>       
+<span class="p">}</span>       
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>nagocoler@ubuntu-server:~$ <span class="nb">cd</span> JavaHelloWorld/
+nagocoler@ubuntu-server:~/JavaHelloWorld$ vim Main.java
+nagocoler@ubuntu-server:~/JavaHelloWorld$ javac Main.java 
+nagocoler@ubuntu-server:~/JavaHelloWorld$ ls
+Main.class  Main.java
+</code></pre></div>
+</td></tr></table>
+<p>点击运行，成功得到结果：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>/home/nagocoler/jdk-jdk8-b120/build/linux-x86_64-normal-server-slowdebug/jdk/bin/java Main
+Hello World!
+
+Process finished with exit code 0
+</code></pre></div>
+</td></tr></table>
+<p>我们还可以在CLion前端页面中进行断点调试，比如我们测试一个入口点JavaMain，在<code>jdk/src/share/bin/java.c</code>中的JavaMain方法：</p>
+<p><img alt="image-20220129200244279" src="https://tva1.sinaimg.cn/large/008i3skNly1gyux47wgp9j31z00sc0xc.jpg" /></p>
+<p>点击右上角调试按钮，可以成功进行调试：</p>
+<p><img alt="image-20220129200314691" src="https://tva1.sinaimg.cn/large/008i3skNly1gyux4lmirkj31mk0u0gq2.jpg" /></p>
+<p>至此，在Ubuntu系统上手动编译OpenJDK8完成。</p>
+<hr />
+<h2 id="jvm_1">JVM启动流程探究</h2>
+<p>前面我们完成了JDK8的编译，也了解了如何进行断点调试，现在我们就可以来研究一下JVM的启动流程了，首先我们要明确，虚拟机的启动入口位于<code>jdk/src/share/bin/java.c</code>的<code>JLI_Launch</code>函数，整个流程分为如下几个步骤：</p>
+<ol>
+<li>配置JVM装载环境</li>
+<li>解析虚拟机参数</li>
+<li>设置线程栈大小</li>
+<li>执行JavaMain方法</li>
+</ol>
+<p>首先我们来看看<code>JLI_Launch</code>函数是如何定义的：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"></span>
+<span class="nf">JLI_Launch</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w">              </span><span class="cm">/* main argc, argc */</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">jargc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">jargv</span><span class="p">,</span><span class="w">          </span><span class="cm">/* java args */</span><span class="w"></span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">appclassc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">appclassv</span><span class="p">,</span><span class="w">  </span><span class="cm">/* app classpath */</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">fullversion</span><span class="p">,</span><span class="w">                </span><span class="cm">/* full version defined */</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">dotversion</span><span class="p">,</span><span class="w">                 </span><span class="cm">/* dot version defined */</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">pname</span><span class="p">,</span><span class="w">                      </span><span class="cm">/* program name */</span><span class="w"></span>
+<span class="w">        </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">lname</span><span class="p">,</span><span class="w">                      </span><span class="cm">/* launcher name */</span><span class="w"></span>
+<span class="w">        </span><span class="n">jboolean</span><span class="w"> </span><span class="n">javaargs</span><span class="p">,</span><span class="w">                      </span><span class="cm">/* JAVA_ARGS */</span><span class="w"></span>
+<span class="w">        </span><span class="n">jboolean</span><span class="w"> </span><span class="n">cpwildcard</span><span class="p">,</span><span class="w">                    </span><span class="cm">/* classpath wildcard */</span><span class="w"></span>
+<span class="w">        </span><span class="n">jboolean</span><span class="w"> </span><span class="n">javaw</span><span class="p">,</span><span class="w">                         </span><span class="cm">/* windows-only javaw */</span><span class="w"></span>
+<span class="w">        </span><span class="n">jint</span><span class="w">     </span><span class="n">ergo_class</span><span class="w">                     </span><span class="cm">/* ergnomics policy */</span><span class="w"></span>
+<span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>可以看到在入口点的参数有很多个，其中包括当前的完整版本名称、简短版本名称、运行参数、程序名称、启动器名称等。</p>
+<p>首先会进行一些初始化操作以及Debug信息打印配置等：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">InitLauncher</span><span class="p">(</span><span class="n">javaw</span><span class="p">);</span><span class="w"></span>
+<span class="n">DumpState</span><span class="p">();</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">JLI_IsTraceLauncher</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Command line args:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">argc</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;argv[%d] = %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="n">AddOption</span><span class="p">(</span><span class="s">&quot;-Dsun.java.launcher.diag=true&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>接着就是选择一个合适的JRE版本：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm"> * Make sure the specified version of the JRE is running.</span>
+<span class="cm"> *</span>
+<span class="cm"> * There are three things to note about the SelectVersion() routine:</span>
+<span class="cm"> *  1) If the version running isn&#39;t correct, this routine doesn&#39;t</span>
+<span class="cm"> *     return (either the correct version has been exec&#39;d or an error</span>
+<span class="cm"> *     was issued).</span>
+<span class="cm"> *  2) Argc and Argv in this scope are *not* altered by this routine.</span>
+<span class="cm"> *     It is the responsibility of subsequent code to ignore the</span>
+<span class="cm"> *     arguments handled by this routine.</span>
+<span class="cm"> *  3) As a side-effect, the variable &quot;main_class&quot; is guaranteed to</span>
+<span class="cm"> *     be set (if it should ever be set).  This isn&#39;t exactly the</span>
+<span class="cm"> *     poster child for structured programming, but it is a small</span>
+<span class="cm"> *     price to pay for not processing a jar file operand twice.</span>
+<span class="cm"> *     (Note: This side effect has been disabled.  See comment on</span>
+<span class="cm"> *     bugid 5030265 below.)</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="n">SelectVersion</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">main_class</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>接着是创建JVM执行环境，例如需要确定数据模型，是32位还是64位，以及jvm本身的一些配置在jvm.cfg文件中读取和解析：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">CreateExecutionEnvironment</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">argv</span><span class="p">,</span><span class="w"></span>
+<span class="w">                               </span><span class="n">jrepath</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">jrepath</span><span class="p">),</span><span class="w"></span>
+<span class="w">                               </span><span class="n">jvmpath</span><span class="p">,</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="n">jvmpath</span><span class="p">),</span><span class="w"></span>
+<span class="w">                               </span><span class="n">jvmcfg</span><span class="p">,</span><span class="w">  </span><span class="k">sizeof</span><span class="p">(</span><span class="n">jvmcfg</span><span class="p">));</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>此函数只在头文件中定义，具体的实现是根据不同平台而定的。接着会动态加载jvm.so这个共享库，并把jvm.so中的相关函数导出并且初始化，而启动JVM的函数也在其中：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">LoadJavaVM</span><span class="p">(</span><span class="n">jvmpath</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ifn</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>比如mac平台下的实现：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">jboolean</span><span class="w"></span>
+<span class="nf">LoadJavaVM</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">jvmpath</span><span class="p">,</span><span class="w"> </span><span class="n">InvocationFunctions</span><span class="w"> </span><span class="o">*</span><span class="n">ifn</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">Dl_info</span><span class="w"> </span><span class="n">dlinfo</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">libjvm</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">JLI_TraceLauncher</span><span class="p">(</span><span class="s">&quot;JVM path is %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">jvmpath</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">libjvm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dlopen</span><span class="p">(</span><span class="n">jvmpath</span><span class="p">,</span><span class="w"> </span><span class="n">RTLD_NOW</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">RTLD_GLOBAL</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">libjvm</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">JLI_ReportErrorMessage</span><span class="p">(</span><span class="n">DLL_ERROR1</span><span class="p">,</span><span class="w"> </span><span class="n">__LINE__</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">JLI_ReportErrorMessage</span><span class="p">(</span><span class="n">DLL_ERROR2</span><span class="p">,</span><span class="w"> </span><span class="n">jvmpath</span><span class="p">,</span><span class="w"> </span><span class="n">dlerror</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">JNI_FALSE</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">ifn</span><span class="o">-&gt;</span><span class="n">CreateJavaVM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">CreateJavaVM_t</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">dlsym</span><span class="p">(</span><span class="n">libjvm</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;JNI_CreateJavaVM&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ifn</span><span class="o">-&gt;</span><span class="n">CreateJavaVM</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">JLI_ReportErrorMessage</span><span class="p">(</span><span class="n">DLL_ERROR2</span><span class="p">,</span><span class="w"> </span><span class="n">jvmpath</span><span class="p">,</span><span class="w"> </span><span class="n">dlerror</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">JNI_FALSE</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">ifn</span><span class="o">-&gt;</span><span class="n">GetDefaultJavaVMInitArgs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">GetDefaultJavaVMInitArgs_t</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="n">dlsym</span><span class="p">(</span><span class="n">libjvm</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;JNI_GetDefaultJavaVMInitArgs&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ifn</span><span class="o">-&gt;</span><span class="n">GetDefaultJavaVMInitArgs</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">JLI_ReportErrorMessage</span><span class="p">(</span><span class="n">DLL_ERROR2</span><span class="p">,</span><span class="w"> </span><span class="n">jvmpath</span><span class="p">,</span><span class="w"> </span><span class="n">dlerror</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">JNI_FALSE</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">ifn</span><span class="o">-&gt;</span><span class="n">GetCreatedJavaVMs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">GetCreatedJavaVMs_t</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">dlsym</span><span class="p">(</span><span class="n">libjvm</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;JNI_GetCreatedJavaVMs&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ifn</span><span class="o">-&gt;</span><span class="n">GetCreatedJavaVMs</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">JLI_ReportErrorMessage</span><span class="p">(</span><span class="n">DLL_ERROR2</span><span class="p">,</span><span class="w"> </span><span class="n">jvmpath</span><span class="p">,</span><span class="w"> </span><span class="n">dlerror</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">JNI_FALSE</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">JNI_TRUE</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>最后就是对JVM进行初始化了：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">return</span><span class="w"> </span><span class="n">JVMInit</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ifn</span><span class="p">,</span><span class="w"> </span><span class="n">threadStackSize</span><span class="p">,</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="n">what</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>这也是由平台决定的，比如Mac下的实现为：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"></span>
+<span class="nf">JVMInit</span><span class="p">(</span><span class="n">InvocationFunctions</span><span class="o">*</span><span class="w"> </span><span class="n">ifn</span><span class="p">,</span><span class="w"> </span><span class="n">jlong</span><span class="w"> </span><span class="n">threadStackSize</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">,</span><span class="w"></span>
+<span class="w">                 </span><span class="kt">int</span><span class="w"> </span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">what</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">sameThread</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//无需关心....</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">//正常情况下走这个</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ContinueInNewThread</span><span class="p">(</span><span class="n">ifn</span><span class="p">,</span><span class="w"> </span><span class="n">threadStackSize</span><span class="p">,</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="n">argv</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="n">what</span><span class="p">,</span><span class="w"> </span><span class="n">ret</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>可以看到最后进入了一个<code>ContinueInNewThread</code>函数（在刚刚的<code>java.c</code>中实现），这个函数会创建一个新的线程来执行：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"></span>
+<span class="nf">ContinueInNewThread</span><span class="p">(</span><span class="n">InvocationFunctions</span><span class="o">*</span><span class="w"> </span><span class="n">ifn</span><span class="p">,</span><span class="w"> </span><span class="n">jlong</span><span class="w"> </span><span class="n">threadStackSize</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">,</span><span class="w"></span>
+<span class="w">                    </span><span class="kt">int</span><span class="w"> </span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">*</span><span class="n">what</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ret</span><span class="p">)</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+
+<span class="w">    </span><span class="p">...</span><span class="w"></span>
+
+<span class="w">      </span><span class="n">rslt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ContinueInNewThread0</span><span class="p">(</span><span class="n">JavaMain</span><span class="p">,</span><span class="w"> </span><span class="n">threadStackSize</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">args</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="cm">/* If the caller has deemed there is an error we</span>
+<span class="cm">       * simply return that, otherwise we return the value of</span>
+<span class="cm">       * the callee</span>
+<span class="cm">       */</span><span class="w"></span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="n">ret</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">rslt</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>接着进入了一个名为<code>ContinueInNewThread0</code>的函数，可以看到它将<code>JavaMain</code>函数传入作为参数，而此函数定义的第一个参数类型是一个函数指针：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"></span>
+<span class="nf">ContinueInNewThread0</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="p">(</span><span class="n">JNICALL</span><span class="w"> </span><span class="o">*</span><span class="n">continuation</span><span class="p">)(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="n">jlong</span><span class="w"> </span><span class="n">stack_size</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">rslt</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">pthread_t</span><span class="w"> </span><span class="n">tid</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">pthread_attr_t</span><span class="w"> </span><span class="n">attr</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">pthread_attr_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">attr</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">pthread_attr_setdetachstate</span><span class="p">(</span><span class="o">&amp;</span><span class="n">attr</span><span class="p">,</span><span class="w"> </span><span class="n">PTHREAD_CREATE_JOINABLE</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">stack_size</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="n">pthread_attr_setstacksize</span><span class="p">(</span><span class="o">&amp;</span><span class="n">attr</span><span class="p">,</span><span class="w"> </span><span class="n">stack_size</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">attr</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">)(</span><span class="kt">void</span><span class="o">*</span><span class="p">))</span><span class="n">continuation</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">      </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="n">pthread_join</span><span class="p">(</span><span class="n">tid</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">tmp</span><span class="p">);</span><span class="w"></span>
+<span class="w">      </span><span class="n">rslt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">tmp</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">     </span><span class="cm">/*</span>
+<span class="cm">      * Continue execution in current thread if for some reason (e.g. out of</span>
+<span class="cm">      * memory/LWP)  a new thread can&#39;t be created. This will likely fail</span>
+<span class="cm">      * later in continuation as JNI_CreateJavaVM needs to create quite a</span>
+<span class="cm">      * few new threads, anyway, just give it a try..</span>
+<span class="cm">      */</span><span class="w"></span>
+<span class="w">      </span><span class="n">rslt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">continuation</span><span class="p">(</span><span class="n">args</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">pthread_attr_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">attr</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">rslt</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>最后实际上是在新的线程中执行<code>JavaMain</code>函数，最后我们再来看看此函数里面做了什么事情：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/* Initialize the virtual machine */</span><span class="w"></span>
+<span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CounterGet</span><span class="p">();</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">InitializeJVM</span><span class="p">(</span><span class="o">&amp;</span><span class="n">vm</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">ifn</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">JLI_ReportErrorMessage</span><span class="p">(</span><span class="n">JVM_ERROR1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>第一步初始化虚拟机，如果报错直接退出。接着就是加载主类（至于具体如何加载一个类，我们会放在后面进行讲解），因为主类是我们Java程序的入口点：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm"> * Get the application&#39;s main class.</span>
+<span class="cm"> *</span>
+<span class="cm"> * See bugid 5030265.  The Main-Class name has already been parsed</span>
+<span class="cm"> * from the manifest, but not parsed properly for UTF-8 support.</span>
+<span class="cm"> * Hence the code here ignores the value previously extracted and</span>
+<span class="cm"> * uses the pre-existing code to reextract the value.  This is</span>
+<span class="cm"> * possibly an end of release cycle expedient.  However, it has</span>
+<span class="cm"> * also been discovered that passing some character sets through</span>
+<span class="cm"> * the environment has &quot;strange&quot; behavior on some variants of</span>
+<span class="cm"> * Windows.  Hence, maybe the manifest parsing code local to the</span>
+<span class="cm"> * launcher should never be enhanced.</span>
+<span class="cm"> *</span>
+<span class="cm"> * Hence, future work should either:</span>
+<span class="cm"> *     1)   Correct the local parsing code and verify that the</span>
+<span class="cm"> *          Main-Class attribute gets properly passed through</span>
+<span class="cm"> *          all environments,</span>
+<span class="cm"> *     2)   Remove the vestages of maintaining main_class through</span>
+<span class="cm"> *          the environment (and remove these comments).</span>
+<span class="cm"> *</span>
+<span class="cm"> * This method also correctly handles launching existing JavaFX</span>
+<span class="cm"> * applications that may or may not have a Main-Class manifest entry.</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="n">mainClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LoadMainClass</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">mode</span><span class="p">,</span><span class="w"> </span><span class="n">what</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>某些没有主方法的Java程序比如JavaFX应用，会获取ApplicationMainClass：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm"> * In some cases when launching an application that needs a helper, e.g., a</span>
+<span class="cm"> * JavaFX application with no main method, the mainClass will not be the</span>
+<span class="cm"> * applications own main class but rather a helper class. To keep things</span>
+<span class="cm"> * consistent in the UI we need to track and report the application main class.</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="n">appClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetApplicationClass</span><span class="p">(</span><span class="n">env</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>初始化完成：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm"> * PostJVMInit uses the class name as the application name for GUI purposes,</span>
+<span class="cm"> * for example, on OSX this sets the application name in the menu bar for</span>
+<span class="cm"> * both SWT and JavaFX. So we&#39;ll pass the actual application class here</span>
+<span class="cm"> * instead of mainClass as that may be a launcher or helper class instead</span>
+<span class="cm"> * of the application class.</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="n">PostJVMInit</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">appClass</span><span class="p">,</span><span class="w"> </span><span class="n">vm</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>接着就是获取主类中的主方法：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm"> * The LoadMainClass not only loads the main class, it will also ensure</span>
+<span class="cm"> * that the main method&#39;s signature is correct, therefore further checking</span>
+<span class="cm"> * is not required. The main method is invoked here so that extraneous java</span>
+<span class="cm"> * stacks are not in the application stack trace.</span>
+<span class="cm"> */</span>
+<span class="n">mainID</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">env</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">GetStaticMethodID</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">mainClass</span><span class="p">,</span> <span class="s">&quot;main&quot;</span><span class="p">,</span>
+                                   <span class="s">&quot;([Ljava/lang/String;)V&quot;</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<p>没错，在字节码中<code>void main(String[] args)</code>表示为<code>([Ljava/lang/String;)V</code>我们之后会详细介绍。接着就是调用主方法了：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/* Invoke main method. */</span><span class="w"></span>
+<span class="p">(</span><span class="o">*</span><span class="n">env</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">CallStaticVoidMethod</span><span class="p">(</span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">mainClass</span><span class="p">,</span><span class="w"> </span><span class="n">mainID</span><span class="p">,</span><span class="w"> </span><span class="n">mainArgs</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>调用后，我们的Java程序就开飞速运行起来，直到走到主方法的最后一行返回：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/*</span>
+<span class="cm"> * The launcher&#39;s exit code (in the absence of calls to</span>
+<span class="cm"> * System.exit) will be non-zero if main threw an exception.</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="o">*</span><span class="n">env</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">ExceptionOccurred</span><span class="p">(</span><span class="n">env</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="n">LEAVE</span><span class="p">();</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>至此，一个Java程序的运行流程结束，在最后LEAVE函数中会销毁JVM。我们可以进行断点调试来查看是否和我们推出的结论一致：</p>
+<p><img alt="image-20220129211342240" src="https://tva1.sinaimg.cn/large/008i3skNly1gyux4uqcxpj31sr0u0td4.jpg" /></p>
+<p>还是以我们之前编写的测试类进行，首先来到调用之前，我们看到主方法执行之前，控制台没有输出任何内容，接着我们执行此函数，再来观察控制台的变化：</p>
+<p><img alt="image-20220129211450939" src="https://tva1.sinaimg.cn/large/008i3skNly1gyux4w5322j31zt0u0afp.jpg" /></p>
+<p>可以看到，主方法执行完成之后，控制台也成功输出了Hello World！</p>
+<p>继续下一步，整个Java程序执行完成，得到退出状态码<code>0</code>：</p>
+<p><img alt="image-20220129211540210" src="https://tva1.sinaimg.cn/large/008i3skNly1gyux4ydghaj31bk0eimy7.jpg" /></p>
+<p>成功验证，最后总结一下整个执行过程：</p>
+<p><img alt="image-20220129213143973" src="https://tva1.sinaimg.cn/large/008i3skNly1gyux50ahdrj31d30u0tdu.jpg" /></p>
+<hr />
+<h2 id="jni">JNI调用本地方法</h2>
+<p>Java还有一个JNI机制，它的全称：Java Native Interface，即Java本地接口。它允许在Java虚拟机内运行的Java代码与其他编程语言（如C/C++和汇编语言）编写的程序和库进行交互（在Android开发中用得比较多）比如我们现在想要让C语言程序帮助我们的Java程序实现a+b的运算，首先我们需要创建一个本地方法：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="c1">//本地方法使用native关键字标记，无需任何实现，交给C语言实现</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">native</span> <span class="kt">int</span> <span class="nf">sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>创建好后，接着点击构建按钮，会出现一个out文件夹，也就是生成的class文件在其中，接着我们直接生成对应的C头文件：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>javah -classpath out/production/SimpleHelloWorld -d ./jni com.test.Main
+</code></pre></div>
+</td></tr></table>
+<p>生成的头文件位于jni文件夹下：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cm">/* DO NOT EDIT THIS FILE - it is machine generated */</span><span class="w"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;jni.h&gt;</span><span class="cp"></span>
+<span class="cm">/* Header for class com_test_Main */</span><span class="w"></span>
+
+<span class="cp">#ifndef _Included_com_test_Main</span>
+<span class="cp">#define _Included_com_test_Main</span>
+<span class="cp">#ifdef __cplusplus</span>
+<span class="k">extern</span><span class="w"> </span><span class="s">&quot;C&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="cp">#endif</span>
+<span class="cm">/*</span>
+<span class="cm"> * Class:     com_test_Main</span>
+<span class="cm"> * Method:    sum</span>
+<span class="cm"> * Signature: (II)V</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_com_test_Main_sum</span><span class="w"></span>
+<span class="w">  </span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="n">jclass</span><span class="p">,</span><span class="w"> </span><span class="n">jint</span><span class="p">,</span><span class="w"> </span><span class="n">jint</span><span class="p">);</span><span class="w"></span>
+
+<span class="cp">#ifdef __cplusplus</span>
+<span class="p">}</span><span class="w"></span>
+<span class="cp">#endif</span>
+<span class="cp">#endif</span>
+</code></pre></div>
+</td></tr></table>
+<p>接着我们在CLion中新建一个C++项目，并引入刚刚生成的头文件，并导入jni相关头文件（在JDK文件夹中）首先修改CMake文件：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">cmake_minimum_required</span><span class="p">(</span><span class="s">VERSION</span><span class="w"> </span><span class="s">3.21</span><span class="p">)</span>
+<span class="nb">project</span><span class="p">(</span><span class="s">JNITest</span><span class="p">)</span>
+
+<span class="nb">include_directories</span><span class="p">(</span><span class="s">/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/include</span><span class="p">)</span>
+<span class="nb">include_directories</span><span class="p">(</span><span class="s">/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/include/darwin</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="s">CMAKE_CXX_STANDARD</span><span class="w"> </span><span class="s">14</span><span class="p">)</span>
+
+<span class="nb">add_executable</span><span class="p">(</span><span class="s">JNITest</span><span class="w"> </span><span class="s">com_test_Main.cpp</span><span class="w"> </span><span class="s">com_test_Main.h</span><span class="p">)</span>
+</code></pre></div>
+</td></tr></table>
+<p>接着就可以编写实现了，首先认识一下引用类型对照表：</p>
+<p><img alt="img" src="https://tva1.sinaimg.cn/large/008i3skNly1gyux540wn7j30xc0h1q47.jpg" /></p>
+<p>所以我们这里直接返回a+b即可：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;com_test_Main.h&quot;</span><span class="cp"></span>
+
+<span class="n">JNIEXPORT</span><span class="w"> </span><span class="n">jint</span><span class="w"> </span><span class="n">JNICALL</span><span class="w"> </span><span class="n">Java_com_test_Main_sum</span><span class="w"></span>
+<span class="w">        </span><span class="p">(</span><span class="n">JNIEnv</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">env</span><span class="p">,</span><span class="w"> </span><span class="n">jclass</span><span class="w"> </span><span class="n">clazz</span><span class="p">,</span><span class="w"> </span><span class="n">jint</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">jint</span><span class="w"> </span><span class="n">b</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>接着我们就可以将cpp编译为动态链接库，在MacOS下会生成<code>.dylib</code>文件，Windows下会生成<code>.dll</code>文件，我们这里就只以MacOS为例，命令有点长，因为还需要包含JDK目录下的头文件：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>gcc com_test_Main.cpp -I /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/include -I /Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/include/darwin -fPIC -shared -o test.dylib -lstdc++
+</code></pre></div>
+</td></tr></table>
+<p>编译完成后，得到<code>test.dylib</code>文件，这就是动态链接库了。</p>
+<p>最后我们再将其放到桌面，然后在Java程序中加载：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">static</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">load</span><span class="p">(</span><span class="s">&quot;/Users/nagocoler/Desktop/test.dylib&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">native</span> <span class="kt">int</span> <span class="nf">sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>运行，成功得到结果：</p>
+<p><img alt="image-20220129222858105" src="https://tva1.sinaimg.cn/large/008i3skNly1gyux58pg32j31ag0smjv5.jpg" /></p>
+<p>通过了解JVM的一些基础知识，我们心目中大致有了一个JVM的模型，在下一章，我们将继续深入学习JVM的内存管理机制和垃圾收集器机制，以及一些实用工具。</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../../sb/SpringBoot%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Linux操作系统与项目部署" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              Linux操作系统与项目部署
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../JVM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-footer__link md-footer__link--next" aria-label="下一页: JVM内存管理" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              JVM内存管理
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 <a href="https://pjmcode.top" target="_blank" rel="noopener noreferrer">潘江明</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+        <script src="../../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

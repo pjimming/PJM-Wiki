@@ -1,0 +1,3888 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="PJM Wiki 是一个计算机知识整合的站点">
+      
+      
+        <meta name="author" content="潘江明">
+      
+      
+        <link rel="canonical" href="https://wiki.pjmcode.top/java/sb/SpringBoot%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/">
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>SpringBoot其他框架 - PJM Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#springboot" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="PJM Wiki" class="md-header__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PJM Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SpringBoot其他框架
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="red"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="cyan" data-md-color-accent="red"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pjimming/PJM-Wiki/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pjimming/PJM-Wiki
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        Welcome
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../linux/first_work/" class="md-tabs__link">
+        Linux
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../algorithm/leetcode/1/" class="md-tabs__link">
+        Algorithm
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-tabs__link md-tabs__link--active">
+        Java
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../latex/basic/" class="md-tabs__link">
+        LaTeX
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/aboutme/" class="md-tabs__link">
+        关于
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="PJM Wiki" class="md-nav__button md-logo" aria-label="PJM Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    PJM Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pjimming/PJM-Wiki/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pjimming/PJM-Wiki
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Welcome
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Welcome" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Welcome
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../acm/acm/" class="md-nav__link">
+        我的算法竞赛之路
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Linux
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/first_work/" class="md-nav__link">
+        WSL2的安装和使用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/command/" class="md-nav__link">
+        常用文件管理命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/tmux_and_vim/" class="md-nav__link">
+        tmux和vim
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Shell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Shell" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Shell
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E6%A6%82%E8%AE%BA/" class="md-nav__link">
+        概论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E6%B3%A8%E9%87%8A/" class="md-nav__link">
+        注释
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E5%8F%98%E9%87%8F/" class="md-nav__link">
+        变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E9%BB%98%E8%AE%A4%E5%8F%98%E9%87%8F/" class="md-nav__link">
+        默认变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E6%95%B0%E7%BB%84/" class="md-nav__link">
+        数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/expr%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        expr命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/read%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        read命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/echo%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        echo命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/printf%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        printf命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/test%E5%91%BD%E4%BB%A4%E4%B8%8E%E5%88%A4%E6%96%AD%E7%AC%A6%E5%8F%B7%5B%5D/" class="md-nav__link">
+        test命令与判断符号[]
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+        判断语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5/" class="md-nav__link">
+        循环语句
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/exit%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        exit命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91/" class="md-nav__link">
+        文件重定向
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/shell/%E5%BC%95%E5%85%A5%E5%A4%96%E9%83%A8%E8%84%9A%E6%9C%AC/" class="md-nav__link">
+        引入外部脚本
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/git/" class="md-nav__link">
+        git
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/conduit/" class="md-nav__link">
+        管道
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/environment_variable/" class="md-nav__link">
+        环境变量
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../linux/common_commond/" class="md-nav__link">
+        常用命令
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Algorithm
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Algorithm" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Algorithm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          leetcode
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="leetcode" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          leetcode
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/1/" class="md-nav__link">
+        1. 两数之和
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/21/" class="md-nav__link">
+        21. 合并两个有序链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/73/" class="md-nav__link">
+        73. 矩阵置零
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/82/" class="md-nav__link">
+        82. 删除排序链表中的重复元素 II
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/150/" class="md-nav__link">
+        150. 逆波兰表达式求值
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/191/" class="md-nav__link">
+        191. 位1的个数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/206/" class="md-nav__link">
+        206. 反转链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/223/" class="md-nav__link">
+        223. 矩形面积
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/341/" class="md-nav__link">
+        341. 扁平化嵌套列表迭代器
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/456/" class="md-nav__link">
+        456. 132 模式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/713/" class="md-nav__link">
+        713. 乘积小于K的子数组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/1011/" class="md-nav__link">
+        1011. 在 D 天内送达包裹的能力
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/1143/" class="md-nav__link">
+        1143. 最长公共子序列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/leetcode/1603/" class="md-nav__link">
+        1603. 设计停车系统
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          剑指offer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="剑指offer" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          剑指offer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/offer/3/" class="md-nav__link">
+        03. 数组中重复的数字
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/offer/24/" class="md-nav__link">
+        24. 反转链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/offer/25/" class="md-nav__link">
+        25. 合并两个排序的链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/offer/65/" class="md-nav__link">
+        65. 不用加减乘除做加法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          程序员面试金典
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="程序员面试金典" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          程序员面试金典
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/mst/17_21/" class="md-nav__link">
+        17.21. 直方图的水量
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          线段树
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="线段树" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          线段树
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/segmentTree/1/" class="md-nav__link">
+        线段树简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/segmentTree/2/" class="md-nav__link">
+        最大数(单点修改，区间查询)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/segmentTree/4/" class="md-nav__link">
+        Bin Packing Problem(单点修改，区间查询)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/segmentTree/3/" class="md-nav__link">
+        Can you answer these queries III(单点修改，区间查询)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/segmentTree/5/" class="md-nav__link">
+        Interval GCD(单点修改，区间查询)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../algorithm/segmentTree/6/" class="md-nav__link">
+        【模板】线段树1(区间修改，区间查询)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Java
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Java" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          JavaSE
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaSE" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          JavaSE
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+        Java语法规范
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-nav__link">
+        Java对象和多态 （面向对象）
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-nav__link">
+        Java异常机制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" class="md-nav__link">
+        Java泛型与集合类
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" class="md-nav__link">
+        Java I/O
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E5%85%AD%EF%BC%89/" class="md-nav__link">
+        Java多线程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%83%EF%BC%89/" class="md-nav__link">
+        Java反射和注解
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          JavaWeb
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaWeb" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          JavaWeb
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/JavaWeb%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+        Java网络编程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/JavaWeb%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-nav__link">
+        数据库基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/JavaWeb%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-nav__link">
+        Java与数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/JavaWeb%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" class="md-nav__link">
+        前端基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../web/JavaWeb%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" class="md-nav__link">
+        JavaWeb后端
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          JavaSSM
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JavaSSM" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          JavaSSM
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ssm/JavaSSM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+        Spring框架技术
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ssm/JavaSSM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-nav__link">
+        SpringMVC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ssm/JavaSSM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-nav__link">
+        SpringSecurity
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ssm/JavaSSM%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89/" class="md-nav__link">
+        MySQL高级
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          SpringBoot
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="SpringBoot" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          SpringBoot
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SpringBoot%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+        SpringBoot一站式开发
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SpringBoot%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-nav__link">
+        Git版本控制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SpringBoot%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-nav__link">
+        Redis数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SpringBoot其他框架
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        SpringBoot其他框架
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mail" class="md-nav__link">
+    邮件发送：Mail
+  </a>
+  
+    <nav class="md-nav" aria-label="邮件发送：Mail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    邮件发送
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    邮件注册
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jpa" class="md-nav__link">
+    持久层框架：JPA
+  </a>
+  
+    <nav class="md-nav" aria-label="持久层框架：JPA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#springdatajpa" class="md-nav__link">
+    认识SpringDataJPA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jpa_1" class="md-nav__link">
+    使用JPA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    方法名称拼接自定义SQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    关联查询
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jpqlsql" class="md-nav__link">
+    JPQL自定义SQL语句
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra" class="md-nav__link">
+    Extra. 前后端分离跨域处理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swagger" class="md-nav__link">
+    接口管理：Swagger
+  </a>
+  
+    <nav class="md-nav" aria-label="接口管理：Swagger">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swagger_1" class="md-nav__link">
+    走进Swagger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    接口信息配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SpringBoot%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" class="md-nav__link">
+        Linux操作系统与项目部署
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_5" type="checkbox" id="__nav_4_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_5">
+          JVM虚拟机
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JVM虚拟机" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          JVM虚拟机
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jvm/JVM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+        走进JVM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jvm/JVM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-nav__link">
+        JVM内存管理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jvm/JVM%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-nav__link">
+        类与加载类
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_6" type="checkbox" id="__nav_4_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_6">
+          JUC并发编程
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="JUC并发编程" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          JUC并发编程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../juc/JUC%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-nav__link">
+        再谈多线程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../juc/JUC%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/" class="md-nav__link">
+        多线程编程核心
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../juc/JUC%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-nav__link">
+        并发编程进阶
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        鸣谢
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          LaTeX
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="LaTeX" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          LaTeX
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../latex/basic/" class="md-nav__link">
+        基础语法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../latex/symbols/" class="md-nav__link">
+        函数、符号及特殊字符
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../latex/env/" class="md-nav__link">
+        矩阵、条件表达式、方程组
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../latex/font/" class="md-nav__link">
+        字体
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../latex/links/" class="md-nav__link">
+        外部链接
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../latex/colors/" class="md-nav__link">
+        颜色
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          关于
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="关于" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          关于
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/aboutme/" class="md-nav__link">
+        关于作者
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about/aboutwiki/" class="md-nav__link">
+        关于PJM Wiki
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mail" class="md-nav__link">
+    邮件发送：Mail
+  </a>
+  
+    <nav class="md-nav" aria-label="邮件发送：Mail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    邮件发送
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    邮件注册
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jpa" class="md-nav__link">
+    持久层框架：JPA
+  </a>
+  
+    <nav class="md-nav" aria-label="持久层框架：JPA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#springdatajpa" class="md-nav__link">
+    认识SpringDataJPA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jpa_1" class="md-nav__link">
+    使用JPA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    方法名称拼接自定义SQL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    关联查询
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jpqlsql" class="md-nav__link">
+    JPQL自定义SQL语句
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra" class="md-nav__link">
+    Extra. 前后端分离跨域处理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swagger" class="md-nav__link">
+    接口管理：Swagger
+  </a>
+  
+    <nav class="md-nav" aria-label="接口管理：Swagger">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#swagger_1" class="md-nav__link">
+    走进Swagger
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    接口信息配置
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/pjimming/PJM-Wiki/edit/master/docs/java/sb/SpringBoot笔记（四）.md" title="编辑此页" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+
+<h1 id="springboot">SpringBoot其他框架</h1>
+<p>通过了解其他的SpringBoot框架，我们就可以在我们自己的Web服务器上实现更多更高级的功能。</p>
+<h2 id="mail">邮件发送：Mail</h2>
+<p>我们在注册很多的网站时，都会遇到邮件或是手机号验证，也就是通过你的邮箱或是手机短信去接受网站发给你的注册验证信息，填写验证码之后，就可以完成注册了，同时，网站也会绑定你的手机号或是邮箱。</p>
+<p>那么，像这样的功能，我们如何实现呢？SpringBoot已经给我们提供了封装好的邮件模块使用：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-mail<span class="nt">&lt;/artifactId&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_1">邮件发送</h3>
+<p>在学习邮件发送之前，我们需要先了解一下什么是电子邮件。</p>
+<p>电子邮件也是一种通信方式，是互联网应用最广的服务。通过网络的电子邮件系统，用户可以以非常低廉的价格（不管发送到哪里，都只需负担网费，实际上就是把信息发送到对方服务器而已）、非常快速的方式，与世界上任何一个地方的电子邮箱用户联系。</p>
+<p>虽说方便倒是方便，虽然是曾经的霸主，不过现在这个时代，QQ微信横行，手机短信和电子邮箱貌似就只剩收验证码这一个功能了。</p>
+<p>要在Internet上提供电子邮件功能，必须有专门的电子邮件服务器。例如现在Internet很多提供邮件服务的厂商：新浪、搜狐、163、QQ邮箱等，他们都有自己的邮件服务器。这些服务器类似于现实生活中的邮局，它主要负责接收用户投递过来的邮件，并把邮件投递到邮件接收者的电子邮箱中。</p>
+<p>所有的用户都可以在电子邮件服务器上申请一个账号用于邮件发送和接收，那么邮件是以什么样的格式发送的呢？实际上和Http一样，邮件发送也有自己的协议，也就是约定邮件数据长啥样以及如何通信。</p>
+<p><img alt="img" src="https://images2015.cnblogs.com/blog/851491/201612/851491-20161202143243756-1715308358.png" /></p>
+<p>比较常用的协议有两种：</p>
+<ol>
+<li>SMTP协议（主要用于发送邮件 Simple Mail Transfer Protocol）</li>
+<li>POP3协议（主要用于接收邮件 Post Office Protocol 3）</li>
+</ol>
+<p>整个发送/接收流程大致如下：</p>
+<p><img alt="img" src="https://img2.baidu.com/it/u=3675146129,445744702&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPG?w=812&amp;h=309" /></p>
+<p>实际上每个邮箱服务器都有一个smtp发送服务器和pop3接收服务器，比如要从QQ邮箱发送邮件到163邮箱，那么我们只需要通过QQ邮箱客户端告知QQ邮箱的smtp服务器我们需要发送邮件，以及邮件的相关信息，然后QQ邮箱的smtp服务器就会帮助我们发送到163邮箱的pop3服务器上，163邮箱会通过163邮箱客户端告知对应用户收到一封新邮件。</p>
+<p>而我们如果想要实现给别人发送邮件，那么就需要连接到对应电子邮箱的smtp服务器上，并告知其我们要发送邮件。而SpringBoot已经帮助我们将最基本的底层通信全部实现了，我们只需要关心smtp服务器的地址以及我们要发送的邮件长啥样即可。</p>
+<p>这里以163邮箱 https://mail.163.com 为例，我们需要在配置文件中告诉SpringBootMail我们的smtp服务器的地址以及你的邮箱账号和密码，首先我们要去设置中开启smtp/pop3服务才可以，开启后会得到一个随机生成的密钥，这个就是我们的密码。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">spring</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">mail</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># 163邮箱的地址为smtp.163.com，直接填写即可</span><span class="w"></span>
+<span class="w">    </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">smtp.163.com</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># 你申请的163邮箱</span><span class="w"></span>
+<span class="w">    </span><span class="nt">username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">javastudy111@163.com</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># 注意密码是在开启smtp/pop3时自动生成的，记得保存一下，不然就找不到了</span><span class="w"></span>
+<span class="w">    </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AZJTOAWZESLMHTNI</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>配置完成后，接着我们来进行一下测试：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@SpringBootTest</span>
+<span class="kd">class</span> <span class="nc">SpringBootTestApplicationTests</span> <span class="p">{</span>
+
+    <span class="c1">//JavaMailSender是专门用于发送邮件的对象，自动配置类已经提供了Bean</span>
+    <span class="nd">@Autowired</span>
+    <span class="n">JavaMailSender</span> <span class="n">sender</span><span class="p">;</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">contextLoads</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//SimpleMailMessage是一个比较简易的邮件封装，支持设置一些比较简单内容</span>
+        <span class="n">SimpleMailMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleMailMessage</span><span class="p">();</span>
+        <span class="c1">//设置邮件标题</span>
+        <span class="n">message</span><span class="p">.</span><span class="na">setSubject</span><span class="p">(</span><span class="s">&quot;【电子科技大学教务处】关于近期学校对您的处分决定&quot;</span><span class="p">);</span>
+        <span class="c1">//设置邮件内容</span>
+        <span class="n">message</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;XXX同学您好，经监控和教务巡查发现，您近期存在旷课、迟到、早退、上课刷抖音行为，&quot;</span> <span class="o">+</span>
+                <span class="s">&quot;现已通知相关辅导员，请手写5000字书面检讨，并在2022年4月1日17点前交到辅导员办公室。&quot;</span><span class="p">);</span>
+        <span class="c1">//设置邮件发送给谁，可以多个，这里就发给你的QQ邮箱</span>
+        <span class="n">message</span><span class="p">.</span><span class="na">setTo</span><span class="p">(</span><span class="s">&quot;你的QQ号@qq.com&quot;</span><span class="p">);</span>
+        <span class="c1">//邮件发送者，这里要与配置文件中的保持一致</span>
+        <span class="n">message</span><span class="p">.</span><span class="na">setFrom</span><span class="p">(</span><span class="s">&quot;javastudy111@163.com&quot;</span><span class="p">);</span>
+        <span class="c1">//OK，万事俱备只欠发送</span>
+        <span class="n">sender</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>如果需要添加附件等更多功能，可以使用MimeMessageHelper来帮助我们完成：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">contextLoads</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">MessagingException</span> <span class="p">{</span>
+    <span class="c1">//创建一个MimeMessage</span>
+    <span class="n">MimeMessage</span> <span class="n">message</span> <span class="o">=</span> <span class="n">sender</span><span class="p">.</span><span class="na">createMimeMessage</span><span class="p">();</span>
+    <span class="c1">//使用MimeMessageHelper来帮我们修改MimeMessage中的信息</span>
+    <span class="n">MimeMessageHelper</span> <span class="n">helper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MimeMessageHelper</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+    <span class="n">helper</span><span class="p">.</span><span class="na">setSubject</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">);</span>
+    <span class="n">helper</span><span class="p">.</span><span class="na">setText</span><span class="p">(</span><span class="s">&quot;lbwnb&quot;</span><span class="p">);</span>
+    <span class="n">helper</span><span class="p">.</span><span class="na">setTo</span><span class="p">(</span><span class="s">&quot;你的QQ号@qq.com&quot;</span><span class="p">);</span>
+    <span class="n">helper</span><span class="p">.</span><span class="na">setFrom</span><span class="p">(</span><span class="s">&quot;javastudy111@163.com&quot;</span><span class="p">);</span>
+    <span class="c1">//发送修改好的MimeMessage</span>
+    <span class="n">sender</span><span class="p">.</span><span class="na">send</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_2">邮件注册</h3>
+<p>既然我们已经了解了邮件发送，那么我们接着来看如何在我们的项目中实现邮件验证。</p>
+<p>首先明确验证流程：请求验证码 -&gt; 生成验证码（临时有效，注意设定过期时间） -&gt; 用户输入验证码并填写注册信息 -&gt; 验证通过注册成功！</p>
+<hr />
+<p><img alt="点击查看图片来源" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.zhimg.com%2Fv2-6f0b9bb234b2534ec295ff195bad183a_1440w.jpg%3Fsource%3D172ae18b&amp;refer=http%3A%2F%2Fpic1.zhimg.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1645108924&amp;t=d40aa5dc6be398725b4ff21ef5895454" /></p>
+<h2 id="jpa">持久层框架：JPA</h2>
+<ul>
+<li>用了Mybatis之后，你看那个JDBC，真是太逊了。</li>
+<li>这么说，你的项目很勇哦？</li>
+<li>开玩笑，我的写代码超勇的好不好。</li>
+<li>阿伟，你可曾幻想过有一天你的项目里不再有SQL语句？</li>
+<li>不再有SQL语句？那我怎么和数据库交互啊？</li>
+<li>我看你是完全不懂哦</li>
+<li>懂，懂什么啊？</li>
+<li>你想懂？来，到我项目里来，我给你看点好康的。</li>
+<li>好康？是什么新框架哦？</li>
+<li>什么新框架，比新框架还刺激，还可以让你的项目登duang郎哦。</li>
+<li>哇，杰哥，你项目里面都没SQL语句诶，这是用的什么框架啊？</li>
+</ul>
+<p>在我们之前编写的项目中，我们不难发现，实际上大部分的数据库交互操作，到最后都只会做一个事情，那就是把数据库中的数据映射为Java中的对象。比如我们要通过用户名去查找对应的用户，或是通过ID查找对应的学生信息，在使用Mybatis时，我们只需要编写正确的SQL语句就可以直接将获取的数据映射为对应的Java对象，通过调用Mapper中的方法就能直接获得实体类，这样就方便我们在Java中数据库表中的相关信息了。</p>
+<p>但是以上这些操作都有一个共性，那就是它们都是通过某种条件去进行查询，而最后的查询结果，都是一个实体类，所以你会发现你写的很多SQL语句都是一个套路<code>select * from xxx where xxx=xxx</code>，那么能否有一种框架，帮我们把这些相同的套路给封装起来，直接把这类相似的SQL语句给屏蔽掉，不再由我们编写，而是让框架自己去组合拼接。</p>
+<h3 id="springdatajpa">认识SpringDataJPA</h3>
+<p>首先我们来看一个国外的统计：</p>
+<p><img alt="image-20220119140326867" src="/Users/nagocoler/Library/Application Support/typora-user-images/image-20220119140326867.png" /></p>
+<p>不对吧，为什么Mybatis这么好用，这么强大，却只有10%的人喜欢呢？然而事实就是，在国外JPA几乎占据了主导地位，而Mybatis并不像国内那样受待见，所以你会发现，JPA都有SpringBoot的官方直接提供的starter，而Mybatis没有。</p>
+<p>至于为啥SSM阶段不讲这个，而是放到现在来讲也是因为，在微服务场景下它的优势才能更多的发挥出来。</p>
+<p>那么，什么是JPA？</p>
+<p>JPA（Java Persistence API）和JDBC类似，也是官方定义的一组接口，但是它相比传统的JDBC，它是为了实现ORM而生的，即Object-Relationl Mapping，它的作用是在关系型数据库和对象之间形成一个映射，这样，我们在具体的操作数据库的时候，就不需要再去和复杂的SQL语句打交道，只要像平时操作对象一样操作它就可以了。</p>
+<p>在之前，我们使用JDBC或是Mybatis来操作数据，通过直接编写对应的SQL语句来实现数据访问，但是我们发现实际上我们在Java中大部分操作数据库的情况都是读取数据并封装为一个实体类，因此，为什么不直接将实体类直接对应到一个数据库表呢？也就是说，一张表里面有什么属性，那么我们的对象就有什么属性，所有属性跟数据库里面的字段一一对应，而读取数据时，只需要读取一行的数据并封装为我们定义好的实体类既可以，而具体的SQL语句执行，完全可以交给框架根据我们定义的映射关系去生成，不再由我们去编写，因为这些SQL实际上都是千篇一律的。</p>
+<p>而实现JPA规范的框架一般最常用的就是<code>Hibernate</code>，它是一个重量级框架，学习难度相比Mybatis也更高一些，而SpringDataJPA也是采用Hibernate框架作为底层实现，并对其加以封装。</p>
+<p>官网：https://spring.io/projects/spring-data-jpa</p>
+<h3 id="jpa_1">使用JPA</h3>
+<p>同样的，我们只需要导入stater依赖即可：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>spring-boot-starter-data-jpa<span class="nt">&lt;/artifactId&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+</td></tr></table>
+<p>接着我们可以直接创建一个类，比如账户类，我们只需要把一个账号对应的属性全部定义好即可：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Data</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Account</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+    <span class="n">String</span> <span class="n">username</span><span class="p">;</span>
+    <span class="n">String</span> <span class="n">password</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>接着，我们可以通过注解形式，在属性上添加数据库映射关系，这样就能够让JPA知道我们的实体类对应的数据库表长啥样。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Data</span>
+<span class="nd">@Entity</span>   <span class="c1">//表示这个类是一个实体类</span>
+<span class="nd">@Table</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>    <span class="c1">//对应的数据库中表名称</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Account</span> <span class="p">{</span>
+
+    <span class="nd">@GeneratedValue</span><span class="p">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="p">.</span><span class="na">IDENTITY</span><span class="p">)</span>   <span class="c1">//生成策略，这里配置为自增</span>
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>    <span class="c1">//对应表中id这一列</span>
+    <span class="nd">@Id</span>     <span class="c1">//此属性为主键</span>
+    <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;username&quot;</span><span class="p">)</span>   <span class="c1">//对应表中username这一列</span>
+    <span class="n">String</span> <span class="n">username</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;password&quot;</span><span class="p">)</span>   <span class="c1">//对应表中password这一列</span>
+    <span class="n">String</span> <span class="n">password</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>接着我们来修改一下配置文件：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">spring</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">jpa</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">#开启SQL语句执行日志信息</span><span class="w"></span>
+<span class="w">    </span><span class="nt">show-sql</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hibernate</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="c1">#配置为自动创建</span><span class="w"></span>
+<span class="w">      </span><span class="nt">ddl-auto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">create</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p><code>ddl-auto</code>属性用于设置自动表定义，可以实现自动在数据库中为我们创建一个表，表的结构会根据我们定义的实体类决定，它有4种</p>
+<ul>
+<li>create 启动时删数据库中的表，然后创建，退出时不删除数据表 </li>
+<li>create-drop 启动时删数据库中的表，然后创建，退出时删除数据表 如果表不存在报错 </li>
+<li>update 如果启动时表格式不一致则更新表，原有数据保留 </li>
+<li>validate 项目启动表结构进行校验 如果不一致则报错</li>
+</ul>
+<p>我们可以在日志中发现，在启动时执行了如下SQL语句：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Hibernate: create table users (id integer not null auto_increment, password varchar(255), username varchar(255), primary key (id)) engine=InnoDB
+</code></pre></div>
+</td></tr></table>
+<p>而我们的数据库中对应的表已经创建好了。</p>
+<p>我们接着来看如何访问我们的表，我们需要创建一个Repository实现类：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AccountRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">Account</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>注意JpaRepository有两个泛型，前者是具体操作的对象实体，也就是对应的表，后者是ID的类型，接口中已经定义了比较常用的数据库操作。编写接口继承即可，我们可以直接注入此接口获得实现类：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@SpringBootTest</span>
+<span class="kd">class</span> <span class="nc">JpaTestApplicationTests</span> <span class="p">{</span>
+
+    <span class="nd">@Resource</span>
+    <span class="n">AccountRepository</span> <span class="n">repository</span><span class="p">;</span>
+
+    <span class="nd">@Test</span>
+    <span class="kt">void</span> <span class="nf">contextLoads</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">//直接根据ID查找</span>
+        <span class="n">repository</span><span class="p">.</span><span class="na">findById</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="na">ifPresent</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>运行后，成功得到查询结果。我们接着来测试增删操作：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">addAccount</span><span class="p">(){</span>
+    <span class="n">Account</span> <span class="n">account</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Account</span><span class="p">();</span>
+    <span class="n">account</span><span class="p">.</span><span class="na">setUsername</span><span class="p">(</span><span class="s">&quot;Admin&quot;</span><span class="p">);</span>
+    <span class="n">account</span><span class="p">.</span><span class="na">setPassword</span><span class="p">(</span><span class="s">&quot;123456&quot;</span><span class="p">);</span>
+    <span class="n">account</span> <span class="o">=</span> <span class="n">repository</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">account</span><span class="p">);</span>  <span class="c1">//返回的结果会包含自动生成的主键值</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;插入时，自动生成的主键ID为：&quot;</span><span class="o">+</span><span class="n">account</span><span class="p">.</span><span class="na">getId</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">deleteAccount</span><span class="p">(){</span>
+    <span class="n">repository</span><span class="p">.</span><span class="na">deleteById</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>   <span class="c1">//根据ID删除对应记录</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">pageAccount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">repository</span><span class="p">.</span><span class="na">findAll</span><span class="p">(</span><span class="n">PageRequest</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)).</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>  <span class="c1">//直接分页</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>我们发现，使用了JPA之后，整个项目的代码中没有出现任何的SQL语句，可以说是非常方便了，JPA依靠我们提供的注解信息自动完成了所有信息的映射和关联。</p>
+<p>相比Mybatis，JPA几乎就是一个全自动的ORM框架，而Mybatis则顶多算是半自动ORM框架。</p>
+<h3 id="sql">方法名称拼接自定义SQL</h3>
+<p>虽然接口预置的方法使用起来非常方便，但是如果我们需要进行条件查询等操作或是一些判断，就需要自定义一些方法来实现，同样的，我们不需要编写SQL语句，而是通过方法名称的拼接来实现条件判断，这里列出了所有支持的条件判断名称：</p>
+<table>
+<thead>
+<tr>
+<th><code>Distinct</code></th>
+<th><code>findDistinctByLastnameAndFirstname</code></th>
+<th><code>select distinct … where x.lastname = ?1 and x.firstname = ?2</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>And</code></td>
+<td><code>findByLastnameAndFirstname</code></td>
+<td><code>… where x.lastname = ?1 and x.firstname = ?2</code></td>
+</tr>
+<tr>
+<td><code>Or</code></td>
+<td><code>findByLastnameOrFirstname</code></td>
+<td><code>… where x.lastname = ?1 or x.firstname = ?2</code></td>
+</tr>
+<tr>
+<td><code>Is</code>，<code>Equals</code></td>
+<td><code>findByFirstname</code>,<code>findByFirstnameIs</code>,<code>findByFirstnameEquals</code></td>
+<td><code>… where x.firstname = ?1</code></td>
+</tr>
+<tr>
+<td><code>Between</code></td>
+<td><code>findByStartDateBetween</code></td>
+<td><code>… where x.startDate between ?1 and ?2</code></td>
+</tr>
+<tr>
+<td><code>LessThan</code></td>
+<td><code>findByAgeLessThan</code></td>
+<td><code>… where x.age &lt; ?1</code></td>
+</tr>
+<tr>
+<td><code>LessThanEqual</code></td>
+<td><code>findByAgeLessThanEqual</code></td>
+<td><code>… where x.age &lt;= ?1</code></td>
+</tr>
+<tr>
+<td><code>GreaterThan</code></td>
+<td><code>findByAgeGreaterThan</code></td>
+<td><code>… where x.age &gt; ?1</code></td>
+</tr>
+<tr>
+<td><code>GreaterThanEqual</code></td>
+<td><code>findByAgeGreaterThanEqual</code></td>
+<td><code>… where x.age &gt;= ?1</code></td>
+</tr>
+<tr>
+<td><code>After</code></td>
+<td><code>findByStartDateAfter</code></td>
+<td><code>… where x.startDate &gt; ?1</code></td>
+</tr>
+<tr>
+<td><code>Before</code></td>
+<td><code>findByStartDateBefore</code></td>
+<td><code>… where x.startDate &lt; ?1</code></td>
+</tr>
+<tr>
+<td><code>IsNull</code>，<code>Null</code></td>
+<td><code>findByAge(Is)Null</code></td>
+<td><code>… where x.age is null</code></td>
+</tr>
+<tr>
+<td><code>IsNotNull</code>，<code>NotNull</code></td>
+<td><code>findByAge(Is)NotNull</code></td>
+<td><code>… where x.age not null</code></td>
+</tr>
+<tr>
+<td><code>Like</code></td>
+<td><code>findByFirstnameLike</code></td>
+<td><code>… where x.firstname like ?1</code></td>
+</tr>
+<tr>
+<td><code>NotLike</code></td>
+<td><code>findByFirstnameNotLike</code></td>
+<td><code>… where x.firstname not like ?1</code></td>
+</tr>
+<tr>
+<td><code>StartingWith</code></td>
+<td><code>findByFirstnameStartingWith</code></td>
+<td><code>… where x.firstname like ?1</code>（参数与附加<code>%</code>绑定）</td>
+</tr>
+<tr>
+<td><code>EndingWith</code></td>
+<td><code>findByFirstnameEndingWith</code></td>
+<td><code>… where x.firstname like ?1</code>（参数与前缀<code>%</code>绑定）</td>
+</tr>
+<tr>
+<td><code>Containing</code></td>
+<td><code>findByFirstnameContaining</code></td>
+<td><code>… where x.firstname like ?1</code>（参数绑定以<code>%</code>包装）</td>
+</tr>
+<tr>
+<td><code>OrderBy</code></td>
+<td><code>findByAgeOrderByLastnameDesc</code></td>
+<td><code>… where x.age = ?1 order by x.lastname desc</code></td>
+</tr>
+<tr>
+<td><code>Not</code></td>
+<td><code>findByLastnameNot</code></td>
+<td><code>… where x.lastname &lt;&gt; ?1</code></td>
+</tr>
+<tr>
+<td><code>In</code></td>
+<td><code>findByAgeIn(Collection&lt;Age&gt; ages)</code></td>
+<td><code>… where x.age in ?1</code></td>
+</tr>
+<tr>
+<td><code>NotIn</code></td>
+<td><code>findByAgeNotIn(Collection&lt;Age&gt; ages)</code></td>
+<td><code>… where x.age not in ?1</code></td>
+</tr>
+<tr>
+<td><code>True</code></td>
+<td><code>findByActiveTrue()</code></td>
+<td><code>… where x.active = true</code></td>
+</tr>
+<tr>
+<td><code>False</code></td>
+<td><code>findByActiveFalse()</code></td>
+<td><code>… where x.active = false</code></td>
+</tr>
+<tr>
+<td><code>IgnoreCase</code></td>
+<td><code>findByFirstnameIgnoreCase</code></td>
+<td><code>… where UPPER(x.firstname) = UPPER(?1)</code></td>
+</tr>
+</tbody>
+</table>
+<p>比如我们想要实现根据用户名模糊匹配查找用户：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AccountRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">Account</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="p">{</span>
+        <span class="c1">//按照表中的规则进行名称拼接，不用刻意去记，IDEA会有提示</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Account</span><span class="o">&gt;</span> <span class="nf">findAllByUsernameLike</span><span class="p">(</span><span class="n">String</span> <span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">repository</span><span class="p">.</span><span class="na">findAllByUsernameLike</span><span class="p">(</span><span class="s">&quot;%T%&quot;</span><span class="p">).</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>又比如我们想同时根据用户名和ID一起查询：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AccountRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">Account</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="p">{</span>
+
+    <span class="n">Account</span> <span class="nf">findByIdAndUsername</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="n">String</span> <span class="n">username</span><span class="p">);</span>
+  <span class="c1">//可以使用Optional类进行包装，Optional&lt;Account&gt; findByIdAndUsername(int id, String username);</span>
+
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Account</span><span class="o">&gt;</span> <span class="nf">findAllByUsernameLike</span><span class="p">(</span><span class="n">String</span> <span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">repository</span><span class="p">.</span><span class="na">findByIdAndUsername</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;Test&quot;</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>比如我们想判断数据库中是否存在某个ID的用户：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AccountRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">Account</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="p">{</span>
+
+    <span class="n">Account</span> <span class="nf">findByIdAndUsername</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="n">String</span> <span class="n">username</span><span class="p">);</span>
+
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Account</span><span class="o">&gt;</span> <span class="nf">findAllByUsernameLike</span><span class="p">(</span><span class="n">String</span> <span class="n">str</span><span class="p">);</span>
+
+    <span class="kt">boolean</span> <span class="nf">existsAccountById</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">repository</span><span class="p">.</span><span class="na">existsAccountByUsername</span><span class="p">(</span><span class="s">&quot;Test&quot;</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>注意自定义条件操作的方法名称一定要遵循规则，不然会出现异常：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Caused by: org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract  ...
+</code></pre></div>
+</td></tr></table>
+<h3 id="_3">关联查询</h3>
+<p>在实际开发中，比较常见的场景还有关联查询，也就是我们会在表中添加一个外键字段，而此外键字段又指向了另一个表中的数据，当我们查询数据时，可能会需要将关联数据也一并获取，比如我们想要查询某个用户的详细信息，一般用户简略信息会单独存放一个表，而用户详细信息会单独存放在另一个表中。当然，除了用户详细信息之外，可能在某些电商平台还会有用户的购买记录、用户的购物车，交流社区中的用户帖子、用户评论等，这些都是需要根据用户信息进行关联查询的内容。</p>
+<p><img alt="img" src="https://img1.baidu.com/it/u=292198351,4011695440&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=404&amp;h=436" /></p>
+<p>我们知道，在JPA中，每张表实际上就是一个实体类的映射，而表之间的关联关系，也可以看作对象之间的依赖关系，比如用户表中包含了用户详细信息的ID字段作为外键，那么实际上就是用户表实体中包括了用户详细信息实体对象：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Data</span>
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;users_detail&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AccountDetail</span> <span class="p">{</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
+    <span class="nd">@GeneratedValue</span><span class="p">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="p">.</span><span class="na">IDENTITY</span><span class="p">)</span>
+    <span class="nd">@Id</span>
+    <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;address&quot;</span><span class="p">)</span>
+    <span class="n">String</span> <span class="n">address</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;email&quot;</span><span class="p">)</span>
+    <span class="n">String</span> <span class="n">email</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;phone&quot;</span><span class="p">)</span>
+    <span class="n">String</span> <span class="n">phone</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;real_name&quot;</span><span class="p">)</span>
+    <span class="n">String</span> <span class="n">realName</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>而用户信息和用户详细信息之间形成了一对一的关系，那么这时我们就可以直接在类中指定这种关系：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Data</span>
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;users&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Account</span> <span class="p">{</span>
+
+    <span class="nd">@GeneratedValue</span><span class="p">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="p">.</span><span class="na">IDENTITY</span><span class="p">)</span>
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
+    <span class="nd">@Id</span>
+    <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;username&quot;</span><span class="p">)</span>
+    <span class="n">String</span> <span class="n">username</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;password&quot;</span><span class="p">)</span>
+    <span class="n">String</span> <span class="n">password</span><span class="p">;</span>
+
+    <span class="nd">@JoinColumn</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;detail_id&quot;</span><span class="p">)</span>   <span class="c1">//指定存储外键的字段名称</span>
+    <span class="nd">@OneToOne</span>    <span class="c1">//声明为一对一关系</span>
+    <span class="n">AccountDetail</span> <span class="n">detail</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>在修改实体类信息后，我们发现在启动时也进行了更新，日志如下：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Hibernate: alter table users add column detail_id integer
+Hibernate: create table users_detail (id integer not null auto_increment, address varchar(255), email varchar(255), phone varchar(255), real_name varchar(255), primary key (id)) engine=InnoDB
+Hibernate: alter table users add constraint FK7gb021edkxf3mdv5bs75ni6jd foreign key (detail_id) references users_detail (id)
+</code></pre></div>
+</td></tr></table>
+<p>是不是感觉非常方便！都懒得去手动改表结构了。</p>
+<p>接着我们往用户详细信息中添加一些数据，一会我们可以直接进行查询：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">pageAccount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">repository</span><span class="p">.</span><span class="na">findById</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="na">ifPresent</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>查询后，可以发现，得到如下结果：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Hibernate: select account0_.id as id1_0_0_, account0_.detail_id as detail_i4_0_0_, account0_.password as password2_0_0_, account0_.username as username3_0_0_, accountdet1_.id as id1_1_1_, accountdet1_.address as address2_1_1_, accountdet1_.email as email3_1_1_, accountdet1_.phone as phone4_1_1_, accountdet1_.real_name as real_nam5_1_1_ from users account0_ left outer join users_detail accountdet1_ on account0_.detail_id=accountdet1_.id where account0_.id=?
+Account(id=1, username=Test, password=123456, detail=AccountDetail(id=1, address=四川省成都市青羊区, email=8371289@qq.com, phone=1234567890, realName=本伟))
+</code></pre></div>
+</td></tr></table>
+<p>也就是，在建立关系之后，我们查询Account对象时，会自动将关联数据的结果也一并进行查询。</p>
+<p>那要是我们只想要Account的数据，不想要用户详细信息数据怎么办呢？我希望在我要用的时候再获取详细信息，这样可以节省一些网络开销，我们可以设置懒加载，这样只有在需要时才会向数据库获取：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@JoinColumn</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;detail_id&quot;</span><span class="p">)</span>
+<span class="nd">@OneToOne</span><span class="p">(</span><span class="n">fetch</span> <span class="o">=</span> <span class="n">FetchType</span><span class="p">.</span><span class="na">LAZY</span><span class="p">)</span>    <span class="c1">//将获取类型改为LAZY</span>
+<span class="n">AccountDetail</span> <span class="n">detail</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<p>接着我们测试一下：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Transactional</span>   <span class="c1">//懒加载属性需要在事务环境下获取，因为repository方法调用完后Session会立即关闭</span>
+<span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">pageAccount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">repository</span><span class="p">.</span><span class="na">findById</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="na">ifPresent</span><span class="p">(</span><span class="n">account</span> <span class="o">-&gt;</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">account</span><span class="p">.</span><span class="na">getUsername</span><span class="p">());</span>   <span class="c1">//获取用户名</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">account</span><span class="p">.</span><span class="na">getDetail</span><span class="p">());</span>  <span class="c1">//获取详细信息（懒加载）</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>接着我们来看看控制台输出了什么：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Hibernate: select account0_.id as id1_0_0_, account0_.detail_id as detail_i4_0_0_, account0_.password as password2_0_0_, account0_.username as username3_0_0_ from users account0_ where account0_.id=?
+Test
+Hibernate: select accountdet0_.id as id1_1_0_, accountdet0_.address as address2_1_0_, accountdet0_.email as email3_1_0_, accountdet0_.phone as phone4_1_0_, accountdet0_.real_name as real_nam5_1_0_ from users_detail accountdet0_ where accountdet0_.id=?
+AccountDetail(id=1, address=四川省成都市青羊区, email=8371289@qq.com, phone=1234567890, realName=卢本)
+</code></pre></div>
+</td></tr></table>
+<p>可以看到，获取用户名之前，并没有去查询用户的详细信息，而是当我们获取详细信息时才进行查询并返回AccountDetail对象。</p>
+<p>那么我们是否也可以在添加数据时，利用实体类之间的关联信息，一次性添加两张表的数据呢？可以，但是我们需要稍微修改一下级联关联操作设定：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@JoinColumn</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;detail_id&quot;</span><span class="p">)</span>
+<span class="nd">@OneToOne</span><span class="p">(</span><span class="n">fetch</span> <span class="o">=</span> <span class="n">FetchType</span><span class="p">.</span><span class="na">LAZY</span><span class="p">,</span> <span class="n">cascade</span> <span class="o">=</span> <span class="n">CascadeType</span><span class="p">.</span><span class="na">ALL</span><span class="p">)</span> <span class="c1">//设置关联操作为ALL</span>
+<span class="n">AccountDetail</span> <span class="n">detail</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<ul>
+<li>ALL：所有操作都进行关联操作</li>
+<li>PERSIST：插入操作时才进行关联操作</li>
+<li>REMOVE：删除操作时才进行关联操作</li>
+<li>MERGE：修改操作时才进行关联操作</li>
+</ul>
+<p>可以多个并存，接着我们来进行一下测试：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">addAccount</span><span class="p">(){</span>
+    <span class="n">Account</span> <span class="n">account</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Account</span><span class="p">();</span>
+    <span class="n">account</span><span class="p">.</span><span class="na">setUsername</span><span class="p">(</span><span class="s">&quot;Nike&quot;</span><span class="p">);</span>
+    <span class="n">account</span><span class="p">.</span><span class="na">setPassword</span><span class="p">(</span><span class="s">&quot;123456&quot;</span><span class="p">);</span>
+    <span class="n">AccountDetail</span> <span class="n">detail</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AccountDetail</span><span class="p">();</span>
+    <span class="n">detail</span><span class="p">.</span><span class="na">setAddress</span><span class="p">(</span><span class="s">&quot;重庆市渝中区解放碑&quot;</span><span class="p">);</span>
+    <span class="n">detail</span><span class="p">.</span><span class="na">setPhone</span><span class="p">(</span><span class="s">&quot;1234567890&quot;</span><span class="p">);</span>
+    <span class="n">detail</span><span class="p">.</span><span class="na">setEmail</span><span class="p">(</span><span class="s">&quot;73281937@qq.com&quot;</span><span class="p">);</span>
+    <span class="n">detail</span><span class="p">.</span><span class="na">setRealName</span><span class="p">(</span><span class="s">&quot;张三&quot;</span><span class="p">);</span>
+    <span class="n">account</span><span class="p">.</span><span class="na">setDetail</span><span class="p">(</span><span class="n">detail</span><span class="p">);</span>
+    <span class="n">account</span> <span class="o">=</span> <span class="n">repository</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">account</span><span class="p">);</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;插入时，自动生成的主键ID为：&quot;</span><span class="o">+</span><span class="n">account</span><span class="p">.</span><span class="na">getId</span><span class="p">()</span><span class="o">+</span><span class="s">&quot;，外键ID为：&quot;</span><span class="o">+</span><span class="n">account</span><span class="p">.</span><span class="na">getDetail</span><span class="p">().</span><span class="na">getId</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>可以看到日志结果：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Hibernate: insert into users_detail (address, email, phone, real_name) values (?, ?, ?, ?)
+Hibernate: insert into users (detail_id, password, username) values (?, ?, ?)
+插入时，自动生成的主键ID为：6，外键ID为：3
+</code></pre></div>
+</td></tr></table>
+<p>结束后会发现数据库中两张表都同时存在数据。</p>
+<p>接着我们来看一对多关联，比如每个用户的成绩信息：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@JoinColumn</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;uid&quot;</span><span class="p">)</span>  <span class="c1">//注意这里的name指的是Score表中的uid字段对应的就是当前的主键，会将uid外键设置为当前的主键</span>
+<span class="nd">@OneToMany</span><span class="p">(</span><span class="n">fetch</span> <span class="o">=</span> <span class="n">FetchType</span><span class="p">.</span><span class="na">LAZY</span><span class="p">,</span> <span class="n">cascade</span> <span class="o">=</span> <span class="n">CascadeType</span><span class="p">.</span><span class="na">REMOVE</span><span class="p">)</span>   <span class="c1">//在移除Account时，一并移除所有的成绩信息，依然使用懒加载</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Score</span><span class="o">&gt;</span> <span class="n">scoreList</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Data</span>
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;users_score&quot;</span><span class="p">)</span>   <span class="c1">//成绩表，注意只存成绩，不存学科信息，学科信息id做外键</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Score</span> <span class="p">{</span>
+
+    <span class="nd">@GeneratedValue</span><span class="p">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="p">.</span><span class="na">IDENTITY</span><span class="p">)</span>
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
+    <span class="nd">@Id</span>
+    <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+
+    <span class="nd">@OneToOne</span>   <span class="c1">//一对一对应到学科上</span>
+    <span class="nd">@JoinColumn</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;cid&quot;</span><span class="p">)</span>
+    <span class="n">Subject</span> <span class="n">subject</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;socre&quot;</span><span class="p">)</span>
+    <span class="kt">double</span> <span class="n">score</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;uid&quot;</span><span class="p">)</span>
+    <span class="kt">int</span> <span class="n">uid</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Data</span>
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;subjects&quot;</span><span class="p">)</span>   <span class="c1">//学科信息表</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Subject</span> <span class="p">{</span>
+
+    <span class="nd">@GeneratedValue</span><span class="p">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="p">.</span><span class="na">IDENTITY</span><span class="p">)</span>
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;cid&quot;</span><span class="p">)</span>
+    <span class="nd">@Id</span>
+    <span class="kt">int</span> <span class="n">cid</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;name&quot;</span><span class="p">)</span>
+    <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;teacher&quot;</span><span class="p">)</span>
+    <span class="n">String</span> <span class="n">teacher</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;time&quot;</span><span class="p">)</span>
+    <span class="kt">int</span> <span class="n">time</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>在数据库中填写相应数据，接着我们就可以查询用户的成绩信息了：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Transactional</span>
+<span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">repository</span><span class="p">.</span><span class="na">findById</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="na">ifPresent</span><span class="p">(</span><span class="n">account</span> <span class="o">-&gt;</span> <span class="p">{</span>
+        <span class="n">account</span><span class="p">.</span><span class="na">getScoreList</span><span class="p">().</span><span class="na">forEach</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">::</span><span class="n">println</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>成功得到用户所有的成绩信息，包括得分和学科信息。</p>
+<p>同样的，我们还可以将对应成绩中的教师信息单独分出一张表存储，并建立多对一的关系，因为多门课程可能由同一个老师教授（千万别搞晕了，一定要理清楚关联关系，同时也是考验你的基础扎不扎实）：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@ManyToOne</span><span class="p">(</span><span class="n">fetch</span> <span class="o">=</span> <span class="n">FetchType</span><span class="p">.</span><span class="na">LAZY</span><span class="p">)</span>
+<span class="nd">@JoinColumn</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;tid&quot;</span><span class="p">)</span>   <span class="c1">//存储教师ID的字段，和一对一是一样的，也会当前表中创个外键</span>
+<span class="n">Teacher</span> <span class="n">teacher</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<p>接着就是教师实体类了：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Data</span>
+<span class="nd">@Entity</span>
+<span class="nd">@Table</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;teachers&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Teacher</span> <span class="p">{</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;id&quot;</span><span class="p">)</span>
+    <span class="nd">@GeneratedValue</span><span class="p">(</span><span class="n">strategy</span> <span class="o">=</span> <span class="n">GenerationType</span><span class="p">.</span><span class="na">IDENTITY</span><span class="p">)</span>
+    <span class="nd">@Id</span>
+    <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;name&quot;</span><span class="p">)</span>
+    <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+
+    <span class="nd">@Column</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;sex&quot;</span><span class="p">)</span>
+    <span class="n">String</span> <span class="n">sex</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>最后我们再进行一下测试：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Transactional</span>
+<span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">repository</span><span class="p">.</span><span class="na">findById</span><span class="p">(</span><span class="mi">3</span><span class="p">).</span><span class="na">ifPresent</span><span class="p">(</span><span class="n">account</span> <span class="o">-&gt;</span> <span class="p">{</span>
+        <span class="n">account</span><span class="p">.</span><span class="na">getScoreList</span><span class="p">().</span><span class="na">forEach</span><span class="p">(</span><span class="n">score</span> <span class="o">-&gt;</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;课程名称：&quot;</span><span class="o">+</span><span class="n">score</span><span class="p">.</span><span class="na">getSubject</span><span class="p">().</span><span class="na">getName</span><span class="p">());</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;得分：&quot;</span><span class="o">+</span><span class="n">score</span><span class="p">.</span><span class="na">getScore</span><span class="p">());</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;任课教师：&quot;</span><span class="o">+</span><span class="n">score</span><span class="p">.</span><span class="na">getSubject</span><span class="p">().</span><span class="na">getTeacher</span><span class="p">().</span><span class="na">getName</span><span class="p">());</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>成功得到多对一的教师信息。</p>
+<p>最后我们再来看最复杂的情况，现在我们一门课程可以由多个老师教授，而一个老师也可以教授多个课程，那么这种情况就是很明显的多对多场景，现在又该如何定义呢？我们可以像之前一样，插入一张中间表表示教授关系，这个表中专门存储哪个老师教哪个科目：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@ManyToMany</span><span class="p">(</span><span class="n">fetch</span> <span class="o">=</span> <span class="n">FetchType</span><span class="p">.</span><span class="na">LAZY</span><span class="p">)</span>   <span class="c1">//多对多场景</span>
+<span class="nd">@JoinTable</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;teach_relation&quot;</span><span class="p">,</span>     <span class="c1">//多对多中间关联表</span>
+        <span class="n">joinColumns</span> <span class="o">=</span> <span class="nd">@JoinColumn</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;cid&quot;</span><span class="p">),</span>    <span class="c1">//当前实体主键在关联表中的字段名称</span>
+        <span class="n">inverseJoinColumns</span> <span class="o">=</span> <span class="nd">@JoinColumn</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;tid&quot;</span><span class="p">)</span>   <span class="c1">//教师实体主键在关联表中的字段名称</span>
+<span class="p">)</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">Teacher</span><span class="o">&gt;</span> <span class="n">teacher</span><span class="p">;</span>
+</code></pre></div>
+</td></tr></table>
+<p>接着，JPA会自动创建一张中间表，并自动设置外键，我们就可以将多对多关联信息编写在其中了。</p>
+<h3 id="jpqlsql">JPQL自定义SQL语句</h3>
+<p>虽然SpringDataJPA能够简化大部分数据获取场景，但是难免会有一些特殊的场景，需要使用复杂查询才能够去完成，这时你又会发现，如果要实现，只能用回Mybatis了，因为我们需要自己手动编写SQL语句，过度依赖SpringDataJPA会使得SQL语句不可控。</p>
+<p>使用JPA，我们也可以像Mybatis那样，直接编写SQL语句，不过它是JPQL语言，与原生SQL语句很类似，但是它是面向对象的，当然我们也可以编写原生SQL语句。</p>
+<p>比如我们要更新用户表中指定ID用户的密码：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Repository</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AccountRepository</span> <span class="kd">extends</span> <span class="n">JpaRepository</span><span class="o">&lt;</span><span class="n">Account</span><span class="p">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="p">{</span>
+
+    <span class="nd">@Transactional</span>    <span class="c1">//DML操作需要事务环境，可以不在这里声明，但是调用时一定要处于事务环境下</span>
+    <span class="nd">@Modifying</span>     <span class="c1">//表示这是一个DML操作</span>
+    <span class="nd">@Query</span><span class="p">(</span><span class="s">&quot;update Account set password = ?2 where id = ?1&quot;</span><span class="p">)</span> <span class="c1">//这里操作的是一个实体类对应的表，参数使用?代表，后面接第n个参数</span>
+    <span class="kt">int</span> <span class="nf">updatePasswordById</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="n">String</span> <span class="n">newPassword</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">updateAccount</span><span class="p">(){</span>
+    <span class="n">repository</span><span class="p">.</span><span class="na">updatePasswordById</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;654321&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>现在我想使用原生SQL来实现根据用户名称修改密码：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Transactional</span>
+<span class="nd">@Modifying</span>
+<span class="nd">@Query</span><span class="p">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;update users set password = :pwd where username = :name&quot;</span><span class="p">,</span> <span class="n">nativeQuery</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span> <span class="c1">//使用原生SQL，和Mybatis一样，这里使用 :名称 表示参数，当然也可以继续用上面那种方式。</span>
+<span class="kt">int</span> <span class="nf">updatePasswordByUsername</span><span class="p">(</span><span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">)</span> <span class="n">String</span> <span class="n">username</span><span class="p">,</span>   <span class="c1">//我们可以使用@Param指定名称</span>
+                             <span class="nd">@Param</span><span class="p">(</span><span class="s">&quot;pwd&quot;</span><span class="p">)</span> <span class="n">String</span> <span class="n">newPassword</span><span class="p">);</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Test</span>
+<span class="kt">void</span> <span class="nf">updateAccount</span><span class="p">(){</span>
+    <span class="n">repository</span><span class="p">.</span><span class="na">updatePasswordByUsername</span><span class="p">(</span><span class="s">&quot;Admin&quot;</span><span class="p">,</span> <span class="s">&quot;654321&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>通过编写原生SQL，在一定程度上弥补了SQL不可控的问题。</p>
+<p>虽然JPA能够为我们带来非常便捷的开发体验，但是正式因为太便捷了，保姆级的体验有时也会适得其反，可能项目开发到后期特别庞大时，就只能从底层SQL语句开始进行优化，而由于JPA尽可能地在屏蔽我们对SQL语句的编写，所以后期优化是个大问题，并且Hibernate相对于Mybatis来说，更加重量级。不过，在微服务的时代，单体项目一般不会太大，而JPA的劣势并没有太明显地体现出来。</p>
+<p>有关Mybatis和JPA的对比，可以参考：https://blog.csdn.net/u010253246/article/details/105731204</p>
+<hr />
+<h2 id="extra">Extra. 前后端分离跨域处理</h2>
+<p>我们的项目已经处于前后端分离状态了，那么前后端分离状态和我们之前的状态有什么区别的呢？</p>
+<ul>
+<li><strong>不分离：</strong>前端页面看到的都是由后端控制，由后端渲染页面或重定向，后端需要控制前端的展示，前端与后端的耦合度很高。比如我们之前都是使用后端来执行重定向操作或是使用Thymeleaf来填充数据，而最终返回的是整个渲染好的页。</li>
+</ul>
+<p><img alt="img" src="https://img2018.cnblogs.com/blog/1394466/201809/1394466-20180916231510365-285933655.png" /></p>
+<ul>
+<li><strong>分离：</strong>后端仅返回前端所需的数据，不再渲染HTML页面，不再控制前端的效果。至于前端用户看到什么效果，从后端请求的数据如何加载到前端中，都由前端通过JS等进行动态数据填充和渲染。这样后端只返回JSON数据，前端处理JSON数据并展示，这样前后端的职责就非常明确了。</li>
+</ul>
+<p><img alt="img" src="https://img2018.cnblogs.com/blog/1394466/201809/1394466-20180916231716242-1862208927.png" /></p>
+<p>实现前后端分离有两种方案，一种是直接放入SpringBoot的资源文件夹下，但是这样实际上还是在依靠SpringBoot内嵌的Tomcat服务器进行页面和静态资源的发送，我们现在就是这种方案。</p>
+<p>另一种方案就是直接将所有的页面和静态资源单独放到代理服务器上（如Nginx），这样我们后端服务器就不必再处理静态资源和页面了，专心返回数据即可，而前端页面就需要访问另一个服务器来获取，虽然逻辑和明确，但是这样会出现跨域问题，实际上就是我们之前所说的跨站请求伪造，为了防止这种不安全的行为发生，所以对异步请求会进行一定的限制。</p>
+<p>这里，我们将前端页面和后端页面直接分离进行测试，在登陆时得到如下错误：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Access to XMLHttpRequest at &#39;http://localhost:8080/api/auth/login&#39; from origin &#39;http://localhost:63342&#39; has been blocked by CORS policy: No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource.
+</code></pre></div>
+</td></tr></table>
+<p>可以很清楚地看到，在Ajax发送异步请求时，我们的请求被阻止，原因是在响应头中没有包含<code>Access-Control-Allow-Origin</code>，也就表示，如果服务端允许跨域请求，那么会在响应头中添加一个<code>Access-Control-Allow-Origin</code>字段，如果不允许跨域，就像现在这样。那么，什么才算是跨域呢：</p>
+<ol>
+<li>请求协议<code>如http、https</code>不同</li>
+<li>请求的地址/域名不同</li>
+<li>端口不同</li>
+</ol>
+<p>因为我们现在相当于前端页面访问的是静态资源服务器，而后端数据是由我们的SpringBoot项目提供，它们是两个不同的服务器，所以在垮服务器请求资源时，会被判断为存在安全风险。</p>
+<p>但是现在，由于我们前后端是分离状态，我们希望的是能够实现跨域请求，这时我们就需要添加一个过滤器来处理跨域问题：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Bean</span>
+<span class="kd">public</span> <span class="n">CorsFilter</span> <span class="nf">corsFilter</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//创建CorsConfiguration对象后添加配置</span>
+    <span class="n">CorsConfiguration</span> <span class="n">config</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CorsConfiguration</span><span class="p">();</span>
+    <span class="c1">//设置放行哪些原始域，这里直接设置为所有</span>
+    <span class="n">config</span><span class="p">.</span><span class="na">addAllowedOriginPattern</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">);</span>
+    <span class="c1">//你可以单独设置放行哪些原始域 config.addAllowedOrigin(&quot;http://localhost:2222&quot;);</span>
+    <span class="c1">//放行哪些原始请求头部信息</span>
+    <span class="n">config</span><span class="p">.</span><span class="na">addAllowedHeader</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">);</span>
+    <span class="c1">//放行哪些请求方式，*代表所有</span>
+    <span class="n">config</span><span class="p">.</span><span class="na">addAllowedMethod</span><span class="p">(</span><span class="s">&quot;*&quot;</span><span class="p">);</span>
+    <span class="c1">//是否允许发送Cookie，必须要开启，因为我们的JSESSIONID需要在Cookie中携带</span>
+    <span class="n">config</span><span class="p">.</span><span class="na">setAllowCredentials</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+    <span class="c1">//映射路径</span>
+    <span class="n">UrlBasedCorsConfigurationSource</span> <span class="n">corsConfigurationSource</span> <span class="o">=</span> <span class="k">new</span> <span class="n">UrlBasedCorsConfigurationSource</span><span class="p">();</span>
+    <span class="n">corsConfigurationSource</span><span class="p">.</span><span class="na">registerCorsConfiguration</span><span class="p">(</span><span class="s">&quot;/**&quot;</span><span class="p">,</span> <span class="n">config</span><span class="p">);</span>
+    <span class="c1">//返回CorsFilter</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">CorsFilter</span><span class="p">(</span><span class="n">corsConfigurationSource</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>这样，我们的SpringBoot项目就支持跨域访问了，接着我们再来尝试进行登陆，可以发现已经能够正常访问了，并且响应头中包含了以下信息：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+Access-Control-Allow-Origin: http://localhost:63342
+Access-Control-Expose-Headers: *
+Access-Control-Allow-Credentials: true
+</code></pre></div>
+</td></tr></table>
+<p>可以看到我们当前访问的原始域已经被放行了。</p>
+<p>但是还有一个问题，我们的Ajax请求中没有携带Cookie信息（这个按理说属于前端知识了）这里我们稍微改一下，不然我们的请求无法确认身份：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">get</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">success</span><span class="p">){</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;get&quot;</span><span class="p">,</span>
+        <span class="nx">url</span><span class="o">:</span> <span class="nx">url</span><span class="p">,</span>
+        <span class="k">async</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">dataType</span><span class="o">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+        <span class="nx">xhrFields</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">withCredentials</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="nx">success</span><span class="o">:</span> <span class="nx">success</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">post</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">success</span><span class="p">){</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+        <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;post&quot;</span><span class="p">,</span>
+        <span class="nx">url</span><span class="o">:</span> <span class="nx">url</span><span class="p">,</span>
+        <span class="k">async</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="nx">data</span><span class="o">:</span> <span class="nx">data</span><span class="p">,</span>
+        <span class="nx">dataType</span><span class="o">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+        <span class="nx">xhrFields</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">withCredentials</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="nx">success</span><span class="o">:</span> <span class="nx">success</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>添加两个封装好的方法，并且将<code>withCredentials</code>开启，这样在发送异步请求时，就会携带Cookie信息了。</p>
+<p>在学习完成Linux之后，我们会讲解如何在Linux服务器上部署Nginx反向代理服务器。</p>
+<hr />
+<h2 id="swagger">接口管理：Swagger</h2>
+<p>在前后端分离项目中，前端人员需要知道我们后端会提供什么数据，根据后端提供的数据来进行前端页面渲染（在之前我们也演示过）这个时候，我们就需要编写一个API文档，以便前端人员随时查阅。</p>
+<p>但是这样的一个文档，我们也不可能单独写一个项目去进行维护，并且随着我们的后端项目不断更新，文档也需要跟随更新，这显然是很麻烦的一件事情，那么有没有一种比较好的解决方案呢？</p>
+<p>当然有，那就是丝袜哥：Swagger</p>
+<h3 id="swagger_1">走进Swagger</h3>
+<p>Swagger的主要功能如下：</p>
+<ul>
+<li>支持 API 自动生成同步的在线文档：使用 Swagger 后可以直接通过代码生成文档，不再需要自己手动编写接口文档了，对程序员来说非常方便，可以节约写文档的时间去学习新技术。</li>
+<li>提供 Web 页面在线测试 API：光有文档还不够，Swagger 生成的文档还支持在线测试。参数和格式都定好了，直接在界面上输入参数对应的值即可在线测试接口。</li>
+</ul>
+<p>结合Spring框架（Spring-fox），Swagger可以很轻松地利用注解以及扫描机制，来快速生成在线文档，以实现当我们项目启动之后，前端开发人员就可以打开Swagger提供的前端页面，查看和测试接口。依赖如下：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>io.springfox<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>springfox-boot-starter<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>3.0.0<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+</td></tr></table>
+<p>SpringBoot 2.6以上版本修改了路径匹配规则，但是Swagger3还不支持，这里换回之前的，不然启动直接报错：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">spring</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mvc</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">pathmatch</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="w w-Error">  </span><span class="nt">matching-strategy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ant_path_matcher</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>项目启动后，我们可以直接打开：http://localhost:8080/swagger-ui/index.html，这个页面（要是觉得丑，UI是可以换的，支持第三方）会显示所有的API文档，包括接口的路径、支持的方法、接口的描述等，并且我们可以直接对API接口进行测试，非常方便。</p>
+<p>我们可以创建一个配置类去配置页面的相关信息：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Configuration</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SwaggerConfiguration</span> <span class="p">{</span>
+
+    <span class="nd">@Bean</span>
+    <span class="kd">public</span> <span class="n">Docket</span> <span class="nf">docket</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Docket</span><span class="p">(</span><span class="n">DocumentationType</span><span class="p">.</span><span class="na">OAS_30</span><span class="p">).</span><span class="na">apiInfo</span><span class="p">(</span>
+                <span class="k">new</span> <span class="n">ApiInfoBuilder</span><span class="p">()</span>
+                        <span class="p">.</span><span class="na">contact</span><span class="p">(</span><span class="k">new</span> <span class="n">Contact</span><span class="p">(</span><span class="s">&quot;你的名字&quot;</span><span class="p">,</span> <span class="s">&quot;https://www.bilibili.com&quot;</span><span class="p">,</span> <span class="s">&quot;javastudy111*@163.com&quot;</span><span class="p">))</span>
+                        <span class="p">.</span><span class="na">title</span><span class="p">(</span><span class="s">&quot;图书管理系统 - 在线API接口文档&quot;</span><span class="p">)</span>
+                        <span class="p">.</span><span class="na">build</span><span class="p">()</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<h3 id="_4">接口信息配置</h3>
+<p>虽然Swagger的UI界面已经可以很好地展示后端提供的接口信息了，但是非常的混乱，我们来看看如何配置接口的一些描述信息。</p>
+<p>首先我们的页面中完全不需要显示ErrorController相关的API，所以我们配置一下选择哪些Controller才会生成API信息：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Bean</span>
+<span class="kd">public</span> <span class="n">Docket</span> <span class="nf">docket</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ApiInfo</span> <span class="n">info</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ApiInfoBuilder</span><span class="p">()</span>
+            <span class="p">.</span><span class="na">contact</span><span class="p">(</span><span class="k">new</span> <span class="n">Contact</span><span class="p">(</span><span class="s">&quot;你的名字&quot;</span><span class="p">,</span> <span class="s">&quot;https://www.bilibili.com&quot;</span><span class="p">,</span> <span class="s">&quot;javastudy111@163.com&quot;</span><span class="p">))</span>
+            <span class="p">.</span><span class="na">title</span><span class="p">(</span><span class="s">&quot;图书管理系统 - 在线API接口文档&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="na">description</span><span class="p">(</span><span class="s">&quot;这是一个图书管理系统的后端API文档，欢迎前端人员查阅！&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">Docket</span><span class="p">(</span><span class="n">DocumentationType</span><span class="p">.</span><span class="na">OAS_30</span><span class="p">)</span>
+            <span class="p">.</span><span class="na">apiInfo</span><span class="p">(</span><span class="n">info</span><span class="p">)</span>
+            <span class="p">.</span><span class="na">select</span><span class="p">()</span>       <span class="c1">//对项目中的所有API接口进行选择</span>
+            <span class="p">.</span><span class="na">apis</span><span class="p">(</span><span class="n">RequestHandlerSelectors</span><span class="p">.</span><span class="na">basePackage</span><span class="p">(</span><span class="s">&quot;com.example.controller&quot;</span><span class="p">))</span>
+            <span class="p">.</span><span class="na">build</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>接着我们来看看如何为一个Controller编写API描述信息：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Api</span><span class="p">(</span><span class="n">tags</span> <span class="o">=</span> <span class="s">&quot;账户验证接口&quot;</span><span class="p">,</span> <span class="n">description</span> <span class="o">=</span> <span class="s">&quot;包括用户登录、注册、验证码请求等操作。&quot;</span><span class="p">)</span>
+<span class="nd">@RestController</span>
+<span class="nd">@RequestMapping</span><span class="p">(</span><span class="s">&quot;/api/auth&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AuthApiController</span> <span class="p">{</span>
+</code></pre></div>
+</td></tr></table>
+<p>我们可以直接在类名称上面添加<code>@Api</code>注解，并填写相关信息，来为当前的Controller设置描述信息。</p>
+<p>接着我们可以为所有的请求映射配置描述信息：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@ApiResponses</span><span class="p">({</span>
+        <span class="nd">@ApiResponse</span><span class="p">(</span><span class="n">code</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;邮件发送成功&quot;</span><span class="p">),</span>  
+        <span class="nd">@ApiResponse</span><span class="p">(</span><span class="n">code</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="s">&quot;邮件发送失败&quot;</span><span class="p">)</span>   <span class="c1">//不同返回状态码描述</span>
+<span class="p">})</span>
+<span class="nd">@ApiOperation</span><span class="p">(</span><span class="s">&quot;请求邮件验证码&quot;</span><span class="p">)</span>   <span class="c1">//接口描述</span>
+<span class="nd">@GetMapping</span><span class="p">(</span><span class="s">&quot;/verify-code&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="n">RestBean</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;</span> <span class="nf">verifyCode</span><span class="p">(</span><span class="nd">@ApiParam</span><span class="p">(</span><span class="s">&quot;邮箱地址&quot;</span><span class="p">)</span>   <span class="c1">//请求参数的描述</span>
+                                 <span class="nd">@RequestParam</span><span class="p">(</span><span class="s">&quot;email&quot;</span><span class="p">)</span> <span class="n">String</span> <span class="n">email</span><span class="p">){</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@ApiIgnore</span>     <span class="c1">//忽略此请求映射</span>
+<span class="nd">@PostMapping</span><span class="p">(</span><span class="s">&quot;/login-success&quot;</span><span class="p">)</span>
+<span class="kd">public</span> <span class="n">RestBean</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;</span> <span class="nf">loginSuccess</span><span class="p">(){</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="n">RestBean</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="s">&quot;登陆成功&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>我们也可以为实体类配置相关的描述信息：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nd">@Data</span>
+<span class="nd">@ApiModel</span><span class="p">(</span><span class="n">description</span> <span class="o">=</span> <span class="s">&quot;响应实体封装类&quot;</span><span class="p">)</span>
+<span class="nd">@AllArgsConstructor</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RestBean</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+
+    <span class="nd">@ApiModelProperty</span><span class="p">(</span><span class="s">&quot;状态码&quot;</span><span class="p">)</span>
+    <span class="kt">int</span> <span class="n">code</span><span class="p">;</span>
+    <span class="nd">@ApiModelProperty</span><span class="p">(</span><span class="s">&quot;状态码描述&quot;</span><span class="p">)</span>
+    <span class="n">String</span> <span class="n">reason</span><span class="p">;</span>
+    <span class="nd">@ApiModelProperty</span><span class="p">(</span><span class="s">&quot;数据实体&quot;</span><span class="p">)</span>
+    <span class="n">T</span> <span class="n">data</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">RestBean</span><span class="p">(</span><span class="kt">int</span> <span class="n">code</span><span class="p">,</span> <span class="n">String</span> <span class="n">reason</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">code</span> <span class="o">=</span> <span class="n">code</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">reason</span> <span class="o">=</span> <span class="n">reason</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</td></tr></table>
+<p>这样，我们就可以在文档中查看实体类简介以及各个属性的介绍了。</p>
+<p>最后我们再配置一下多环境：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;profiles&gt;</span>
+    <span class="nt">&lt;profile&gt;</span>
+        <span class="nt">&lt;id&gt;</span>dev<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;activation&gt;</span>
+            <span class="nt">&lt;activeByDefault&gt;</span>true<span class="nt">&lt;/activeByDefault&gt;</span>
+        <span class="nt">&lt;/activation&gt;</span>
+        <span class="nt">&lt;properties&gt;</span>
+            <span class="nt">&lt;environment&gt;</span>dev<span class="nt">&lt;/environment&gt;</span>
+        <span class="nt">&lt;/properties&gt;</span>
+    <span class="nt">&lt;/profile&gt;</span>
+    <span class="nt">&lt;profile&gt;</span>
+        <span class="nt">&lt;id&gt;</span>prod<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;activation&gt;</span>
+            <span class="nt">&lt;activeByDefault&gt;</span>false<span class="nt">&lt;/activeByDefault&gt;</span>
+        <span class="nt">&lt;/activation&gt;</span>
+        <span class="nt">&lt;properties&gt;</span>
+            <span class="nt">&lt;environment&gt;</span>prod<span class="nt">&lt;/environment&gt;</span>
+        <span class="nt">&lt;/properties&gt;</span>
+    <span class="nt">&lt;/profile&gt;</span>
+<span class="nt">&lt;/profiles&gt;</span>
+</code></pre></div>
+</td></tr></table>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;resources&gt;</span>
+    <span class="nt">&lt;resource&gt;</span>
+        <span class="nt">&lt;directory&gt;</span>src/main/resources<span class="nt">&lt;/directory&gt;</span>
+        <span class="nt">&lt;excludes&gt;</span>
+            <span class="nt">&lt;exclude&gt;</span>application*.yaml<span class="nt">&lt;/exclude&gt;</span>
+        <span class="nt">&lt;/excludes&gt;</span>
+    <span class="nt">&lt;/resource&gt;</span>
+    <span class="nt">&lt;resource&gt;</span>
+        <span class="nt">&lt;directory&gt;</span>src/main/resources<span class="nt">&lt;/directory&gt;</span>
+        <span class="nt">&lt;filtering&gt;</span>true<span class="nt">&lt;/filtering&gt;</span>
+        <span class="nt">&lt;includes&gt;</span>
+            <span class="nt">&lt;include&gt;</span>application.yaml<span class="nt">&lt;/include&gt;</span>
+            <span class="nt">&lt;include&gt;</span>application-${environment}.yaml<span class="nt">&lt;/include&gt;</span>
+        <span class="nt">&lt;/includes&gt;</span>
+    <span class="nt">&lt;/resource&gt;</span>
+<span class="nt">&lt;/resources&gt;</span>
+</code></pre></div>
+</td></tr></table>
+<p>首先在Maven中添加两个环境，接着我们配置一下不同环境的配置文件：</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="w">  </span><span class="nt">jpa</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">show-sql</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hibernate</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">ddl-auto</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">update</span><span class="w"></span>
+<span class="nt">springfox</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">documentation</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<p>在生产环境下，我们选择不开启Swagger文档以及JPA的数据库操作日志，这样我们就可以根据情况选择两套环境了。</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" data-md-state="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../SpringBoot%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%89%EF%BC%89/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Redis数据库" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              Redis数据库
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../SpringBoot%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%94%EF%BC%89/" class="md-footer__link md-footer__link--next" aria-label="下一页: Linux操作系统与项目部署" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              Linux操作系统与项目部署
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2022 <a href="https://pjmcode.top" target="_blank" rel="noopener noreferrer">潘江明</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+        <script src="../../../js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
