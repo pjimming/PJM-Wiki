@@ -104,7 +104,6 @@ nav:
     # - My Problem:
     #   - 方毓乔买咖啡: algorithm/myproblem/fyqbuycoffee.md
   - Java:
-    - Java 前言: java/index.md
     - JavaSE:
       - Java语法规范: java/javase/JavaSE笔记（一）.md
       - Java对象和多态 （面向对象）: java/javase/JavaSE笔记（二）.md
@@ -113,6 +112,32 @@ nav:
       - Java I/O: java/javase/JavaSE笔记（五）.md
       - Java多线程: java/javase/JavaSE笔记（六）.md
       - Java反射和注解: java/javase/JavaSE笔记（七）.md
+    - JavaWeb:
+      - Java网络编程: java/web/JavaWeb笔记（一）.md
+      - 数据库基础: java/web/JavaWeb笔记（二）.md
+      - Java与数据库: java/web/JavaWeb笔记（三）.md
+      - 前端基础: java/web/JavaWeb笔记（四）.md
+      - JavaWeb后端: java/web/JavaWeb笔记（五）.md
+    - JavaSSM:
+      - Spring框架技术: java/ssm/JavaSSM笔记（一）.md
+      - SpringMVC: java/ssm/JavaSSM笔记（二）.md
+      - SpringSecurity: java/ssm/JavaSSM笔记（三）.md
+      - MySQL高级: java/ssm/JavaSSM笔记（四）.md
+    - SpringBoot:
+      - SpringBoot一站式开发: java/sb/SpringBoot笔记（一）.md
+      - Git版本控制: java/sb/SpringBoot笔记（二）.md
+      - Redis数据库: java/sb/SpringBoot笔记（三）.md
+      - SpringBoot其他框架: java/sb/SpringBoot笔记（四）.md
+      - Linux操作系统与项目部署: java/sb/SpringBoot笔记（五）.md
+    - JVM虚拟机:
+      - 走进JVM: java/jvm/JVM笔记（一）.md
+      - JVM内存管理: java/jvm/JVM笔记（二）.md
+      - 类与加载类: java/jvm/JVM笔记（三）.md
+    - JUC并发编程:
+      - 再谈多线程: java/juc/JUC笔记（一）.md
+      - 多线程编程核心: java/juc/JUC笔记（二）.md
+      - 并发编程进阶: java/juc/JUC笔记（三）.md
+    - 鸣谢: java/index.md
   - LaTeX:
     - 基础语法: latex/basic.md
     - 函数、符号及特殊字符: latex/symbols.md
