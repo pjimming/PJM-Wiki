@@ -103,6 +103,7 @@ nav:
       - Can you answer these queries III(单点修改，区间查询): algorithm/segmentTree/3.md
       - Interval GCD(单点修改，区间查询): algorithm/segmentTree/5.md
       - 【模板】线段树1(区间修改，区间查询): algorithm/segmentTree/6.md
+      - 【模板】线段树2(区间修改，区间查询): algorithm/segmentTree/7.md
     - My Problem:
       - 方毓乔买咖啡: algorithm/myproblem/fyqbuycoffee.md
   - Java:
