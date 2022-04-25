@@ -98,6 +98,8 @@ nav:
       - 17.21. 直方图的水量: algorithm/mst/17_21.md
     - 背包问题:
       - 背包模板: algorithm/bag/1.md
+    - 树状数组:
+      - 树状数组简介: algorithm/bit/1.md
     - 线段树:
       - 线段树简介: algorithm/segmentTree/1.md
       - 最大数(单点修改，区间查询): algorithm/segmentTree/2.md
