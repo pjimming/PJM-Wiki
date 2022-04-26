@@ -115,6 +115,7 @@ nav:
       - 【模板】线段树2(区间修改，区间查询): algorithm/segmentTree/7.md
     - My Problem:
       - 方毓乔买咖啡: algorithm/myproblem/fyqbuycoffee.md
+      - 二叉树可以维护逆序对吗？: algorithm/myproblem/numofnxd.md
   - Java:
     - JavaSE:
       - Java语法规范: java/javase/JavaSE笔记（一）.md
