@@ -104,6 +104,7 @@ nav:
       - 【模板】树状数组2(区间修改，单点查询): algorithm/bit/3.md
       - 逆序对: algorithm/bit/4.md
       - 火柴排队(NOIP2013 提高组): algorithm/bit/5.md
+      - 配对统计(GZOI2017): algorithm/bit/6.md
     - 线段树:
       - 线段树简介: algorithm/segmentTree/1.md
       - 最大数(单点修改，区间查询): algorithm/segmentTree/2.md
