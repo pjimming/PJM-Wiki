@@ -228,6 +228,8 @@
         
   
   
+    
+  
 
 
   
@@ -239,7 +241,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../leetcode/1/" class="md-tabs__link">
+      <a href="../../leetcode/1/" class="md-tabs__link md-tabs__link--active">
         Algorithm
       </a>
     </li>
@@ -804,12 +806,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -1518,12 +1522,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" checked>
       
       
       
@@ -1549,6 +1555,110 @@
       <a href="../fyqbuycoffee/" class="md-nav__link">
         方毓乔买咖啡
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          二叉树可以维护逆序对吗？
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        二叉树可以维护逆序对吗？
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    题目描述
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    输入格式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    输出格式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    数据范围
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    输入样例1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    输出样例1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    输入样例2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    输出样例2
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2426,15 +2536,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    输入样例
+  <a href="#1" class="md-nav__link">
+    输入样例1
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    输出样例
+  <a href="#1_1" class="md-nav__link">
+    输出样例1
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    输入样例2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    输出样例2
   </a>
   
 </li>
@@ -2458,6 +2582,7 @@
 
 
 <h1 id="_1">二叉树可以维护逆序对吗？</h1>
+<p><a href="https://yzcode.top/problem/T1003">原题链接</a></p>
 <h4 id="_2">题目描述</h4>
 <p>我们都知道一颗二叉树，有前序、中序、后续三种遍历方式。</p>
 <p>其中给定前序和中序，便可以推导出二叉树的后序。</p>
@@ -2465,14 +2590,43 @@
 <p><strong>逆序对：</strong> 对于一个包含 <span class="arithmatex">\(N\)</span> 个非负整数的数组 <span class="arithmatex">\(A[1..n]\)</span>，如果有 <span class="arithmatex">\(i &lt; j\)</span>，且 <span class="arithmatex">\(A[i]&gt;A[j]\)</span>，则称<span class="arithmatex">\((A[i] ,A[j])\)</span>为数组A中的一个逆序对。</p>
 <p>其中 <span class="arithmatex">\(A[i]\)</span>为第 <span class="arithmatex">\(i\)</span> 个遍历到的节点编号。</p>
 <h4 id="_3">输入格式</h4>
+<p>第一行输入一个整数<span class="arithmatex">\(n\)</span>，表示二叉树节点的个数。节点编号为(<span class="arithmatex">\(1,2,...,n\)</span>)。</p>
+<p>第二行有 <span class="arithmatex">\(n\)</span> 个整数，表示二叉树的前序遍历。</p>
+<p>第三行有 <span class="arithmatex">\(n\)</span> 个整数，表示二叉树的中序遍历。</p>
 <h4 id="_4">输出格式</h4>
+<p>输出两行</p>
+<p>第一行输出 <span class="arithmatex">\(n\)</span> 个数，表示二叉树的后序遍历，每个数用一个空格分开。</p>
+<p>第二行输出一个整数 <span class="arithmatex">\(k\)</span>，表示二叉树后序遍历的逆序对数量，答案可能会爆 <span class="arithmatex">\(int\)</span>。</p>
 <h4 id="_5">数据范围</h4>
-<h4 id="_6">输入样例</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+<ul>
+<li><span class="arithmatex">\(1\le n\le 10^5\)</span></li>
+</ul>
+<h4 id="1">输入样例1</h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>5
+1 2 4 5 3
+4 2 5 1 3
 </code></pre></div>
 </td></tr></table>
-<h4 id="_7">输出样例</h4>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>
+<h4 id="1_1">输出样例1</h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>4 5 2 3 1
+8
+</code></pre></div>
+</td></tr></table>
+<h4 id="2">输入样例2</h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>10
+2 4 8 6 10 7 3 9 1 5
+8 6 10 4 7 2 3 1 5 9
+</code></pre></div>
+</td></tr></table>
+<h4 id="2_1">输出样例2</h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>10 6 8 7 4 5 1 9 3 2
+34
 </code></pre></div>
 </td></tr></table>
 
@@ -2489,6 +2643,41 @@
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="页脚">
+      
+        
+        <a href="../fyqbuycoffee/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 方毓乔买咖啡" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              方毓乔买咖啡
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../../java/javase/JavaSE%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89/" class="md-footer__link md-footer__link--next" aria-label="下一页: Java语法规范" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              Java语法规范
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
