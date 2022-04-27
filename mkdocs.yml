@@ -116,6 +116,7 @@ nav:
     - My Problem:
       - 方毓乔买咖啡: algorithm/myproblem/fyqbuycoffee.md
       - 二叉树可以维护逆序对吗？: algorithm/myproblem/numofnxd.md
+      - 一个简单的计算题: algorithm/myproblem/easycalculate.md
   - Java:
     - JavaSE:
       - Java语法规范: java/javase/JavaSE笔记（一）.md
@@ -158,6 +159,9 @@ nav:
     - 字体: latex/font.md
     - 外部链接: latex/links.md
     - 颜色: latex/colors.md
+  - 工具:
+    - OJ生成数据模板: tools/1.md
+    - 出题模板: tools/2.md
   - 关于:
     - 关于作者: about/aboutme.md
     - 关于PJM Wiki: about/aboutwiki.md
