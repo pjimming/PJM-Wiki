@@ -61,6 +61,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://wiki.pjmcode.top/algorithm/dsu/1/</loc>
+         <lastmod>2022-04-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://wiki.pjmcode.top/algorithm/leetcode/1/</loc>
          <lastmod>2022-04-27</lastmod>
          <changefreq>daily</changefreq>
