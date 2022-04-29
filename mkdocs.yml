@@ -101,6 +101,7 @@ nav:
     - 并查集:
       - 并查集简介: algorithm/dsu/1.md
       - 程序自动分析(NOI2015): algorithm/dsu/2.md
+      - 星球大战(JSOI2008): algorithm/dsu/3.md
     - 树状数组:
       - 树状数组简介: algorithm/bit/1.md
       - 【模板】树状数组1(单点修改，区间查询): algorithm/bit/2.md
