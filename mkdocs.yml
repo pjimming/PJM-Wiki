@@ -103,6 +103,7 @@ nav:
       - 程序自动分析(NOI2015): algorithm/dsu/2.md
       - 星球大战(JSOI2008): algorithm/dsu/3.md
       - 银河英雄传说(NOI2002): algorithm/dsu/4.md
+      - 食物链(NOI2001): algorithm/dsu/5.md
     - 树状数组:
       - 树状数组简介: algorithm/bit/1.md
       - 【模板】树状数组1(单点修改，区间查询): algorithm/bit/2.md
