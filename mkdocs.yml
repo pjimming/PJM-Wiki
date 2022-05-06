@@ -96,6 +96,7 @@ nav:
       - 65. 不用加减乘除做加法: algorithm/offer/65.md
     - 程序员面试金典:
       - 17.21. 直方图的水量: algorithm/mst/17_21.md
+    - 数学基础知识: algorithm/math/1.md
     - 背包问题:
       - 背包模板: algorithm/bag/1.md
     - 并查集:
