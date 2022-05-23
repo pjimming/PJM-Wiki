@@ -167,6 +167,12 @@ nav:
       - 文本标签: web/html/2.md
       - 图片: web/html/3.md
       - 音频与视频: web/html/4.md
+      - 超链接: web/html/5.md
+      - 表单: web/html/6.md
+      - 列表: web/html/7.md
+      - 表格: web/html/8.md
+      - 语义标签: web/html/9.md
+      - 特殊符号: web/html/10.md
   - LaTeX:
     - 基础语法: latex/basic.md
     - 函数、符号及特殊字符: latex/symbols.md
