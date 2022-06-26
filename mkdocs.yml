@@ -184,6 +184,7 @@ nav:
   - 工具:
     - OJ生成数据模板: tools/1.md
     - 出题模板: tools/2.md
+    - leetcode题解模板: tools/3.md
   - 关于:
     - 关于作者: about/aboutme.md
     - 关于PJM Wiki: about/aboutwiki.md
