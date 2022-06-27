@@ -95,6 +95,8 @@ nav:
       - 24. 反转链表: algorithm/offer/24.md
       - 25. 合并两个排序的链表: algorithm/offer/25.md
       - 65. 不用加减乘除做加法: algorithm/offer/65.md
+    - 剑指offer Ⅱ:
+      - 053. 二叉搜索树中的中序后继: algorithm/offer2/53.md
     - 程序员面试金典:
       - 17.21. 直方图的水量: algorithm/mst/17_21.md
     - 数学基础知识: algorithm/math/1.md
