@@ -78,6 +78,7 @@ nav:
       - 61. 旋转链表: algorithm/leetcode/61.md
       - 73. 矩阵置零: algorithm/leetcode/73.md
       - 82. 删除排序链表中的重复元素 II: algorithm/leetcode/82.md
+      - 94. 二叉树的中序遍历: algorithm/leetcode/94.md
       - 150. 逆波兰表达式求值: algorithm/leetcode/150.md
       - 173. 二叉搜索树迭代器: algorithm/leetcode/173.md
       - 191. 位1的个数: algorithm/leetcode/191.md
