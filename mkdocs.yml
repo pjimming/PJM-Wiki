@@ -81,6 +81,7 @@ nav:
       - 94. 二叉树的中序遍历: algorithm/leetcode/94.md
       - 150. 逆波兰表达式求值: algorithm/leetcode/150.md
       - 173. 二叉搜索树迭代器: algorithm/leetcode/173.md
+      - 190. 颠倒二进制位: algorithm/leetcode/190.md
       - 191. 位1的个数: algorithm/leetcode/191.md
       - 206. 反转链表: algorithm/leetcode/206.md
       - 223. 矩形面积: algorithm/leetcode/223.md
