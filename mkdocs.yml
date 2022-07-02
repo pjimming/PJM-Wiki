@@ -178,6 +178,15 @@ nav:
       - 表格: web/html/8.md
       - 语义标签: web/html/9.md
       - 特殊符号: web/html/10.md
+    - CSS:
+      - 样式定义方式: web/css/1.md
+      - 选择器: web/css/2.md
+      - 颜色: web/css/3.md
+      - 文本: web/css/4.md
+      - 字体: web/css/5.md
+      - 背景: web/css/6.md
+      - 边框: web/css/7.md
+      - 元素展示格式: web/css/8.md
   - LaTeX:
     - 基础语法: latex/basic.md
     - 函数、符号及特殊字符: latex/symbols.md
