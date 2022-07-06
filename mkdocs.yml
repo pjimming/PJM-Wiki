@@ -101,11 +101,14 @@ nav:
       - 053. 二叉搜索树中的中序后继: algorithm/offer2/53.md
     - 程序员面试金典:
       - 17.21. 直方图的水量: algorithm/mst/17_21.md
-    - 数学基础知识: algorithm/math/1.md
-    - 欧拉函数:
-      - 欧拉函数基础: algorithm/math/euler/1.md
+    - My Problem:
+      - 方毓乔买咖啡: algorithm/myproblem/fyqbuycoffee.md
+      - 二叉树可以维护逆序对吗？: algorithm/myproblem/numofnxd.md
+      - 一个简单的计算题: algorithm/myproblem/easycalculate.md
+  - 动态规划:
     - 背包问题:
       - 背包模板: algorithm/bag/1.md
+  - 数据结构:
     - 并查集:
       - 并查集简介: algorithm/dsu/1.md
       - 程序自动分析(NOI2015): algorithm/dsu/2.md
@@ -127,10 +130,10 @@ nav:
       - Interval GCD(单点修改，区间查询): algorithm/segmentTree/5.md
       - 【模板】线段树1(区间修改，区间查询): algorithm/segmentTree/6.md
       - 【模板】线段树2(区间修改，区间查询): algorithm/segmentTree/7.md
-    - My Problem:
-      - 方毓乔买咖啡: algorithm/myproblem/fyqbuycoffee.md
-      - 二叉树可以维护逆序对吗？: algorithm/myproblem/numofnxd.md
-      - 一个简单的计算题: algorithm/myproblem/easycalculate.md
+  - 数论:
+    - 数学基础知识: algorithm/math/1.md
+    - 欧拉函数:
+      - 欧拉函数基础: algorithm/math/euler/1.md
   - Java:
     - JavaSE:
       - Java语法规范: java/javase/JavaSE笔记（一）.md
@@ -187,6 +190,12 @@ nav:
       - 背景: web/css/6.md
       - 边框: web/css/7.md
       - 元素展示格式: web/css/8.md
+      - 内边距与外边距: web/css/9.md
+      - 盒子模型: web/css/10.md
+      - 位置: web/css/11.md
+      - 浮动: web/css/12.md
+      - flex布局: web/css/13.md
+      - 响应式布局: web/css/14.md
   - LaTeX:
     - 基础语法: latex/basic.md
     - 函数、符号及特殊字符: latex/symbols.md
