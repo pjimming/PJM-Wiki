@@ -111,6 +111,8 @@ nav:
     - 数字三角形模型:
       - 摘花生: dp/triangle/1.md
       - 最低通行费: dp/triangle/2.md
+      - 方格取数: dp/triangle/3.md
+      - 传纸条: dp/triangle/4.md
   - 数据结构:
     - 并查集:
       - 并查集简介: algorithm/dsu/1.md
