@@ -201,6 +201,18 @@ nav:
       - 浮动: web/css/12.md
       - flex布局: web/css/13.md
       - 响应式布局: web/css/14.md
+    - JavaScript:
+      - JS的调用方式与执行顺序: web/js/1.md
+      - 变量与运算符: web/js/2.md
+      - 输入与输出: web/js/3.md
+      - 判断语句: web/js/4.md
+      - 循环语句: web/js/5.md
+      - 对象: web/js/6.md
+      - 数组: web/js/7.md
+      - 函数: web/js/8.md
+      - 类: web/js/9.md
+      - 事件: web/js/10.md
+      - 常用库: web/js/11.md
   - LaTeX:
     - 基础语法: latex/basic.md
     - 函数、符号及特殊字符: latex/symbols.md
