@@ -113,7 +113,12 @@ nav:
       - 最低通行费: dp/triangle/2.md
       - 方格取数: dp/triangle/3.md
       - 传纸条: dp/triangle/4.md
+    - 单调队列优化DP:
+      - 最大子序和: dp/mono-queue/1.md
+      - 修建草坪: dp/mono-queue/2.md
   - 数据结构:
+    - 单调队列:
+      - 单调队列简介: ds/monotonous-queue/1.md
     - 并查集:
       - 并查集简介: algorithm/dsu/1.md
       - 程序自动分析(NOI2015): algorithm/dsu/2.md
