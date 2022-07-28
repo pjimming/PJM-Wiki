@@ -116,6 +116,7 @@ nav:
     - 单调队列优化DP:
       - 最大子序和: dp/mono-queue/1.md
       - 修建草坪: dp/mono-queue/2.md
+      - 旅行问题: dp/mono-queue/3.md
   - 数据结构:
     - 单调队列:
       - 单调队列简介: ds/monotonous-queue/1.md
