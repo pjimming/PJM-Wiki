@@ -119,6 +119,7 @@ nav:
       - 旅行问题: dp/mono-queue/3.md
       - 烽火传递: dp/mono-queue/4.md
       - 绿色通道: dp/mono-queue/5.md
+      - 理想的正方形: dp/mono-queue/6.md
   - 数据结构:
     - 单调队列:
       - 单调队列简介: ds/monotonous-queue/1.md
