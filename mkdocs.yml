@@ -122,6 +122,7 @@ nav:
       - 理想的正方形: dp/mono-queue/6.md
     - 斜率优化DP:
       - 任务安排 1: dp/slope/1.md
+      - 任务安排 2: dp/slope/2.md
   - 数据结构:
     - 单调队列:
       - 单调队列简介: ds/monotonous-queue/1.md
