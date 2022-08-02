@@ -123,6 +123,8 @@ nav:
     - 斜率优化DP:
       - 任务安排 1: dp/slope/1.md
       - 任务安排 2: dp/slope/2.md
+      - 任务安排 3: dp/slope/3.md
+      - 运输小猫: dp/slope/4.md
   - 数据结构:
     - 单调队列:
       - 单调队列简介: ds/monotonous-queue/1.md
