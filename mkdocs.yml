@@ -149,6 +149,9 @@ nav:
       - Interval GCD(单点修改，区间查询): algorithm/segmentTree/5.md
       - 【模板】线段树1(区间修改，区间查询): algorithm/segmentTree/6.md
       - 【模板】线段树2(区间修改，区间查询): algorithm/segmentTree/7.md
+  - 图论:
+    - 图论相关概念: graph/concept.md
+    - 图论基础算法: graph/basic.md
   - 数论:
     - 数学基础知识: algorithm/math/1.md
     - 欧拉函数:
