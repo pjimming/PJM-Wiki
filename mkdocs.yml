@@ -152,6 +152,13 @@ nav:
   - 图论:
     - 图论相关概念: graph/concept.md
     - 图论基础算法: graph/basic.md
+    - 单源最短路:
+      - 最小花费: graph/single-souce-shostest-path/1.md
+      - 最优乘车: graph/single-souce-shostest-path/2.md
+      - 新年好: graph/single-souce-shostest-path/3.md
+      - 通信线路: graph/single-souce-shostest-path/4.md
+      - 道路与航线: graph/single-souce-shostest-path/5.md
+      - 最优贸易: graph/single-souce-shostest-path/6.md
   - 数论:
     - 数学基础知识: algorithm/math/1.md
     - 欧拉函数:
