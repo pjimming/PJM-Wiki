@@ -159,6 +159,9 @@ nav:
       - 通信线路: graph/single-souce-shostest-path/4.md
       - 道路与航线: graph/single-souce-shostest-path/5.md
       - 最优贸易: graph/single-souce-shostest-path/6.md
+      - 最短路计数: graph/single-souce-shostest-path/7.md
+      - 拯救大兵瑞恩: graph/single-souce-shostest-path/8.md
+      - 观光: graph/single-souce-shostest-path/9.md
   - 数论:
     - 数学基础知识: algorithm/math/1.md
     - 欧拉函数:
