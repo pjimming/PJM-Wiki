@@ -162,6 +162,11 @@ nav:
       - 最短路计数: graph/single-souce-shostest-path/7.md
       - 拯救大兵瑞恩: graph/single-souce-shostest-path/8.md
       - 观光: graph/single-souce-shostest-path/9.md
+    - Floyd:
+      - 观光之旅: graph/floyd/1.md
+    - 最小生成树:
+      - 走廊泼水节: graph/mst/1.md
+      - 秘密的牛奶运输: graph/mst/2.md
   - 数论:
     - 数学基础知识: algorithm/math/1.md
     - 欧拉函数:
@@ -251,6 +256,7 @@ nav:
     - OJ生成数据模板: tools/1.md
     - 出题模板: tools/2.md
     - leetcode题解模板: tools/3.md
+    - ACM模板: tools/4.md
   - 关于:
     - 关于作者: about/aboutme.md
     - 关于PJM Wiki: about/aboutwiki.md
