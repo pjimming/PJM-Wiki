@@ -170,6 +170,12 @@ nav:
     - 负环:
       - 观光奶牛: graph/spfa/1.md
       - 单词环: graph/spfa/2.md
+    - 差分约束:
+      - 浅谈差分约束: graph/spfa/3.md
+      - 糖果: graph/spfa/4.md
+      - 区间: graph/spfa/5.md
+      - 排队布局: graph/spfa/6.md
+      - 雇佣收银员: graph/spfa/7.md
   - 数论:
     - 数学基础知识: algorithm/math/1.md
     - 欧拉函数:
