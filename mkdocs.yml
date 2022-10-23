@@ -179,12 +179,22 @@ nav:
     - 最近公共祖先:
       - 距离: graph/lca/1.md
       - 次小生成树: graph/lca/2.md
-    - 有向图的强连通分量:
+    - 强连通分量:
       - 强连通分量: graph/scc/1.md
       - 受欢迎的牛: graph/scc/2.md
       - 学校网络: graph/scc/3.md
       - 最大半连通子图: graph/scc/4.md
       - 银河: graph/scc/5.md
+    - 二分图:
+      - 介绍二分图: graph/bi-graph/1.md
+      - 关押罪犯: graph/bi-graph/2.md
+      - 棋盘覆盖: graph/bi-graph/3.md
+    - 拓扑排序:
+      - 介绍拓扑排序: graph/topo/1.md
+      - 家谱树: graph/topo/2.md
+      - 奖金: graph/topo/3.md
+      - 可达性统计: graph/topo/4.md
+      - 车站分级: graph/topo/5.md
   - 数论:
     - 数学基础知识: algorithm/math/1.md
     - 欧拉函数:
