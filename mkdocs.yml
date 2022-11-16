@@ -179,6 +179,7 @@ nav:
     - 最近公共祖先:
       - 距离: graph/lca/1.md
       - 次小生成树: graph/lca/2.md
+      - Passable Paths (CF 1702): graph/lca/3.md
     - 强连通分量:
       - 强连通分量: graph/scc/1.md
       - 受欢迎的牛: graph/scc/2.md
