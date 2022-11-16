@@ -2861,6 +2861,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lca/3/" class="md-nav__link">
+        Passable Paths (CF 1702)
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -5081,7 +5095,7 @@ else
 </details>
 <p>代码的核心是维持一个入度为 0 的顶点的集合。</p>
 <p>可以参考该图</p>
-<p><img alt="topo" src="https://oiwiki.org/graph/images/topo-example.svg" /></p>
+<p><img alt="topo" src="https://oi-wiki.org/graph/images/topo-example.svg" /></p>
 <p>对其排序的结果就是：2 -&gt; 8 -&gt; 0 -&gt; 3 -&gt; 7 -&gt; 1 -&gt; 5 -&gt; 6 -&gt; 9 -&gt; 4 -&gt; 11 -&gt; 10 -&gt; 12</p>
 <h3 id="_3">时间复杂度</h3>
 <p>假设这个图 <span class="arithmatex">\(G = (V, E)\)</span> 在初始化入度为 <span class="arithmatex">\(0\)</span> 的集合 <span class="arithmatex">\(S\)</span> 的时候就需要遍历整个图，并检查每一条边，因而有 <span class="arithmatex">\(O(E+V)\)</span> 的复杂度。然后对该集合进行操作，显然也是需要 <span class="arithmatex">\(O(E+V)\)</span> 的时间复杂度。</p>
