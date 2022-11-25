@@ -201,6 +201,7 @@ nav:
     - 欧拉函数:
       - 欧拉函数基础: math/euler/1.md
       - 可见的点: math/euler/2.md
+      - 最大公约数: math/euler/3.md
   - Java:
     - JavaSE:
       - Java语法规范: java/javase/JavaSE笔记（一）.md

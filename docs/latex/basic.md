@@ -149,7 +149,7 @@ ${\displaystyle {\begin{matrix}\underbrace {a+b+\cdots +z} \\26\end{matrix}}}$
 
 求和（累加）
 
-`\sum_{k=1}^N k^2`
+`\displaystyle \sum_{k=1}^N k^2`
 
 ${\displaystyle \sum _{k=1}^{N}k^{2}}$
 
