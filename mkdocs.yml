@@ -72,6 +72,8 @@ nav:
     - 环境变量: linux/environment_variable.md
     - 常用命令: linux/common_commond.md
   - Algorithm:
+    - 杂题:
+      - Absolute Sorting: algorithm/problem/1.md
     - leetcode:
       - 1. 两数之和: algorithm/leetcode/1.md
       - 21. 合并两个有序链表: algorithm/leetcode/21.md
@@ -198,6 +200,7 @@ nav:
       - 车站分级: graph/topo/5.md
   - 数论:
     - 数学基础知识: math/1.md
+    - 最大公约数简介: math/gcd.md
     - 欧拉函数:
       - 欧拉函数基础: math/euler/1.md
       - 可见的点: math/euler/2.md
