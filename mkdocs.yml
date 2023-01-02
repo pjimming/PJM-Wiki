@@ -75,6 +75,7 @@ nav:
     - 杂题:
       - Absolute Sorting: algorithm/problem/1.md
       - Lucky Chains: algorithm/problem/2.md
+      - Meeting on the Line: algorithm/problem/3.md
     - leetcode:
       - 1. 两数之和: algorithm/leetcode/1.md
       - 21. 合并两个有序链表: algorithm/leetcode/21.md
@@ -93,6 +94,7 @@ nav:
       - 713. 乘积小于K的子数组: algorithm/leetcode/713.md
       - 1011. 在 D 天内送达包裹的能力: algorithm/leetcode/1011.md
       - 1143. 最长公共子序列: algorithm/leetcode/1143.md
+      - 1293. 网格中的最短路径: algorithm/leetcode/1293.md
       - 1603. 设计停车系统: algorithm/leetcode/1603.md
     - 剑指offer:
       - 03. 数组中重复的数字: algorithm/offer/3.md
