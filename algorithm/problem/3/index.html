@@ -1042,7 +1042,7 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    题目大意
+    题意
   </a>
   
 </li>
@@ -1132,6 +1132,34 @@
     <li class="md-nav__item">
       <a href="../6/" class="md-nav__link">
         FLT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7/" class="md-nav__link">
+        Rectangular Congruence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8/" class="md-nav__link">
+        Zeros and Ones
       </a>
     </li>
   
@@ -5059,7 +5087,7 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    题目大意
+    题意
   </a>
   
 </li>
@@ -5125,8 +5153,10 @@
   <h1>Meeting on the Line</h1>
 
 <p><a href="https://codeforces.com/contest/1730/problem/B">原题链接</a></p>
-<h3 id="_1">题目大意</h3>
+<h3 id="_1">题意</h3>
 <p>有 <span class="arithmatex">\(n\)</span> 个人要到一个地方集合，每人要从 <span class="arithmatex">\(x[i]\)</span> 出发，出发前要打扮 <span class="arithmatex">\(t[i]\)</span> 分钟，走一单位的距离要花费 <span class="arithmatex">\(1\)</span> 时间，求最合适的集合的位置,使得集合所需的时间最少。</p>
+<p><em>⭐rating: 1600</em></p>
+<hr />
 <h3 id="1-bi-search">分析1 (bi-search)</h3>
 <p>我们可以二分集合所需要的最小时间 <span class="arithmatex">\(T\)</span>，如果在 <span class="arithmatex">\(T\)</span> 时间内所有人可以到达集合点，那么对于 <span class="arithmatex">\(\forall x&gt;0\)</span>，在 <span class="arithmatex">\(T+x\)</span> 的时间内都可以到达该集合点，因此具有二段性，可以进行二分搜索。</p>
 <p>如何进行二分查找？第 <span class="arithmatex">\(i\)</span> 个人在 <span class="arithmatex">\(T\)</span> 时间内可以到达的区间为 <span class="arithmatex">\([x_i-(T-t_i),x_i+(T-t_i)]\)</span>。记 <span class="arithmatex">\(p\)</span> 为所有人可到达区间的左端点的最大值，<span class="arithmatex">\(q\)</span> 为所有人可到达区间的右端点的最小值。当 <span class="arithmatex">\(p \le q\)</span> 时，<span class="arithmatex">\(T\)</span> 为有效答案，此时可以确定答案为 <span class="arithmatex">\(p\)</span>，可以证明如果时间 <span class="arithmatex">\(T\)</span> 为最小的集合时间时，<span class="arithmatex">\(p \equiv q\)</span>。</p>

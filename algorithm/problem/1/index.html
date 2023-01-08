@@ -1014,13 +1014,20 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    分析
+    题意
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    分析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     代码
   </a>
   
@@ -1099,6 +1106,34 @@
     <li class="md-nav__item">
       <a href="../6/" class="md-nav__link">
         FLT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7/" class="md-nav__link">
+        Rectangular Congruence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8/" class="md-nav__link">
+        Zeros and Ones
       </a>
     </li>
   
@@ -5026,13 +5061,20 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    分析
+    题意
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
+    分析
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     代码
   </a>
   
@@ -5059,12 +5101,11 @@
   <h1>Absolute Sorting</h1>
 
 <p><a href="https://codeforces.com/contest/1772/problem/D">Absolute Sorting</a></p>
-<p>You are given an array a consisting of n integers. The array is sorted if <span class="arithmatex">\(a_1≤a_2≤⋯≤a_n\)</span>.</p>
-<p>You want to make the array a sorted by applying the following operation exactly once:</p>
-<p>choose an integer x, then for every <span class="arithmatex">\(i∈[1,n]\)</span>, replace ai by |ai−x|.
-Find any value of x that will make the array sorted, or report that there is no such value.</p>
+<h3 id="_1">题意</h3>
+<p>给定一个乱序数组，判断是否存在一个数值x，让这个数组减去x后非递减排序。并且<span class="arithmatex">\(a[i] = abs(a[i] - x)\)</span>。如果存在，输出x，否则输出-1。</p>
+<p><em>⭐rating: 1400</em></p>
 <hr />
-<h3 id="_1">分析</h3>
+<h3 id="_2">分析</h3>
 <p>如果 <span class="arithmatex">\(a_i=a_{i+1}\)</span>，始终存在 <span class="arithmatex">\(|a_i-x|\le|a_{i+1}-x|\)</span> 的情况，对于任意的 <span class="arithmatex">\(x\)</span> 都可以取到。</p>
 <p>对于 <span class="arithmatex">\(a_i\le a_{i+1}\)</span> 的情况：</p>
 <ol>
@@ -5095,7 +5136,7 @@ $$</p>
 <p>上述可得，<span class="arithmatex">\(x\le \left \lfloor \frac{a_i+a_{i+1}}{2} \right \rfloor\)</span> 时满足 <span class="arithmatex">\(a_i\le a_{i+1}\)</span> 的条件。</p>
 <p>同理可以推出，当 <span class="arithmatex">\(a_{i+1}\le a_{i}\)</span> 时，需要满足 <span class="arithmatex">\(x\ge \left \lceil \frac{a_i+a_{i+1}}{2} \right \rceil\)</span> 的条件。</p>
 <p>如果存在一个 <span class="arithmatex">\(x\)</span> 可以满足使最后的序列 sorted，那么必然满足 <span class="arithmatex">\(x\)</span> 大于最大的下界且小于最小的上界。</p>
-<h3 id="_2">代码</h3>
+<h3 id="_3">代码</h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Go</label><label for="__tabbed_1_2">C++</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">

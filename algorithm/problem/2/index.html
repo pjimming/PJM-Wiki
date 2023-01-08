@@ -1028,7 +1028,7 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    题目大意
+    题意
   </a>
   
 </li>
@@ -1106,6 +1106,34 @@
     <li class="md-nav__item">
       <a href="../6/" class="md-nav__link">
         FLT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7/" class="md-nav__link">
+        Rectangular Congruence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8/" class="md-nav__link">
+        Zeros and Ones
       </a>
     </li>
   
@@ -5033,7 +5061,7 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    题目大意
+    题意
   </a>
   
 </li>
@@ -5073,8 +5101,10 @@
   <h1>Lucky Chains</h1>
 
 <p><a href="https://codeforces.com/contest/1766/problem/D">Lucky Chains</a></p>
-<h3 id="_1">题目大意</h3>
+<h3 id="_1">题意</h3>
 <p>给一对数 <span class="arithmatex">\((x,y)\)</span>，找到最小的 <span class="arithmatex">\(k(k\ge 0)\)</span> 满足 <span class="arithmatex">\(\gcd(x+k,y+k)\ne 1\)</span>。</p>
+<p><em>⭐rating: 1600</em></p>
+<hr />
 <h3 id="_2">分析</h3>
 <p>令 <span class="arithmatex">\(\gcd(x+k,y+k)=g\)</span>，那么 <span class="arithmatex">\((y+k)-(x+k)=y-x\)</span> 同样也可以被 <span class="arithmatex">\(g\)</span> 整除，就是说 <span class="arithmatex">\(\gcd(x+k,y-x)=h\)</span> 可以被 <span class="arithmatex">\(g\)</span> 整除；回到 <span class="arithmatex">\(\gcd(x+k,y-x)=h\)</span> 那么 <span class="arithmatex">\((x+k)+(y-x)=y+k\)</span> 也可以被 <span class="arithmatex">\(h\)</span> 整除，那么 <span class="arithmatex">\(\gcd(x+k,y+k)=g\)</span> 可以被 <span class="arithmatex">\(h\)</span> 整除。</p>
 <p>由于 <span class="arithmatex">\(h|g\)</span> 和 <span class="arithmatex">\(g|h\)</span>，可以推出 <span class="arithmatex">\(g=h\)</span>。</p>

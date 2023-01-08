@@ -1153,6 +1153,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7/" class="md-nav__link">
+        Rectangular Congruence
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../8/" class="md-nav__link">
+        Zeros and Ones
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -5157,6 +5185,8 @@
 <p><a href="https://codeforces.com/contest/1712/problem/D">原题链接</a></p>
 <h3 id="_1">题意</h3>
 <p>给定一长度为 <span class="arithmatex">\(n\)</span> 的数组，你可以进行 <span class="arithmatex">\(k\)</span> 次操作任意改变数组的一个值 <span class="arithmatex">\([1,10^9]\)</span>，用该数组构建一张无向稠密图，对于任意 <span class="arithmatex">\([l, r]\)</span> 两点之间的路径长度为数组 <span class="arithmatex">\(a\)</span> 上 <span class="arithmatex">\([l, r]\)</span> 范围内的最小值。求操作后该图上两个点之间最短路的最大值。</p>
+<p><em>⭐rating: 2000</em></p>
+<hr />
 <h3 id="_2">分析</h3>
 <h4 id="_3">图的性质</h4>
 <p>因为建图所得到的图为无向完全图，最短路有两种取得的方式，一种为直接从 <span class="arithmatex">\(u\)</span> 走到 <span class="arithmatex">\(v\)</span>，所需代价为 <span class="arithmatex">\(\min_{u\le i\le v}(a_i)\)</span>；另一种是 <span class="arithmatex">\(u\)</span> 先走到权值最小的点，再从最小的点走到 <span class="arithmatex">\(v\)</span>，代价为 <span class="arithmatex">\(2\times\min_{1\le i\le n}(a_i)\)</span>。</p>
