@@ -81,6 +81,7 @@ nav:
       - FLT: algorithm/problem/6.md
       - Rectangular Congruence: algorithm/problem/7.md
       - Zeros and Ones: algorithm/problem/8.md
+      - Madoka and The Best University: algorithm/problem/9.md
     - leetcode:
       - 1. 两数之和: algorithm/leetcode/1.md
       - 21. 合并两个有序链表: algorithm/leetcode/21.md
