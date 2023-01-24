@@ -85,6 +85,10 @@ nav:
       - 鸡算几何: algorithm/problem/10.md
       - 鸡玩炸弹人: algorithm/problem/11.md
       - 鸡格线: algorithm/problem/12.md
+      - Tokitsukaze and Three Integers: algorithm/problem/13.md
+      - Tokitsukaze and Function: algorithm/problem/14.md
+      - Tokitsukaze and Musynx: algorithm/problem/15.md
+      - Tokitsukaze and Synthesis and Traits: algorithm/problem/16.md
     - leetcode:
       - 1. 两数之和: algorithm/leetcode/1.md
       - 21. 合并两个有序链表: algorithm/leetcode/21.md
