@@ -82,6 +82,9 @@ nav:
       - Rectangular Congruence: algorithm/problem/7.md
       - Zeros and Ones: algorithm/problem/8.md
       - Madoka and The Best University: algorithm/problem/9.md
+      - 鸡算几何: algorithm/problem/10.md
+      - 鸡玩炸弹人: algorithm/problem/11.md
+      - 鸡格线: algorithm/problem/12.md
     - leetcode:
       - 1. 两数之和: algorithm/leetcode/1.md
       - 21. 合并两个有序链表: algorithm/leetcode/21.md
@@ -297,10 +300,10 @@ nav:
     - 外部链接: latex/links.md
     - 颜色: latex/colors.md
   - 工具:
+    - ACM模板: tools/4.md
     - OJ生成数据模板: tools/1.md
     - 出题模板: tools/2.md
     - leetcode题解模板: tools/3.md
-    - ACM模板: tools/4.md
   - 关于:
     - 关于作者: about/aboutme.md
     - 关于PJM Wiki: about/aboutwiki.md
