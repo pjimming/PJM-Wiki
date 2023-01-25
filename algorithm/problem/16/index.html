@@ -1245,6 +1245,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17/" class="md-nav__link">
+        灵魂碎片的收集
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18/" class="md-nav__link">
+        永恒守候的爱恋
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -5218,6 +5246,7 @@
 <p>题意转化：在一张可能不连通的无向图中，进行 <span class="arithmatex">\(q\)</span> 次查询，每次给出 <span class="arithmatex">\(k\)</span> 个点，查询 <span class="arithmatex">\(\frac{k\cdot(k-1)}{2}\)</span> 个边，有多少边在原图中出现过。</p>
 <p>考虑给原图的边定向。设 <span class="arithmatex">\(d_x\)</span> 表示节点 <span class="arithmatex">\(x\)</span> 的度，则对于原图中的一条边 <span class="arithmatex">\((u, v)\)</span>,若 <span class="arithmatex">\(d_u&lt;d_v\)</span>，则连接 <span class="arithmatex">\(u→v\)</span>，否则连接 <span class="arithmatex">\(v→u\)</span>。给原图的边定向后，每个点的出边 <span class="arithmatex">\(≤\sqrt{m}\)</span>。对于每次查询，用桶记录每个点，然后直接遍历每个查询的点的所有出边即可，常数较小。总时间复杂度为 <span class="arithmatex">\(O(\sqrt{m}·\sum k)\)</span>。</p>
 <p>证明:对于一个查询的点 <span class="arithmatex">\(x\)</span>，设 <span class="arithmatex">\(cnt_x\)</span> 表示 <span class="arithmatex">\(x\)</span> 的出边数量。若 <span class="arithmatex">\(cnt_x&lt;\sqrt{m}\)</span>，则显然遍历所有出边的时间复杂度小于 <span class="arithmatex">\(O(\sqrt{m})\)</span>；若 <span class="arithmatex">\(cnt&gt;\sqrt{m}\)</span>，由于 <span class="arithmatex">\(x→y (d_x&lt;d_y)\)</span>，则总边数最多为<span class="arithmatex">\(cnt_x·d_y=m\)</span>，所以 <span class="arithmatex">\(cnt_x\)</span> 不超过 <span class="arithmatex">\(\sqrt{m}\)</span>。</p>
+<p>时间复杂度 <span class="arithmatex">\(O(m\sqrt{m})\)</span></p>
 <h3 id="_2">代码</h3>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -5366,13 +5395,13 @@
       
       
         
-        <a href="../../leetcode/1/" class="md-footer__link md-footer__link--next" aria-label="下一页: 1. 两数之和" rel="next">
+        <a href="../17/" class="md-footer__link md-footer__link--next" aria-label="下一页: 灵魂碎片的收集" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              1. 两数之和
+              灵魂碎片的收集
             </div>
           </div>
           <div class="md-footer__button md-icon">
