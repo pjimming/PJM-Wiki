@@ -91,6 +91,9 @@ nav:
       - Tokitsukaze and Synthesis and Traits: algorithm/problem/16.md
       - 灵魂碎片的收集: algorithm/problem/17.md
       - 永恒守候的爱恋: algorithm/problem/18.md
+      - Work or Rest: algorithm/problem/19.md
+      - Components: algorithm/problem/20.md
+      - Balance Update Query: algorithm/problem/21.md
     - leetcode:
       - 1. 两数之和: algorithm/leetcode/1.md
       - 21. 合并两个有序链表: algorithm/leetcode/21.md
@@ -217,6 +220,8 @@ nav:
       - 奖金: graph/topo/3.md
       - 可达性统计: graph/topo/4.md
       - 车站分级: graph/topo/5.md
+    - 欧拉图:
+      - 介绍欧拉图: graph/euler/1.md
   - 数论:
     - 数学基础知识: math/1.md
     - 最大公约数简介: math/gcd.md
