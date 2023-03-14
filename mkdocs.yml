@@ -71,6 +71,9 @@ nav:
     - 管道: linux/conduit.md
     - 环境变量: linux/environment_variable.md
     - 常用命令: linux/common_commond.md
+  - 公开课:
+    - MIT6.824:
+      - Lab 1:MapReduce: MIT6.824/lab1.md
   - Algorithm:
     - 杂题:
       - Absolute Sorting: algorithm/problem/1.md
