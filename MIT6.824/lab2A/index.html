@@ -1144,6 +1144,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#struct" class="md-nav__link">
+    Struct
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5578,6 +5585,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#struct" class="md-nav__link">
+    Struct
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -5728,6 +5742,88 @@ lastmod: 2023-03-19T20:00:28Z
 <span class="w">    </span><span class="nx">ElectionTimeOutMin</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">150</span><span class="w"> </span><span class="c1">// 选举超时最小时间 ms</span><span class="w"></span>
 <span class="w">    </span><span class="nx">ElectionTimeOutMax</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">300</span><span class="w"> </span><span class="c1">// 选举超时最大时间 ms</span><span class="w"></span>
 <span class="p">)</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="struct">Struct</h4>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">type</span><span class="w"> </span><span class="nx">Raft</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">mu</span><span class="w">        </span><span class="nx">sync</span><span class="p">.</span><span class="nx">Mutex</span><span class="w">          </span><span class="c1">// Lock to protect shared access to this peer&#39;s state</span><span class="w"></span>
+<span class="w">    </span><span class="nx">peers</span><span class="w">     </span><span class="p">[]</span><span class="o">*</span><span class="nx">labrpc</span><span class="p">.</span><span class="nx">ClientEnd</span><span class="w"> </span><span class="c1">// RPC end points of all peers</span><span class="w"></span>
+<span class="w">    </span><span class="nx">persister</span><span class="w"> </span><span class="o">*</span><span class="nx">Persister</span><span class="w">          </span><span class="c1">// Object to hold this peer&#39;s persisted state</span><span class="w"></span>
+<span class="w">    </span><span class="nx">me</span><span class="w">        </span><span class="kt">int</span><span class="w">                 </span><span class="c1">// this peer&#39;s index into peers[]</span><span class="w"></span>
+<span class="w">    </span><span class="nx">dead</span><span class="w">      </span><span class="kt">int32</span><span class="w">               </span><span class="c1">// set by Kill()</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1">// 2A START</span><span class="w"></span>
+<span class="w">    </span><span class="nx">currentTerm</span><span class="w">      </span><span class="kt">int</span><span class="w">       </span><span class="c1">// 当前任期</span><span class="w"></span>
+<span class="w">    </span><span class="nx">votedFor</span><span class="w">         </span><span class="kt">int</span><span class="w">       </span><span class="c1">// 投票给谁</span><span class="w"></span>
+<span class="w">    </span><span class="nx">peersVoteGranted</span><span class="w"> </span><span class="p">[]</span><span class="kt">bool</span><span class="w">    </span><span class="c1">// 已获得的选票</span><span class="w"></span>
+<span class="w">    </span><span class="nx">role</span><span class="w">             </span><span class="kt">int</span><span class="w">       </span><span class="c1">// 角色 follower, candidate, leader</span><span class="w"></span>
+<span class="w">    </span><span class="nx">heartBeatTimeOut</span><span class="w"> </span><span class="nx">time</span><span class="p">.</span><span class="nx">Time</span><span class="w"> </span><span class="c1">// 上一次收到心跳包的时间+随即选举超时时间（在收到心跳包后再随机一个）</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 2A End</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">RequestVoteArgs</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 2A Start</span><span class="w"></span>
+<span class="w">    </span><span class="nx">CandidateTerm</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="c1">// 候选人Term</span><span class="w"></span>
+<span class="w">    </span><span class="nx">CandidateIndex</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="c1">// 候选人Index</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 2A End</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">RequestVoteReply</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 2A Start</span><span class="w"></span>
+<span class="w">    </span><span class="nx">FollowerTerm</span><span class="w"> </span><span class="kt">int</span><span class="w">  </span><span class="c1">// 当前任期号，以便候选人更新自己的任期号</span><span class="w"></span>
+<span class="w">    </span><span class="nx">VotGranted</span><span class="w">   </span><span class="kt">bool</span><span class="w"> </span><span class="c1">// 候选人是否被投票</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// 2A END</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1">// AppendEntriesArgs 心跳/追加包</span><span class="w"></span>
+<span class="kd">type</span><span class="w"> </span><span class="nx">AppendEntriesArgs</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">LeaderTerm</span><span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="c1">// leader&#39;s term</span><span class="w"></span>
+<span class="w">    </span><span class="nx">LeaderIndex</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="c1">// leader&#39;s index</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">type</span><span class="w"> </span><span class="nx">AppendEntriesReply</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">FollowerTerm</span><span class="w"> </span><span class="kt">int</span><span class="w">  </span><span class="c1">// follower的term，用来更新leader自己的term</span><span class="w"></span>
+<span class="w">    </span><span class="nx">Success</span><span class="w">      </span><span class="kt">bool</span><span class="w"> </span><span class="c1">// 是否成功</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <h3 id="_6">推荐阅读</h3>
