@@ -1,10 +1,10 @@
----
+<!-- ---
 title: lab1
 date: 2023-03-13T21:04:54Z
 lastmod: 2023-03-14T15:26:28Z
----
+--- -->
 
-# lab1
+# Lab1: Map Reduce
 
 ### MapReduce
 
@@ -221,4 +221,8 @@ pjm@pjm2001:~/6.5840/src/main$ bash test-mr.sh
 *** PASSED ALL TESTS
 ```
 
-‍
+### 推荐阅读
+
+[1] [Mit6.824 lab1全解析（推导历程+代码）](https://zhuanlan.zhihu.com/p/425093684)​
+
+[2] [MIT 6.824 分布式系统 2022 Lab1 MR 解决思路和调试技巧](https://zhuanlan.zhihu.com/p/602564288)​
