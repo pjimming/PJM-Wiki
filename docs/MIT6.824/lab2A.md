@@ -101,6 +101,51 @@ const (
 )
 ```
 
+#### Struct
+
+```go
+type Raft struct {
+	mu        sync.Mutex          // Lock to protect shared access to this peer's state
+	peers     []*labrpc.ClientEnd // RPC end points of all peers
+	persister *Persister          // Object to hold this peer's persisted state
+	me        int                 // this peer's index into peers[]
+	dead      int32               // set by Kill()
+
+	// 2A START
+	currentTerm      int       // 当前任期
+	votedFor         int       // 投票给谁
+	peersVoteGranted []bool    // 已获得的选票
+	role             int       // 角色 follower, candidate, leader
+	heartBeatTimeOut time.Time // 上一次收到心跳包的时间+随即选举超时时间（在收到心跳包后再随机一个）
+	// 2A End
+}
+
+type RequestVoteArgs struct {
+	// 2A Start
+	CandidateTerm  int // 候选人Term
+	CandidateIndex int // 候选人Index
+	// 2A End
+}
+
+type RequestVoteReply struct {
+	// 2A Start
+	FollowerTerm int  // 当前任期号，以便候选人更新自己的任期号
+	VotGranted   bool // 候选人是否被投票
+	// 2A END
+}
+
+// AppendEntriesArgs 心跳/追加包
+type AppendEntriesArgs struct {
+	LeaderTerm  int // leader's term
+	LeaderIndex int // leader's index
+}
+
+type AppendEntriesReply struct {
+	FollowerTerm int  // follower的term，用来更新leader自己的term
+	Success      bool // 是否成功
+}
+```
+
 ### 推荐阅读
 
 [1] [[MIT6.824 lab2] Raft-Leader election 代码实现 &amp; 踩坑记录](https://juejin.cn/post/7109291073226145806#heading-13)​
