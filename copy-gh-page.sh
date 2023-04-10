@@ -1,6 +1,8 @@
 #! /bin/bash
 
-git commit -m $1
+msg="$@"
+
+git commit -m "$msg"
 
 git push
 

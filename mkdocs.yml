@@ -75,6 +75,7 @@ nav:
     - MIT6.824:
       - Lab 1:MapReduce: MIT6.824/lab1.md
       - Lab 2:Raft:
+        - Raft论文中文翻译: MIT6.824/raft-zh_cn.md
         - Lab 2A:Leader Election: MIT6.824/lab2A.md
   - Algorithm:
     - 杂题:
