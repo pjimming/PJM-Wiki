@@ -45,7 +45,6 @@ copyright: Copyright &copy; 2022-2023 <a href="https://pjmcode.top" target="_bla
 nav:
   - Welcome: 
     - Welcome: index.md
-    - 我的算法竞赛之路: acm/acm.md
   - Linux:
     - WSL2的安装和使用: linux/first_work.md
     - 常用文件管理命令: linux/command.md
@@ -324,6 +323,8 @@ nav:
   - 关于:
     - 关于作者: about/aboutme.md
     - 关于PJM Wiki: about/aboutwiki.md
+    - 我的算法竞赛之路: acm/acm.md
+
 
 
 
